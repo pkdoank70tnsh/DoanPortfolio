@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thao tác cơ bản với tệp tin và thư mục - Phạm Đình Khánh Đoan</title>
-  <!-- Google Fonts: Literata (academic serif) & Outfit (geometric sans-serif) -->
+  <!-- Google Fonts: Montserrat (headings) & Be Vietnam Pro (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
@@ -17,12 +17,12 @@
   </script>
   <style>
     body {
-      font-family: 'Outfit', sans-serif !important;
+      font-family: 'Be Vietnam Pro', sans-serif !important;
       background: linear-gradient(135deg, #e6f7ef 0%, #d8f3e5 35%, #cdeedb 70%, #dcfce7 100%) !important;
       background-attachment: fixed;
     }
     h1, h2, h3, .font-serif {
-      font-family: 'Literata', serif !important;
+      font-family: 'Montserrat', sans-serif !important;
     }
     /* Custom float animations */
     @keyframes float-custom {
@@ -98,7 +98,7 @@
   <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
     <!-- Header -->
     <header class="mb-10 text-center md:text-left border-b border-gray-200 pb-8">
-      <span class="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-700 bg-emerald-100 rounded-full">Bài tập số 1</span>
+      <span class="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-700 bg-emerald-100 rounded-full">Báo cáo số 1</span>
       <h1 class="text-3xl md:text-5xl font-bold mt-3 mb-4 text-zinc-900 leading-tight font-serif">Thao tác cơ bản với tệp tin và thư mục</h1>
       <p class="text-lg text-gray-600 max-w-3xl leading-relaxed">Thiết lập cấu trúc thư mục học tập tối ưu và áp dụng quy tắc đặt tên khoa học để lưu trữ dữ liệu nghiên cứu Sinh học và AI.</p>
       
@@ -111,48 +111,12 @@
       </div>
     </header>
 
-    <!-- 3-Column Responsive Grid Layout -->
+    <!-- 2-Column Responsive Grid Layout (Content expanded, switchers compacted at top right) -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
       
-      <!-- Column 1: Target & Summary (lg:col-span-3) -->
-      <div class="lg:col-span-3 space-y-6">
-        <div class="p-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-sm">
-          <h3 class="text-lg font-bold text-zinc-900 mb-4 flex items-center font-serif">
-            <i class="fa-solid fa-bullseye text-emerald-500 mr-2"></i> Mục tiêu bài học
-          </h3>
-          <ul class="space-y-3 text-xs md:text-sm text-gray-600 leading-relaxed">
-            
-            <li class="flex items-start">
-              <i class="fa-solid fa-check text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
-              <span>Hiểu rõ nguyên lý tổ chức dữ liệu cá nhân phục vụ học tập lâu dài.</span>
-            </li>
-    
-            <li class="flex items-start">
-              <i class="fa-solid fa-check text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
-              <span>Áp dụng quy tắc đặt tên CamelCase hoặc SnakeCase kết hợp mốc thời gian để tránh thất lạc tài liệu thí nghiệm.</span>
-            </li>
-    
-            <li class="flex items-start">
-              <i class="fa-solid fa-check text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
-              <span>Quản lý phiên bản khoa học đối với các tài liệu nghiên cứu Sinh học và mã nguồn phân tích.</span>
-            </li>
-    
-          </ul>
-        </div>
-
-        <div class="p-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-sm">
-          <h3 class="text-lg font-bold text-zinc-900 mb-4 flex items-center font-serif">
-            <i class="fa-solid fa-circle-info text-emerald-500 mr-2"></i> Tóm tắt thực hiện
-          </h3>
-          <p class="text-xs md:text-sm text-gray-600 leading-relaxed text-justify">
-            Tôi đã xây dựng cây thư mục phục vụ cho học kỳ này. Hệ thống phân cấp rõ ràng từ thư mục gốc của môn học đến các bài tập thực hành, tài liệu tham khảo và báo cáo.
-          </p>
-        </div>
-      </div>
-
-      <!-- Column 2: Content (lg:col-span-6) -->
-      <div class="lg:col-span-6 space-y-6 bg-white/50 backdrop-blur-sm border border-gray-200/50 p-6 md:p-8 rounded-3xl shadow-sm">
-        <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Thực hiện</p>
+      <!-- Left Column: Content (lg:col-span-9) -->
+      <div class="lg:col-span-9 space-y-6 bg-white/50 backdrop-blur-sm border border-gray-200/50 p-6 md:p-8 rounded-3xl shadow-sm">
+        <p class="text-sm md:text-base text-gray-700 leading-relaxed text-left mb-4 select-text">Thực hiện</p>
 <ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Mở File Explorer: Nhấn tổ hợp phím Windows + E hoặc nhấp vào biểu tượng thư mục màu vàng trên thanh tác vụ.</span></li></ul>
 
 <div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
@@ -263,7 +227,7 @@
   <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 1.16: Ảnh chụp minh chứng kết quả thực hành bài tập 1</div>
 </div>
 
-<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Sau khi thưc hiện xong:</p>
+<p class="text-sm md:text-base text-gray-700 leading-relaxed text-left mb-4 select-text">Sau khi thưc hiện xong:</p>
 <ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Thư mục ThucHanh_PhamDinhKhanhDoan:</span></li></ul>
 
 <div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
@@ -298,7 +262,7 @@
   <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 1.21: Ảnh chụp minh chứng kết quả thực hành bài tập 1</div>
 </div>
 
-<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Sau khi nhấn “Có”, ta không thấy DiChuyen.txt trong Thùng rác</p>
+<p class="text-sm md:text-base text-gray-700 leading-relaxed text-left mb-4 select-text">Sau khi nhấn “Có”, ta không thấy DiChuyen.txt trong Thùng rác</p>
 <h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">12.     Khôi phục từ Thùng rác (Tùy chọn): Tìm biểu tượng Recycle Bin trên màn hình nền, nhấp đúp để mở. Tìm tệp GhiChuQuanTrong.txt đã xóa, nhấp chuột phải vào nó và chọn Restore. Tệp sẽ quay trở lại vị trí ban đầu.</h3>
 
 <div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
@@ -320,52 +284,63 @@
 
       </div>
 
-      <!-- Column 3: Quick Projects Switcher Sidebar (lg:col-span-3) -->
+      <!-- Right Column: Sidebar (lg:col-span-3) -->
       <div class="lg:col-span-3 space-y-6">
-        <div class="p-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-sm sticky top-24">
-          <h3 class="text-sm font-bold text-zinc-900 mb-4 flex items-center border-b border-gray-100 pb-2 font-serif">
-            <i class="fa-solid fa-list-check text-emerald-500 mr-2"></i> Chuyển nhanh bài tập
+        <!-- Card 1: Collapsed Quick Projects Switcher (Top Right) -->
+        <div class="p-5 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-sm">
+          <h3 class="text-xs font-bold text-zinc-900 mb-3 flex items-center border-b border-gray-100 pb-2 font-serif uppercase tracking-wider">
+            <i class="fa-solid fa-list-check text-emerald-500 mr-2"></i> Mục lục bài tập
           </h3>
-          <nav class="space-y-2.5">
+          <nav class="space-y-1.5">
             
             <!-- Active report -->
-            <a href="bai1.html" class="block p-3 rounded-xl text-xs font-bold border transition-all text-emerald-700 bg-emerald-50 border-emerald-500 shadow-sm">
-              <span class="block text-[8px] text-emerald-500 uppercase tracking-widest font-mono mb-0.5">Bài đang xem</span>
+            <a href="bai1.html" class="block px-2.5 py-1.5 rounded-lg text-[11px] font-bold border transition-all text-emerald-700 bg-emerald-50 border-emerald-500/50 shadow-sm">
               Bài 1: Cấu trúc thư mục
             </a>
             
 
-            <a href="bai2.html" class="block p-3 rounded-xl text-xs font-semibold border border-gray-150 text-gray-600 bg-gray-50 hover:border-emerald-500/50 hover:bg-emerald-50 hover:text-emerald-700 transition-all">
+            <a href="bai2.html" class="block px-2.5 py-1.5 rounded-lg text-[11px] font-medium border border-transparent text-gray-500 hover:border-emerald-500/20 hover:bg-emerald-50/50 hover:text-emerald-600 transition-all">
               Bài 2: Tìm kiếm thông tin
             </a>
             
 
-            <a href="bai3.html" class="block p-3 rounded-xl text-xs font-semibold border border-gray-150 text-gray-600 bg-gray-50 hover:border-emerald-500/50 hover:bg-emerald-50 hover:text-emerald-700 transition-all">
+            <a href="bai3.html" class="block px-2.5 py-1.5 rounded-lg text-[11px] font-medium border border-transparent text-gray-500 hover:border-emerald-500/20 hover:bg-emerald-50/50 hover:text-emerald-600 transition-all">
               Bài 3: Prompt Engineering
             </a>
             
 
-            <a href="bai4.html" class="block p-3 rounded-xl text-xs font-semibold border border-gray-150 text-gray-600 bg-gray-50 hover:border-emerald-500/50 hover:bg-emerald-50 hover:text-emerald-700 transition-all">
+            <a href="bai4.html" class="block px-2.5 py-1.5 rounded-lg text-[11px] font-medium border border-transparent text-gray-500 hover:border-emerald-500/20 hover:bg-emerald-50/50 hover:text-emerald-600 transition-all">
               Bài 4: Công cụ hợp tác nhóm
             </a>
             
 
-            <a href="bai5.html" class="block p-3 rounded-xl text-xs font-semibold border border-gray-150 text-gray-600 bg-gray-50 hover:border-emerald-500/50 hover:bg-emerald-50 hover:text-emerald-700 transition-all">
+            <a href="bai5.html" class="block px-2.5 py-1.5 rounded-lg text-[11px] font-medium border border-transparent text-gray-500 hover:border-emerald-500/20 hover:bg-emerald-50/50 hover:text-emerald-600 transition-all">
               Bài 5: AI tạo sinh nội dung
             </a>
             
 
-            <a href="bai6.html" class="block p-3 rounded-xl text-xs font-semibold border border-gray-150 text-gray-600 bg-gray-50 hover:border-emerald-500/50 hover:bg-emerald-50 hover:text-emerald-700 transition-all">
+            <a href="bai6.html" class="block px-2.5 py-1.5 rounded-lg text-[11px] font-medium border border-transparent text-gray-500 hover:border-emerald-500/20 hover:bg-emerald-50/50 hover:text-emerald-600 transition-all">
               Bài 6: Đạo đức AI
             </a>
             
           </nav>
-          
-          <div class="mt-5 pt-4 border-t border-gray-150">
-            <a href="../index.html" class="block text-center py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs md:text-sm font-bold transition-all shadow-md shadow-emerald-500/10 hover:shadow-lg">
-              <i class="fa-solid fa-house mr-1 text-[10px]"></i> Quay lại Portfolio chính
-            </a>
-          </div>
+        </div>
+
+        <!-- Card 2: Main Objective -->
+        <div class="p-5 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-sm">
+          <h3 class="text-xs font-bold text-zinc-900 mb-3 flex items-center border-b border-gray-100 pb-2 font-serif uppercase tracking-wider">
+            <i class="fa-solid fa-bullseye text-emerald-500 mr-2"></i> Mục tiêu chính
+          </h3>
+          <p class="text-xs md:text-sm text-gray-600 leading-relaxed text-left">
+            Thiết lập cấu trúc thư mục học tập khoa học và áp dụng quy tắc đặt tên chuẩn hóa để lưu trữ và quản lý tài liệu nghiên cứu Sinh học lâu dài.
+          </p>
+        </div>
+
+        <!-- Card 3: Action Button -->
+        <div class="p-4 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-sm">
+          <a href="../index.html" class="block text-center py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition-all shadow-md shadow-emerald-500/10 hover:shadow-lg">
+            <i class="fa-solid fa-house mr-1.5 text-[10px]"></i> Quay lại Portfolio chính
+          </a>
         </div>
       </div>
 

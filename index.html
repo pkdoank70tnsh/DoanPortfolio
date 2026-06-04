@@ -9,10 +9,10 @@
   <meta name="description" content="Digital Portfolio của Phạm Đình Khánh Đoan - Sinh viên Khoa Sinh học, Trường Đại học Khoa học Tự nhiên (HUS-VNU). Giao lưu giữa Sinh học phân tử và Trí tuệ nhân tạo.">
   <meta name="author" content="Phạm Đình Khánh Đoan">
   
-  <!-- Google Fonts: Literata (academic serif) & Outfit (geometric sans-serif) -->
+  <!-- Google Fonts: Montserrat (headings) & Be Vietnam Pro (body/cards) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -34,8 +34,8 @@
             }
           },
           fontFamily: {
-            serif: ['"Literata"', 'serif'],
-            sans: ['"Outfit"', 'sans-serif'],
+            serif: ['"Montserrat"', 'sans-serif'],
+            sans: ['"Be Vietnam Pro"', 'sans-serif'],
           },
           animation: {
             'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
@@ -54,13 +54,13 @@
   
   <style>
     body {
-      font-family: 'Outfit', sans-serif !important;
+      font-family: 'Be Vietnam Pro', sans-serif !important;
       background: linear-gradient(135deg, #e6f7ef 0%, #d8f3e5 35%, #cdeedb 70%, #dcfce7 100%) !important;
       background-attachment: fixed;
       transition: background-color 0.5s;
     }
     h1, h2, h3, .font-serif {
-      font-family: 'Literata', serif !important;
+      font-family: 'Montserrat', sans-serif !important;
     }
     /* Tăng cỡ chữ tổng thể */
     .text-xs { font-size: 0.85rem !important; }
@@ -73,7 +73,7 @@
     .text-4xl { font-size: 2.6rem !important; }
     .text-5xl { font-size: 3.3rem !important; }
     .text-justify {
-      text-align: justify;
+      text-align: left;
     }
     /* SPA transitions */
     .tab-content {
@@ -274,7 +274,7 @@
                   </div>
                   <div class="flex justify-between">
                     <span class="text-gray-400 font-medium">Mã sinh viên:</span>
-                    <span class="text-emerald-600 font-mono font-bold">25001395</span>
+                    <span class="text-emerald-600 font-sans font-bold">25001395</span>
                   </div>
                   <div class="flex justify-between">
                     <span class="text-gray-400 font-medium">Khoa:</span>
@@ -401,7 +401,7 @@
                 </div>
                 <div class="flex justify-between items-center text-sm">
                   <span class="text-gray-400 font-semibold">Mã sinh viên:</span>
-                  <span class="text-emerald-600 font-mono font-bold">25001395</span>
+                  <span class="text-emerald-600 font-sans font-bold">25001395</span>
                 </div>
                 <div class="flex justify-between items-center text-sm">
                   <span class="text-gray-400 font-semibold">Cơ sở đào tạo:</span>
@@ -732,7 +732,7 @@
           
           <div class="space-y-1">
             <span class="text-[10px] text-gray-400 block uppercase font-bold tracking-wider font-mono">Email Sinh viên HUS-VNU</span>
-            <span id="student-email" class="text-base sm:text-lg font-bold text-gray-800 font-mono">25001395@vnu.edu.vn</span>
+            <span id="student-email" class="text-base sm:text-lg font-bold text-gray-800 font-sans">25001395@vnu.edu.vn</span>
           </div>
 
           <p class="text-xs text-gray-500 max-w-sm">

@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm - Phạm Đình Khánh Đoan</title>
-  <!-- Google Fonts: Literata (academic serif) & Outfit (geometric sans-serif) -->
+  <title>Bài tập 3: Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm - Phạm Đình Khánh Đoan</title>
+  <!-- Google Fonts: Montserrat (headings) & Be Vietnam Pro (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
@@ -17,12 +17,12 @@
   </script>
   <style>
     body {
-      font-family: 'Outfit', sans-serif !important;
+      font-family: 'Be Vietnam Pro', sans-serif !important;
       background: linear-gradient(135deg, #e6f7ef 0%, #d8f3e5 35%, #cdeedb 70%, #dcfce7 100%) !important;
       background-attachment: fixed;
     }
     h1, h2, h3, .font-serif {
-      font-family: 'Literata', serif !important;
+      font-family: 'Montserrat', sans-serif !important;
     }
     /* Custom float animations */
     @keyframes float-custom {
@@ -103,8 +103,8 @@
   <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
     <!-- Header -->
     <header class="mb-10 text-center md:text-left border-b border-gray-200 pb-8">
-      <span class="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-700 bg-emerald-100 rounded-full">Bài tập số 4</span>
-      <h1 class="text-3xl md:text-5xl font-bold mt-3 mb-4 text-zinc-900 leading-tight font-serif">Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm</h1>
+      <span class="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-700 bg-emerald-100 rounded-full">Báo cáo số 4</span>
+      <h1 class="text-3xl md:text-5xl font-bold mt-3 mb-4 text-zinc-900 leading-tight font-serif">Bài tập 3: Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm</h1>
       <p class="text-lg text-gray-600 max-w-3xl leading-relaxed">Quản lý hiệu suất dự án nhóm bằng mô hình Kanban và phối hợp đồng bộ qua các nền tảng đám mây.</p>
       
       <div class="mt-6 flex flex-wrap gap-4 justify-center md:justify-start text-sm text-gray-500">
@@ -116,53 +116,18 @@
       </div>
     </header>
 
-    <!-- 3-Column Responsive Grid Layout -->
+    <!-- 2-Column Responsive Grid Layout (Content expanded, switchers compacted at top right) -->
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
       
-      <!-- Column 1: Target & Summary (lg:col-span-3) -->
-      <div class="lg:col-span-3 space-y-6">
-        <div class="p-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-sm">
-          <h3 class="text-lg font-bold text-zinc-900 mb-4 flex items-center font-serif">
-            <i class="fa-solid fa-bullseye text-emerald-500 mr-2"></i> Mục tiêu bài học
-          </h3>
-          <ul class="space-y-3 text-xs md:text-sm text-gray-600 leading-relaxed">
-            
-            <li class="flex items-start">
-              <i class="fa-solid fa-check text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
-              <span>Làm quen với các công cụ quản lý dự án Agile hiện đại (Trello, Notion).</span>
-            </li>
-    
-            <li class="flex items-start">
-              <i class="fa-solid fa-check text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
-              <span>Phân chia vai trò khoa học và cộng tác biên tập đồng bộ thời gian thực.</span>
-            </li>
-    
-          </ul>
-        </div>
-
-        <div class="p-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-sm">
-          <h3 class="text-lg font-bold text-zinc-900 mb-4 flex items-center font-serif">
-            <i class="fa-solid fa-circle-info text-emerald-500 mr-2"></i> Tóm tắt thực hiện
-          </h3>
-          <p class="text-xs md:text-sm text-gray-600 leading-relaxed text-justify">
-            Nhóm của tôi đã phối hợp lập tiến độ công việc trên bảng Kanban trực tuyến, chia nhỏ các nhiệm vụ nghiên cứu tài liệu và phân tích dữ liệu phòng lab.
-          </p>
-        </div>
-      </div>
-
-      <!-- Column 2: Content (lg:col-span-6) -->
-      <div class="lg:col-span-6 space-y-6 bg-white/50 backdrop-blur-sm border border-gray-200/50 p-6 md:p-8 rounded-3xl shadow-sm">
-        <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">BÁO CÁO</p>
-<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">BÀI TẬP 3: SỬ DỤNG CÔNG CỤ HỢP TÁC TRỰC TUYẾN CHO DỰ ÁN NHÓM</p>
-<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Người thực hiện: Phạm Đình Khánh Đoan</p>
-<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Mã sinh viên: 25001395</p>
-<h2 class="text-xl md:text-2xl font-bold font-serif text-emerald-900 mt-10 mb-5 border-l-4 border-emerald-500 pl-3.5 pb-0.5 flex items-center select-text">I. Bối cảnh</h2>
+      <!-- Left Column: Content (lg:col-span-9) -->
+      <div class="lg:col-span-9 space-y-6 bg-white/50 backdrop-blur-sm border border-gray-200/50 p-6 md:p-8 rounded-3xl shadow-sm">
+        <h2 class="text-xl md:text-2xl font-bold font-serif text-emerald-900 mt-10 mb-5 border-l-4 border-emerald-500 pl-3.5 pb-0.5 flex items-center select-text">I. Bối cảnh</h2>
 <ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Chủ đề dự án nhóm: "Xây dựng Video tiếng Anh giới thiệu di sản văn hóa Thăng Long - Hà Nội".</span></li></ul>
 <ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Vai trò cá nhân: Biên tập viên nội dung.</span></li></ul>
-<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Tôi chịu trách nhiệm trực tiếp biên soạn kịch bản chi tiết cũng như lịch trình sản xuất trên các nền tảng số, sau đó phân công kịch bản cho các thành viên trong nhóm. Ngoài ra tôi cũng thực hiện một phần phỏng vấn nhỏ trong video sản phẩm.</p>
+<p class="text-sm md:text-base text-gray-700 leading-relaxed text-left mb-4 select-text">Tôi chịu trách nhiệm trực tiếp biên soạn kịch bản chi tiết cũng như lịch trình sản xuất trên các nền tảng số, sau đó phân công kịch bản cho các thành viên trong nhóm. Ngoài ra tôi cũng thực hiện một phần phỏng vấn nhỏ trong video sản phẩm.</p>
 <ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Mục tiêu: Hoàn thành video chất lượng cao trước ngày 02/05/2026.</span></li></ul>
 <h2 class="text-xl md:text-2xl font-bold font-serif text-emerald-900 mt-10 mb-5 border-l-4 border-emerald-500 pl-3.5 pb-0.5 flex items-center select-text">II. Lựa chọn công cụ</h2>
-<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Để tối ưu hóa hiệu suất làm việc từ xa, nhóm chúng tôi đã thiết lập hệ thống 4 nhóm công cụ:</p>
+<p class="text-sm md:text-base text-gray-700 leading-relaxed text-left mb-4 select-text">Để tối ưu hóa hiệu suất làm việc từ xa, nhóm chúng tôi đã thiết lập hệ thống 4 nhóm công cụ:</p>
 <h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">1. Công cụ quản lý dự án:</h3>
 <ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tên công cụ: Trello.</span></li></ul>
 <ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tối ưu hóa: Thiết kế lịch, timeline cho một số thành viên cùng làm, sử dụng tag thành viên.</span></li></ul>
@@ -252,7 +217,7 @@
       </tr>
     </thead>
     <tbody class="divide-y divide-gray-150 text-gray-700">
-      <tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">Trello</td><td class="p-3 border-b border-gray-150">Giúp   tôi   không  bao  giờ   quên   việc  "Demo  nói   thử ".  Tránh   việc   chồng   chéo   nhiệm   vụ   giữa   các   thành   viên .</td><td class="p-3 border-b border-gray-150">Tôi   sử   dụng   nhãn   màu   để   ưu   tiên   các   việc   khẩn   cấp ,  giúp   nhóm   tập   trung   vào   mục   tiêu   ngắn   hạn .</td></tr><tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">Google Docs  &  Google Sheets</td><td class="p-3 border-b border-gray-150">Cho  phép  10  thành   viên   cùng   lúc   theo   dõi   kịch   bản .  Tính   năng  "Comment"  giúp   tôi   duyệt  ý  tưởng   đề   xuất   sửa   kịch   bản   của   các   bạn   khác   ngay   lập   tức .</td><td class="p-3 border-b border-gray-150">Tận   dụng  "Version History"  để   theo   dõi  ai  đã   thay   đổi   kịch   bản ,  tránh   việc   xóa   nhầm   dữ   liệu   quan   trọng .</td></tr><tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">Google Drive</td><td class="p-3 border-b border-gray-150">Lưu  trữ  video 4K dung  lượng   lớn   mà   Zalo   không   gửi   được .  Phân   quyền  " Chỉ   xem "  cho   một   số   thành   viên   để   bảo   mật   dữ   liệu .</td><td class="p-3 border-b border-gray-150">Thiết   lập   hệ   thống   thư   mục  3  cấp  ( Fieldtrip_Nhóm  4   Video  gốc    Video quay  tại   địa   điểm  1)   giúp   tìm   kiếm  file  dễ   dàng .</td></tr><tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">Zalo</td><td class="p-3 border-b border-gray-150">Phản   hồi   cực   nhanh .  Tính   năng  "Ghim tin  nhắn "  giúp   các   thông   báo   về   lịch   trình   luôn   hiển   thị   đầu   nhóm .</td><td class="p-3 border-b border-gray-150">Sử   dụng   tính   năng  " Nhắc   hẹn "  trên   Zalo   đồng   bộ   với   lịch   trên  Trello  để   nhắc   nhở   các   thành   viên  hay  quên .</td></tr>
+      <tr class="hover:bg-emerald-50/50 transition-colors"><td class="p-3 border-b border-gray-150">Trello</td><td class="p-3 border-b border-gray-150">Giúp   tôi   không  bao  giờ   quên   việc  "Demo  nói   thử ".  Tránh   việc   chồng   chéo   nhiệm   vụ   giữa   các   thành   viên .</td><td class="p-3 border-b border-gray-150">Tôi   sử   dụng   nhãn   màu   để   ưu   tiên   các   việc   khẩn   cấp ,  giúp   nhóm   tập   trung   vào   mục   tiêu   ngắn   hạn .</td></tr><tr class="hover:bg-emerald-50/50 transition-colors"><td class="p-3 border-b border-gray-150">Google Docs  &  Google Sheets</td><td class="p-3 border-b border-gray-150">Cho  phép  10  thành   viên   cùng   lúc   theo   dõi   kịch   bản .  Tính   năng  "Comment"  giúp   tôi   duyệt  ý  tưởng   đề   xuất   sửa   kịch   bản   của   các   bạn   khác   ngay   lập   tức .</td><td class="p-3 border-b border-gray-150">Tận   dụng  "Version History"  để   theo   dõi  ai  đã   thay   đổi   kịch   bản ,  tránh   việc   xóa   nhầm   dữ   liệu   quan   trọng .</td></tr><tr class="hover:bg-emerald-50/50 transition-colors"><td class="p-3 border-b border-gray-150">Google Drive</td><td class="p-3 border-b border-gray-150">Lưu  trữ  video 4K dung  lượng   lớn   mà   Zalo   không   gửi   được .  Phân   quyền  " Chỉ   xem "  cho   một   số   thành   viên   để   bảo   mật   dữ   liệu .</td><td class="p-3 border-b border-gray-150">Thiết   lập   hệ   thống   thư   mục  3  cấp  ( Fieldtrip_Nhóm  4   Video  gốc    Video quay  tại   địa   điểm  1)   giúp   tìm   kiếm  file  dễ   dàng .</td></tr><tr class="hover:bg-emerald-50/50 transition-colors"><td class="p-3 border-b border-gray-150">Zalo</td><td class="p-3 border-b border-gray-150">Phản   hồi   cực   nhanh .  Tính   năng  "Ghim tin  nhắn "  giúp   các   thông   báo   về   lịch   trình   luôn   hiển   thị   đầu   nhóm .</td><td class="p-3 border-b border-gray-150">Sử   dụng   tính   năng  " Nhắc   hẹn "  trên   Zalo   đồng   bộ   với   lịch   trên  Trello  để   nhắc   nhở   các   thành   viên  hay  quên .</td></tr>
     </tbody>
   </table>
 </div>
@@ -269,52 +234,63 @@
 <ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Giải quyết: Đặt Soft Deadline trên Trello sớm hơn 2 ngày so với thời hạn thật để chủ động hoàn thành nhiệm vụ trước hạn.</span></li></ul>
       </div>
 
-      <!-- Column 3: Quick Projects Switcher Sidebar (lg:col-span-3) -->
+      <!-- Right Column: Sidebar (lg:col-span-3) -->
       <div class="lg:col-span-3 space-y-6">
-        <div class="p-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-sm sticky top-24">
-          <h3 class="text-sm font-bold text-zinc-900 mb-4 flex items-center border-b border-gray-100 pb-2 font-serif">
-            <i class="fa-solid fa-list-check text-emerald-500 mr-2"></i> Chuyển nhanh bài tập
+        <!-- Card 1: Collapsed Quick Projects Switcher (Top Right) -->
+        <div class="p-5 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-sm">
+          <h3 class="text-xs font-bold text-zinc-900 mb-3 flex items-center border-b border-gray-100 pb-2 font-serif uppercase tracking-wider">
+            <i class="fa-solid fa-list-check text-emerald-500 mr-2"></i> Mục lục bài tập
           </h3>
-          <nav class="space-y-2.5">
+          <nav class="space-y-1.5">
             
-            <a href="bai1.html" class="block p-3 rounded-xl text-xs font-semibold border border-gray-150 text-gray-600 bg-gray-50 hover:border-emerald-500/50 hover:bg-emerald-50 hover:text-emerald-700 transition-all">
+            <a href="bai1.html" class="block px-2.5 py-1.5 rounded-lg text-[11px] font-medium border border-transparent text-gray-500 hover:border-emerald-500/20 hover:bg-emerald-50/50 hover:text-emerald-600 transition-all">
               Bài 1: Cấu trúc thư mục
             </a>
             
 
-            <a href="bai2.html" class="block p-3 rounded-xl text-xs font-semibold border border-gray-150 text-gray-600 bg-gray-50 hover:border-emerald-500/50 hover:bg-emerald-50 hover:text-emerald-700 transition-all">
+            <a href="bai2.html" class="block px-2.5 py-1.5 rounded-lg text-[11px] font-medium border border-transparent text-gray-500 hover:border-emerald-500/20 hover:bg-emerald-50/50 hover:text-emerald-600 transition-all">
               Bài 2: Tìm kiếm thông tin
             </a>
             
 
-            <a href="bai3.html" class="block p-3 rounded-xl text-xs font-semibold border border-gray-150 text-gray-600 bg-gray-50 hover:border-emerald-500/50 hover:bg-emerald-50 hover:text-emerald-700 transition-all">
+            <a href="bai3.html" class="block px-2.5 py-1.5 rounded-lg text-[11px] font-medium border border-transparent text-gray-500 hover:border-emerald-500/20 hover:bg-emerald-50/50 hover:text-emerald-600 transition-all">
               Bài 3: Prompt Engineering
             </a>
             
 
             <!-- Active report -->
-            <a href="bai4.html" class="block p-3 rounded-xl text-xs font-bold border transition-all text-emerald-700 bg-emerald-50 border-emerald-500 shadow-sm">
-              <span class="block text-[8px] text-emerald-500 uppercase tracking-widest font-mono mb-0.5">Bài đang xem</span>
+            <a href="bai4.html" class="block px-2.5 py-1.5 rounded-lg text-[11px] font-bold border transition-all text-emerald-700 bg-emerald-50 border-emerald-500/50 shadow-sm">
               Bài 4: Công cụ hợp tác nhóm
             </a>
             
 
-            <a href="bai5.html" class="block p-3 rounded-xl text-xs font-semibold border border-gray-150 text-gray-600 bg-gray-50 hover:border-emerald-500/50 hover:bg-emerald-50 hover:text-emerald-700 transition-all">
+            <a href="bai5.html" class="block px-2.5 py-1.5 rounded-lg text-[11px] font-medium border border-transparent text-gray-500 hover:border-emerald-500/20 hover:bg-emerald-50/50 hover:text-emerald-600 transition-all">
               Bài 5: AI tạo sinh nội dung
             </a>
             
 
-            <a href="bai6.html" class="block p-3 rounded-xl text-xs font-semibold border border-gray-150 text-gray-600 bg-gray-50 hover:border-emerald-500/50 hover:bg-emerald-50 hover:text-emerald-700 transition-all">
+            <a href="bai6.html" class="block px-2.5 py-1.5 rounded-lg text-[11px] font-medium border border-transparent text-gray-500 hover:border-emerald-500/20 hover:bg-emerald-50/50 hover:text-emerald-600 transition-all">
               Bài 6: Đạo đức AI
             </a>
             
           </nav>
-          
-          <div class="mt-5 pt-4 border-t border-gray-150">
-            <a href="../index.html" class="block text-center py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs md:text-sm font-bold transition-all shadow-md shadow-emerald-500/10 hover:shadow-lg">
-              <i class="fa-solid fa-house mr-1 text-[10px]"></i> Quay lại Portfolio chính
-            </a>
-          </div>
+        </div>
+
+        <!-- Card 2: Main Objective -->
+        <div class="p-5 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-sm">
+          <h3 class="text-xs font-bold text-zinc-900 mb-3 flex items-center border-b border-gray-100 pb-2 font-serif uppercase tracking-wider">
+            <i class="fa-solid fa-bullseye text-emerald-500 mr-2"></i> Mục tiêu chính
+          </h3>
+          <p class="text-xs md:text-sm text-gray-600 leading-relaxed text-left">
+            Phối hợp quản lý tiến độ công việc nhóm bằng bảng Kanban và cộng tác biên tập tài liệu trực tuyến thời gian thực trên các nền tảng đám mây.
+          </p>
+        </div>
+
+        <!-- Card 3: Action Button -->
+        <div class="p-4 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-sm">
+          <a href="../index.html" class="block text-center py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition-all shadow-md shadow-emerald-500/10 hover:shadow-lg">
+            <i class="fa-solid fa-house mr-1.5 text-[10px]"></i> Quay lại Portfolio chính
+          </a>
         </div>
       </div>
 
