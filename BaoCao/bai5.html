@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung - Phạm Đình Khánh Đoan</title>
+  <!-- Google Fonts: Lora & Outfit for premium look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {"theme":{"extend":{"colors":{"brand":{"light":"#10b981","DEFAULT":"#059669","dark":"#047857","sage":"#e8f3ee","deep":"#061c12"}}}}}
+  </script>
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #e6f7ef 0%, #d8f3e5 35%, #cdeedb 70%, #dcfce7 100%);
+      background-attachment: fixed;
+    }
+    h1, h2, h3, .font-serif {
+      font-family: 'Lora', serif;
+    }
+    /* Custom float animations */
+    @keyframes float-custom {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-float {
+      animation: float-custom 6s ease-in-out infinite;
+    }
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 0.3; }
+    }
+    .animate-pulse-slow {
+      animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    /* Tăng cỡ chữ tổng thể */
+    .text-xs { font-size: 0.85rem !important; }
+    .text-sm { font-size: 0.95rem !important; }
+    .text-base { font-size: 1.05rem !important; }
+    .text-lg { font-size: 1.2rem !important; }
+    .text-xl { font-size: 1.35rem !important; }
+  </style>
+</head>
+<body class="text-zinc-800 min-h-screen flex flex-col opacity-0 transition-opacity duration-500 relative overflow-x-hidden">
+  
+  <!-- BACKGROUND ANIMATION MESH & SVGS -->
+  <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-60">
+    <div class="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-emerald-400/20 filter blur-[100px] animate-pulse-slow"></div>
+    <div class="absolute top-1/3 -right-40 w-[600px] h-[600px] rounded-full bg-teal-400/20 filter blur-[120px] animate-pulse-slow" style="animation-delay: 1.5s;"></div>
+  </div>
+
+  
+  <!-- Synapse Cell Decor -->
+  <svg viewBox="0 0 100 100" class="absolute w-24 h-24 text-emerald-500/10 pointer-events-none z-0 animate-float" style="top: 15%; right: 4%; animation-duration: 13s; opacity: 0.08;">
+    <circle cx="50" cy="50" r="8" fill="currentColor" />
+    <path d="M 50,42 L 50,20 M 50,58 L 50,80 M 42,50 L 20,50 M 58,50 L 80,50" stroke="currentColor" stroke-width="1.8" />
+    <path d="M 44,44 L 28,28 M 56,56 L 72,72 M 44,56 L 28,72 M 56,44 L 72,28" stroke="currentColor" stroke-width="1.5" />
+    <circle cx="50" cy="20" r="3" fill="currentColor" />
+    <circle cx="50" cy="80" r="3" fill="currentColor" />
+    <circle cx="20" cy="50" r="3" fill="currentColor" />
+    <circle cx="80" cy="50" r="3" fill="currentColor" />
+  </svg>
+
+  <!-- Lab Flask Decor -->
+  <svg viewBox="0 0 100 100" class="absolute w-20 h-20 text-emerald-500/10 pointer-events-none z-0 animate-float" style="bottom: 25%; left: 4%; animation-duration: 9s; opacity: 0.08;">
+    <path d="M 40,10 L 60,10 M 45,10 L 45,35 L 20,80 A 10,10 0 0 0 30,90 L 70,90 A 10,10 0 0 0 80,80 L 55,35 L 55,10" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+    <path d="M 28,70 L 72,70" stroke="currentColor" stroke-width="1.5" />
+  </svg>
+
+
+  <!-- Nav Bar -->
+  <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50 relative shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <a href="../index.html" class="flex items-center space-x-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Quay lại Portfolio</span>
+          </a>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div class="text-sm text-gray-500 font-semibold">Bài 5: AI tạo sinh nội dung</div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
+    <!-- Header -->
+    <header class="mb-10 text-center md:text-left border-b border-gray-200 pb-8">
+      <span class="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-700 bg-emerald-100 rounded-full">Bài tập số 5</span>
+      <h1 class="text-3xl md:text-5xl font-bold mt-3 mb-4 text-zinc-900 leading-tight font-serif">Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung</h1>
+      <p class="text-lg text-gray-600 max-w-3xl leading-relaxed">Ứng dụng Midjourney / DALL-E và các mô hình sinh văn bản để xây dựng ấn phẩm truyền thông khoa học trực quan.</p>
+      
+      <div class="mt-6 flex flex-wrap gap-4 justify-center md:justify-start text-sm text-gray-500">
+        <div><i class="fa-regular fa-user mr-1 text-emerald-500"></i> Sinh viên: <strong>Phạm Đình Khánh Đoan</strong></div>
+        <div class="hidden md:block text-gray-300">|</div>
+        <div><i class="fa-regular fa-id-card mr-1 text-emerald-500"></i> MSV: <strong>25001395</strong></div>
+        <div class="hidden md:block text-gray-300">|</div>
+        <div><i class="fa-regular fa-building mr-1 text-emerald-500"></i> Khoa Sinh học - HUS-VNU</div>
+      </div>
+    </header>
+
+    <!-- 3-Column Responsive Grid Layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      
+      <!-- Column 1: Target & Summary (lg:col-span-3) -->
+      <div class="lg:col-span-3 space-y-6">
+        <div class="p-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-sm">
+          <h3 class="text-lg font-bold text-zinc-900 mb-4 flex items-center font-serif">
+            <i class="fa-solid fa-bullseye text-emerald-500 mr-2"></i> Mục tiêu bài học
+          </h3>
+          <ul class="space-y-3 text-xs md:text-sm text-gray-600 leading-relaxed">
+            
+            <li class="flex items-start">
+              <i class="fa-solid fa-check text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
+              <span>Ứng dụng mô hình AI tạo sinh hình ảnh, đồ họa trực quan hóa tri thức y sinh.</span>
+            </li>
+    
+            <li class="flex items-start">
+              <i class="fa-solid fa-check text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
+              <span>Truyền thông khoa học bằng phương thức trực quan, dễ hiểu.</span>
+            </li>
+    
+          </ul>
+        </div>
+
+        <div class="p-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-sm">
+          <h3 class="text-lg font-bold text-zinc-900 mb-4 flex items-center font-serif">
+            <i class="fa-solid fa-circle-info text-emerald-500 mr-2"></i> Tóm tắt thực hiện
+          </h3>
+          <p class="text-xs md:text-sm text-gray-600 leading-relaxed text-justify">
+            Tôi đã sử dụng AI để hỗ trợ viết bài tóm tắt và thiết kế đồ họa vector chuỗi xoắn DNA dưới dạng lưới công nghệ làm nền tảng cho poster truyền thông khoa học.
+          </p>
+        </div>
+      </div>
+
+      <!-- Column 2: Content (lg:col-span-6) -->
+      <div class="lg:col-span-6 space-y-6 bg-white/50 backdrop-blur-sm border border-gray-200/50 p-6 md:p-8 rounded-3xl shadow-sm">
+        <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">BÁO CÁO</p>
+<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">SỬ DỤNG AI TẠO SINH ĐỂ HỖ TRỢ SÁNG TẠO NỘI DUNG</p>
+<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Người thực hiện: Phạm Đình Khánh Đoan</p>
+<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Mã sinh viên: 25001395</p>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">I. Lựa chọn dự án</h2>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">1. Chủ đề:</h3>
+<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Thiết kế Infographic về “Vòng đời của Bướm Chúa” (Monarch Butterfly Lifecycle).</p>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">2. Lý do lựa chọn:</h3>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tính hấp dẫn trực quan: Vòng đời của Bướm Chúa có 4 giai đoạn rõ ràng (Trứng, Sâu bướm, Nhộng, Bướm trưởng thành) với màu sắc và hình thái rất đặc trưng, dễ dàng tạo ra một sản phẩm đẹp mắt.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Dễ tìm hình ảnh/tư liệu: Vì dữ liệu về loài bướm rất phong phú, giúp các công cụ AI tạo hình ảnh hoạt động hiệu quả và chính xác hơn.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Nhiều ý tưởng tích hợp: Bên cạnh vòng đời, có thể tích hợp thêm các thông tin phụ liên quan như: Sơ đồ di cư, sự phụ thuộc vào cây Bông sữa (Milkweed), hoặc sự phân biệt giới tính,…</li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">3. Ý tưởng chi tiết cho Infographic:</h3>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Bố cục: Dạng dọc (4:3 hoặc 16:9 dọc), chia làm 4 phần chính tương ứng 4 giai đoạn, xếp chồng hoặc đi theo mũi tên vòng tròn.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Nội dung chính:</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tiêu đề chính: "VÒNG ĐỜI CỦA BƯỚM CHÚA".</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Giai đoạn 1 (Trứng): Ảnh cận cảnh trứng trên lá bông sữa.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Giai đoạn 2 (Sâu bướm): Ảnh sâu bướm đang ăn lá.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Giai đoạn 3 (Nhộng/Kén): Ảnh kén bướm.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Giai đoạn 4 (Bướm trưởng thành): Ảnh bướm Monarch xòe cánh.</li></ul>
+<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Với mỗi giai đoạn, chèn thêm văn bản mô tả tóm tắt về sự thay đổi hình thái, sinh lý của bướm trong giai đoạn đó.</p>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Hình ảnh và Đồ họa: Ảnh chụp macro siêu thực (generated by AI), kết hợp các vector icon sạch sẽ cho dữ liệu (arrows, data points).</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Màu sắc: Tông màu chủ đạo là Cam và Xanh lá.</li></ul>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">II. Lựa chọn công cụ</h2>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">1. Công cụ AI tạo văn bản: Google Gemini (để lập dàn ý, viết nội dung chi tiết và tinh chỉnh prompt).</h3>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">2. Công cụ AI tạo hình ảnh: DALL-E 3 (Công cụ AI tạo hình ảnh miễn phí, chuyên tạo ảnh macro siêu thực).</h3>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">3. Công cụ AI hỗ trợ thiết kế: Canva AI (với các tính năng AI như Magic Media, Background Remover để ghép và chỉnh sửa assets).</h3>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">III. Quá trình thực hiện sáng tạo nội dung</h2>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Bước 1: Lên kế hoạch, nội dung và chiến lược Prompt (Google Gemini)</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Prompt 1 (Lập dàn ý): Hãy lập một dàn ý chi tiết cho một infographic dạng dọc về vòng đời hoàn chỉnh của bướm Chúa. Chia nội dung thành 4 phần tương ứng với 4 giai đoạn: Trứng, Sâu bướm, Nhộng, Bướm trưởng thành. Cung cấp các thông tin chính cho từng giai đoạn bằng tiếng Việt và gợi ý các yếu tố hình ảnh minh họa cho mỗi phần. Bên cạnh thông tin chính về từng giai đoạn, tích hợp thêm các thông tin phụ liên quan như: Sơ đồ di cư, sự phụ thuộc vào cây Bông sữa (Milkweed), hoặc sự phân biệt giới tính, …</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Kết quả 1: Google Gemini cung cấp dàn ý chi tiết 4 giai đoạn bằng Tiếng Việt.</li></ul>
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai5_img1.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai5_img2.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai5_img3.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai5_img4.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai5_img5.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Prompt 2 (Tạo prompt cho DALL-E 3): Dựa trên dàn ý trên, hãy tạo các câu lệnh (prompt) tạo hình ảnh nâng cao cho DALL-E 3 để tạo ra các tài nguyên ảnh siêu thực, độ phân giải cao cho từng phần trong 4 giai đoạn. Sử dụng ngôn ngữ mô tả chuyên sâu về nhiếp ảnh macro (chụp cận cảnh), ánh sáng và kết cấu bề mặt. Chỉ định tỷ lệ khung hình là 4:3.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Kết quả 2: Google Gemini đưa ra 4 prompt tiếng Anh chuyên sâu cho DALL-E 3.</li></ul>
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai5_img6.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai5_img7.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai5_img8.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai5_img9.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai5_img10.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Bước 2: Tạo hình ảnh (DALL-E 3)</li></ul>
+<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Sử dụng DALL-E 3 với các prompt từ Google Gemini đã được tôi tinh chỉnh lại. Kết quả cho ra các hình ảnh về Vòng đời của bướm Chúa.</p>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Giai đoạn 1: Trứng</li></ul>
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai5_img11.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Giai đoạn 2: Sâu bướm</li></ul>
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai5_img12.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Giai đoạn 3: Kén</li></ul>
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai5_img13.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Giai đoạn 4: Bướm trưởng thành</li></ul>
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai5_img14.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed"> Bước 3: Thiết kế Infographic (Canva)</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Đưa ảnh từ DALL-E 3 vào Canva.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Sử dụng Canva AI để thiết kế Infographic, giúp bố cục trông hiện đại và chuyên nghiệp hơn.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tự tay thiết kế các đường dẫn mũi tên, chọn font chữ và phối màu cam - xanh đặc trưng.</li></ul>
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai5_img15.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">IV. So sánh các công cụ AI</h2>
+
+<div class="overflow-x-auto my-6 bg-white/70 backdrop-blur-sm border border-gray-200/60 rounded-2xl p-4 shadow-sm select-text">
+  <table class="w-full text-left text-xs md:text-sm border-collapse">
+    <thead>
+      <tr class="bg-emerald-50/50 text-zinc-900 font-bold">
+        <th class="p-3 border-b border-emerald-500/20 font-bold text-emerald-800">Tiêu chí</th><th class="p-3 border-b border-emerald-500/20 font-bold text-emerald-800">Google Gemini</th><th class="p-3 border-b border-emerald-500/20 font-bold text-emerald-800">DALL-E 3</th><th class="p-3 border-b border-emerald-500/20 font-bold text-emerald-800">Canva AI</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-150 text-gray-700">
+      <tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">Vai trò chính</td><td class="p-3 border-b border-gray-150">Lập dàn ý, tra cứu kiến thức sinh học và tối ưu hóa prompt.</td><td class="p-3 border-b border-gray-150">Tạo ra các bức ảnh macro siêu thực về vòng đời bướm.</td><td class="p-3 border-b border-gray-150">Tách nền, hiệu chỉnh bố cục và tạo các biểu tượng bổ trợ.</td></tr><tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">Độ chính xác nội dung</td><td class="p-3 border-b border-gray-150">Rất cao. Có khả năng truy cập dữ liệu thực tế để đảm bảo kiến thức sinh học đúng.</td><td class="p-3 border-b border-gray-150">Khá. Hiểu tốt các mô tả phức tạp nhưng đôi khi sai chi tiết nhỏ (số lượng chân).</td><td class="p-3 border-b border-gray-150">Trung bình. Các hình ảnh tạo ra từ Magic Media thường mang tính minh họa chung chung.</td></tr><tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">Khả năng tương tác</td><td class="p-3 border-b border-gray-150">Giao tiếp tự nhiên, hỗ trợ đa ngôn ngữ và hiểu ngữ cảnh tốt.</td><td class="p-3 border-b border-gray-150">Hiểu ngôn ngữ tự nhiên tốt nhất trong các dòng AI tạo ảnh hiện nay.</td><td class="p-3 border-b border-gray-150">Giao diện kéo thả trực quan, tích hợp ngay trong không gian thiết kế.</td></tr><tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">Hạn chế lớn nhất</td><td class="p-3 border-b border-gray-150">Không trực tiếp tạo ra file thiết kế đồ họa hay ảnh chất lượng cao.</td><td class="p-3 border-b border-gray-150">Khó duy trì tính nhất quán của nhân vật/chủ thể qua nhiều lần tạo khác nhau.</td><td class="p-3 border-b border-gray-150">Chất lượng hình ảnh  sau khi dùng chức năng tách nền khá mờ.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">V. Hoàn thiện dự án</h2>
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai5_img16.jpg" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Dự án đạt được sự hài hòa giữa sản phẩm AI và đóng góp cá nhân:</p>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">AI (dưới 50%): Cung cấp ý tưởng văn bản và tạo hình ảnh.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cá nhân (trên 50%): Kiểm chứng kiến thức sinh học, chọn lọc thông tin phù hợp, thiết kế bố cục infographic.</li></ul>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">VI. Phân tích về vai trò của AI trong quá trình sáng tạo</h2>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">1. Ưu điểm và hạn chế</h3>
+<h4 class="text-base md:text-lg font-bold text-emerald-800 mt-4 mb-2 flex items-center select-text">a. Ưu điểm</h4>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tối ưu hóa hiệu suất và thời gian: AI giúp rút ngắn giai đoạn lên ý tưởng. Thay vì mất nhiều giờ tra cứu tài liệu và tìm kiếm hình ảnh không dính bản quyền, Google Gemini và DALL-E 3 cho phép hoàn thiện dàn ý nội dung và tư liệu hình ảnh chỉ trong vài phút.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">AI xóa bỏ rào cản về kỹ thuật đồ họa chuyên sâu. Một sinh viên ngành Sinh học không cần thành thạo các phần mềm phức tạp như Adobe Illustrator vẫn có thể tạo ra các sản phẩm đạt tiêu chuẩn nhờ sự hỗ trợ của Canva AI và DALL-E 3.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">AI đóng vai trò là người đồng hành "brainstorming". Các gợi ý từ Google Gemini có thể mở ra những góc nhìn mới mà con người bỏ sót, giúp mở rộng giới hạn sáng tạo của cá nhân.</li></ul>
+<h4 class="text-base md:text-lg font-bold text-emerald-800 mt-4 mb-2 flex items-center select-text">b. Hạn chế</h4>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Vấn đề "Ảo giác" (AI Hallucination): Đây là hạn chế lớn nhất đối với các dự án khoa học. AI có thể tạo ra hình ảnh sâu bướm Monarch trông rất đẹp nhưng lại sai lệch về số lượng đốt thân hoặc đặc điểm giải phẫu học. Điều này đòi hỏi người dùng phải có kiến thức chuyên môn để kiểm chứng.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Thiếu hụt cảm xúc và bản sắc riêng: Các sản phẩm thuần AI thường có xu hướng "hoàn hảo một cách công nghiệp", thiếu đi những nét riêng mang tính cảm xúc và trải nghiệm cá nhân vốn là linh hồn của các tác phẩm nghệ thuật truyền thống.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Sự phụ thuộc vào chất lượng Prompt: Hiệu quả của AI tỷ lệ thuận với khả năng diễn đạt của con người. Nếu người dùng không có tư duy logic và vốn từ vựng tốt để viết prompt, kết quả nhận được sẽ rất chung chung và kém hiệu quả.</li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">2. Cách AI thay đổi quy trình sáng tạo</h3>
+<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">AI đã làm thay đổi hoàn toàn cấu trúc của dòng công việc (workflow), chuyển dịch từ mô hình Thực thi (Execution-heavy) sang mô hình Điều phối (Curation-heavy):</p>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Trước đây, người sáng tạo dành 80% thời gian cho việc thực hiện các thao tác kỹ thuật (vẽ, cắt ảnh, chỉnh màu). Hiện nay, 80% thời gian đó được dành cho việc ra quyết định: lựa chọn ý tưởng từ Gemini, chọn lọc ảnh từ DALL-E 3 và điều phối bố cục trên Canva.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Vòng lặp thử nghiệm: AI cho phép chúng ta thử nghiệm và sai (Trial and Error) với chi phí gần như bằng không. Ta có thể yêu cầu AI tạo ra 10 phương án bố cục khác nhau trong 1 phút để chọn ra phương án tối ưu nhất.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Sáng tạo dựa trên sự cộng tác (Collaborative Creativity): AI cung cấp các nguyên liệu thô, và con người đóng vai trò kiểm định thông tin, sàng lọc văn hóa, thẩm mỹ và đạo đức để tạo ra thành phẩm cuối cùng.</li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">3. Các vấn đề đạo đức cần cân nhắc</h3>
+<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Khi tích hợp AI vào quy trình sáng tạo chuyên nghiệp, chúng ta buộc phải đối mặt với các vấn đề đạo đức:</p>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Quyền sở hữu trí tuệ và bản quyền: Các mô hình AI như DALL-E 3 được huấn luyện trên hàng tỷ tác phẩm có sẵn. Việc sử dụng sản phẩm từ AI đặt ra câu hỏi: Liệu chúng ta có đang vô tình "mượn" phong cách của các nghệ sĩ khác mà không có sự cho phép? Hiện nay, khung pháp lý về bản quyền cho tác phẩm do AI tạo ra vẫn đang trong quá trình xây dựng.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tính trung thực và minh bạch: Trong môi trường học thuật, việc sử dụng AI cần được công khai minh bạch. Việc trình bày một sản phẩm 100% do AI tạo ra và coi đó là nỗ lực cá nhân là vi phạm đạo đức liêm chính học thuật.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tác động đến thị trường lao động: Sự trỗi dậy của AI gây áp lực lên các ngành nghề sáng tạo truyền thống như thiết kế đồ họa, nhiếp ảnh. Điều này đòi hỏi thế hệ sinh viên hiện đại không chỉ học kỹ năng chuyên môn mà còn phải học cách làm chủ AI để không bị tụt hậu.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Định kiến và sai lệch: AI có thể phản ánh những định kiến có sẵn trong dữ liệu đào tạo. Người sáng tạo cần tỉnh táo để nhận diện và loại bỏ các yếu tố sai lệch về văn hóa trong các sản phẩm do AI gợi ý.</li></ul>
+      </div>
+
+      <!-- Column 3: Quick Projects Switcher Sidebar (lg:col-span-3) -->
+      <div class="lg:col-span-3 space-y-6">
+        <div class="p-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-sm sticky top-24">
+          <h3 class="text-sm font-bold text-zinc-900 mb-4 flex items-center border-b border-gray-100 pb-2 font-serif">
+            <i class="fa-solid fa-list-check text-emerald-500 mr-2"></i> Chuyển nhanh bài tập
+          </h3>
+          <nav class="space-y-2.5">
+            
+            <a href="bai1.html" class="block p-3 rounded-xl text-xs font-semibold border border-gray-150 text-gray-600 bg-gray-50 hover:border-emerald-500/50 hover:bg-emerald-50 hover:text-emerald-700 transition-all">
+              Bài 1: Cấu trúc thư mục
+            </a>
+            
+
+            <a href="bai2.html" class="block p-3 rounded-xl text-xs font-semibold border border-gray-150 text-gray-600 bg-gray-50 hover:border-emerald-500/50 hover:bg-emerald-50 hover:text-emerald-700 transition-all">
+              Bài 2: Tìm kiếm thông tin
+            </a>
+            
+
+            <a href="bai3.html" class="block p-3 rounded-xl text-xs font-semibold border border-gray-150 text-gray-600 bg-gray-50 hover:border-emerald-500/50 hover:bg-emerald-50 hover:text-emerald-700 transition-all">
+              Bài 3: Prompt Engineering
+            </a>
+            
+
+            <a href="bai4.html" class="block p-3 rounded-xl text-xs font-semibold border border-gray-150 text-gray-600 bg-gray-50 hover:border-emerald-500/50 hover:bg-emerald-50 hover:text-emerald-700 transition-all">
+              Bài 4: Công cụ hợp tác nhóm
+            </a>
+            
+
+            <!-- Active report -->
+            <a href="bai5.html" class="block p-3 rounded-xl text-xs font-bold border transition-all text-emerald-700 bg-emerald-50 border-emerald-500 shadow-sm">
+              <span class="block text-[8px] text-emerald-500 uppercase tracking-widest font-mono mb-0.5">Bài đang xem</span>
+              Bài 5: AI tạo sinh nội dung
+            </a>
+            
+
+            <a href="bai6.html" class="block p-3 rounded-xl text-xs font-semibold border border-gray-150 text-gray-600 bg-gray-50 hover:border-emerald-500/50 hover:bg-emerald-50 hover:text-emerald-700 transition-all">
+              Bài 6: Đạo đức AI
+            </a>
+            
+          </nav>
+          
+          <div class="mt-5 pt-4 border-t border-gray-150">
+            <a href="../index.html" class="block text-center py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs md:text-sm font-bold transition-all shadow-md shadow-emerald-500/10 hover:shadow-lg">
+              <i class="fa-solid fa-house mr-1 text-[10px]"></i> Quay lại Portfolio chính
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-auto bg-white/40 border-t border-gray-200/50 py-8 text-center text-xs text-gray-500 font-semibold relative z-10">
+    Trường Đại học Khoa học Tự nhiên - ĐHQGHN
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.remove('opacity-0');
+      document.body.classList.add('opacity-100');
+    });
+  </script>
+</body>
+</html>

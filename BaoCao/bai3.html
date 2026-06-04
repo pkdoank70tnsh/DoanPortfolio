@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viết Prompt hiệu quả cho các tác vụ học tập - Phạm Đình Khánh Đoan</title>
+  <!-- Google Fonts: Lora & Outfit for premium look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {"theme":{"extend":{"colors":{"brand":{"light":"#10b981","DEFAULT":"#059669","dark":"#047857","sage":"#e8f3ee","deep":"#061c12"}}}}}
+  </script>
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #e6f7ef 0%, #d8f3e5 35%, #cdeedb 70%, #dcfce7 100%);
+      background-attachment: fixed;
+    }
+    h1, h2, h3, .font-serif {
+      font-family: 'Lora', serif;
+    }
+    /* Custom float animations */
+    @keyframes float-custom {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .animate-float {
+      animation: float-custom 6s ease-in-out infinite;
+    }
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 0.3; }
+    }
+    .animate-pulse-slow {
+      animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    /* Tăng cỡ chữ tổng thể */
+    .text-xs { font-size: 0.85rem !important; }
+    .text-sm { font-size: 0.95rem !important; }
+    .text-base { font-size: 1.05rem !important; }
+    .text-lg { font-size: 1.2rem !important; }
+    .text-xl { font-size: 1.35rem !important; }
+  </style>
+</head>
+<body class="text-zinc-800 min-h-screen flex flex-col opacity-0 transition-opacity duration-500 relative overflow-x-hidden">
+  
+  <!-- BACKGROUND ANIMATION MESH & SVGS -->
+  <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-60">
+    <div class="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-emerald-400/20 filter blur-[100px] animate-pulse-slow"></div>
+    <div class="absolute top-1/3 -right-40 w-[600px] h-[600px] rounded-full bg-teal-400/20 filter blur-[120px] animate-pulse-slow" style="animation-delay: 1.5s;"></div>
+  </div>
+
+  
+  <!-- Monstera Leaf Decor -->
+  <svg viewBox="0 0 100 100" class="absolute w-20 h-20 text-emerald-500/10 pointer-events-none z-0 animate-float" style="top: 15%; left: 4%; animation-duration: 12s; opacity: 0.08;">
+    <path d="M 50,90 C 50,90 20,60 20,40 C 20,20 40,10 50,10 C 60,10 80,20 80,40 C 80,60 50,90 50,90 Z" fill="none" stroke="currentColor" stroke-width="2" />
+    <path d="M 50,10 L 50,90" stroke="currentColor" stroke-width="2" />
+    <path d="M 50,30 C 35,25 30,30 30,30 M 50,45 C 32,40 25,48 25,48 M 50,60 C 35,58 28,68 28,68" stroke="currentColor" stroke-width="1.5" fill="none" />
+    <path d="M 50,30 C 65,25 70,30 70,30 M 50,45 C 68,40 75,48 75,48 M 50,60 C 65,58 72,68 72,68" stroke="currentColor" stroke-width="1.5" fill="none" />
+  </svg>
+
+  <!-- Carbon Benzene Ring Decor -->
+  <svg viewBox="0 0 100 100" class="absolute w-16 h-16 text-emerald-500/10 pointer-events-none z-0 animate-float" style="bottom: 25%; right: 4%; animation-duration: 10s; opacity: 0.08;">
+    <polygon points="50,15 80,32 80,68 50,85 20,68 20,32" stroke="currentColor" stroke-width="2" fill="none" />
+    <polygon points="50,22 74,36 74,64 50,78 26,64 26,36" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="3,3" />
+  </svg>
+
+
+  <!-- Nav Bar -->
+  <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50 relative shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <a href="../index.html" class="flex items-center space-x-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Quay lại Portfolio</span>
+          </a>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div class="text-sm text-gray-500 font-semibold">Bài 3: Prompt Engineering</div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
+    <!-- Header -->
+    <header class="mb-10 text-center md:text-left border-b border-gray-200 pb-8">
+      <span class="px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-700 bg-emerald-100 rounded-full">Bài tập số 3</span>
+      <h1 class="text-3xl md:text-5xl font-bold mt-3 mb-4 text-zinc-900 leading-tight font-serif">Viết Prompt hiệu quả cho các tác vụ học tập</h1>
+      <p class="text-lg text-gray-600 max-w-3xl leading-relaxed">Thiết kế cấu trúc Prompt chuyên sâu theo mô hình chuẩn hóa để điều hướng AI phân tích cơ sở dữ liệu di truyền học hiệu quả.</p>
+      
+      <div class="mt-6 flex flex-wrap gap-4 justify-center md:justify-start text-sm text-gray-500">
+        <div><i class="fa-regular fa-user mr-1 text-emerald-500"></i> Sinh viên: <strong>Phạm Đình Khánh Đoan</strong></div>
+        <div class="hidden md:block text-gray-300">|</div>
+        <div><i class="fa-regular fa-id-card mr-1 text-emerald-500"></i> MSV: <strong>25001395</strong></div>
+        <div class="hidden md:block text-gray-300">|</div>
+        <div><i class="fa-regular fa-building mr-1 text-emerald-500"></i> Khoa Sinh học - HUS-VNU</div>
+      </div>
+    </header>
+
+    <!-- 3-Column Responsive Grid Layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+      
+      <!-- Column 1: Target & Summary (lg:col-span-3) -->
+      <div class="lg:col-span-3 space-y-6">
+        <div class="p-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-sm">
+          <h3 class="text-lg font-bold text-zinc-900 mb-4 flex items-center font-serif">
+            <i class="fa-solid fa-bullseye text-emerald-500 mr-2"></i> Mục tiêu bài học
+          </h3>
+          <ul class="space-y-3 text-xs md:text-sm text-gray-600 leading-relaxed">
+            
+            <li class="flex items-start">
+              <i class="fa-solid fa-check text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
+              <span>Học tập phương pháp Prompt Engineering có hệ thống (C-R-T-C).</span>
+            </li>
+    
+            <li class="flex items-start">
+              <i class="fa-solid fa-check text-emerald-500 mt-1 mr-2 flex-shrink-0"></i>
+              <span>Kiểm soát dữ liệu học thuật đầu ra, tránh lỗi ảo tưởng của mô hình ngôn ngữ.</span>
+            </li>
+    
+          </ul>
+        </div>
+
+        <div class="p-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-sm">
+          <h3 class="text-lg font-bold text-zinc-900 mb-4 flex items-center font-serif">
+            <i class="fa-solid fa-circle-info text-emerald-500 mr-2"></i> Tóm tắt thực hiện
+          </h3>
+          <p class="text-xs md:text-sm text-gray-600 leading-relaxed text-justify">
+            Tôi đã viết thử nghiệm so sánh 2 dạng cấu trúc Prompt (đại trà và tối ưu hóa) để hỏi AI về cơ chế phân tử điều trị bệnh di truyền bằng liệu pháp gen CRISPR.
+          </p>
+        </div>
+      </div>
+
+      <!-- Column 2: Content (lg:col-span-6) -->
+      <div class="lg:col-span-6 space-y-6 bg-white/50 backdrop-blur-sm border border-gray-200/50 p-6 md:p-8 rounded-3xl shadow-sm">
+        <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">BÁO CÁO</p>
+<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">BÀI TẬP 2: VIẾT PROMPT HIỆU QUẢ</p>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">I. PHÂN TÍCH TÁC VỤ HỌC TẬP</h2>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">1. Tóm tắt một bài đọc/tài liệu học thuật (Ví dụ: Bài báo về chủ đề: Cơ chế CRISPR-Cas9)</h3>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Mục tiêu: Trích xuất thông tin cốt lõi (vấn đề, phương pháp, kết quả) từ một văn bản dài, phức tạp.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Thách thức: Tài liệu sinh học thường dài và chứa nhiều dữ liệu. Thách thức là phải giữ được phương pháp nghiên cứu và kết quả cốt lõi mà không làm mất đi tính logic.</li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">2. Giải thích một khái niệm phức tạp (Ví dụ: Khái niệm Chuỗi vận chuyển điện tử trong hô hấp tế bào)</h3>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Mục tiêu: Làm sáng tỏ các thuật ngữ trừu tượng thành kiến thức dễ tiếp thu.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Thách thức: Cân bằng giữa tính hàn lâm của các thuật ngữ chuyên ngành Sinh học và tính trực quan, dễ hiểu. Đòi hỏi phải sử dụng các phép ẩn dụ hợp lý mà không làm sai lệch bản chất.</li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">3. Tạo bộ câu hỏi ôn tập cho một chủ đề (Ví dụ: Tạo bộ câu hỏi ôn tập chủ đề Di truyền học Mendel)</h3>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Mục tiêu: Thiết kế công cụ kiểm tra kiến thức bao quát nhiều câu hỏi ở nhiều mức độ (biết, hiểu, vận dụng).</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Thách thức: Các prompt đơn giản thường chỉ tạo ra câu hỏi ghi nhớ mức độ thấp (Fact-based). Cần tạo ra các câu hỏi phân tích, suy luận và cung cấp đáp án có giải thích chuỗi tư duy (Chain-of-Thought).</li></ul>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">II. XÂY DỰNG CÁC PHIÊN BẢN PROMPT</h2>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">1. Tóm tắt một bài đọc/tài liệu học thuật (Ví dụ: Bài báo về chủ đề: Cơ chế CRISPR-Cas9)</h3>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ bản: Tóm tắt bài báo “Simon A. Jackson et al., CRISPR-Cas: Adapting to change. Science 356, eaal5056 (2017)” cho tôi.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cải tiến: Hãy tóm tắt bài báo “Simon A. Jackson et al., CRISPR-Cas: Adapting to change. Science 356, eaal5056 (2017)” thành 4 ý chính: Mục tiêu nghiên cứu, Phương pháp, Kết quả và Ý nghĩa thực tiễn.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Nâng cao: Bạn là một chuyên gia Sinh học phân tử. Hãy đọc tài liệu về CRISPR-Cas9 sau đây: “Simon A. Jackson et al., CRISPR-Cas: Adapting to change. Science 356, eaal5056 (2017)”</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Bước 1: Trình bày Mục tiêu nghiên cứu của bài báo.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Bước 2: Tóm tắt quy trình thực nghiệm theo sơ đồ logic.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Bước 3: Đưa ra Kết quả và Kết luận về tính đột phá của nghiên cứu.</li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">2. Giải thích một khái niệm phức tạp (Ví dụ: Khái niệm Chuỗi vận chuyển điện tử trong hô hấp tế bào)</h3>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ bản: Chuỗi vận chuyển điện tử trong hô hấp tế bào là gì?</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cải tiến: Giải thích khái niệm “Chuỗi vận chuyển điện tử trong hô hấp tế bào” cho sinh viên đại học. Sử dụng các gạch đầu dòng để phân biệt các giai đoạn.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Nâng cao: Đóng vai một giảng viên Sinh học tế bào. Hãy giải thích khái niệm “Chuỗi vận chuyển điện tử trong hô hấp tế bào” bằng cách so sánh nó với một hệ thống trong thực tế (ví dụ: dây chuyền sản xuất). Sau đó, viết một đoạn ngắn tóm tắt vai trò của H+ và ATP synthase.</li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">3. Tạo bộ câu hỏi ôn tập cho một chủ đề (Ví dụ: Tạo bộ câu hỏi ôn tập chủ đề Di truyền học Mendel)</h3>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ bản: Tạo 5 câu hỏi trắc nghiệm về Di truyền học Mendel.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cải tiến: Tạo 5 câu hỏi trắc nghiệm về Quy luật phân li độc lập của Mendel, bao gồm cả câu hỏi lý thuyết và bài tập tính toán tỉ lệ. Có kèm đáp án.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Nâng cao: Dựa trên nội dung chương Di truyền học Mendel, hãy tạo 6 câu hỏi theo thang đo Bloom (2 câu Nhận biết, 2 câu Thông hiểu, 2 câu Vận dụng cao về xác suất). Mỗi câu hỏi phải có 4 lựa chọn, trong đó các đáp án nhiễu phải liên quan đến các lỗi sai phổ biến của sinh viên. Cung cấp lời giải chi tiết.</li></ul>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">III. THỬ NGHIỆM VÀ SO SÁNH KẾT QUẢ</h2>
+<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Thử nghiệm các prompt với ChatGPT:</p>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tác vụ 1:</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ bản:</li></ul>
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai3_img1.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cải tiến:</li></ul>
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai3_img2.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Nâng cao:</li></ul>
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai3_img3.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tác vụ 2:</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ bản:</li></ul>
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai3_img4.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cải tiến:</li></ul>
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai3_img5.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Nâng cao:</li></ul>
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai3_img6.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tác vụ 3:</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ bản:</li></ul>
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai3_img7.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cải tiến:</li></ul>
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai3_img8.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Nâng cao:</li></ul>
+
+<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai3_img9.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+</div>
+
+<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Bảng so sánh các prompt:</p>
+
+<div class="overflow-x-auto my-6 bg-white/70 backdrop-blur-sm border border-gray-200/60 rounded-2xl p-4 shadow-sm select-text">
+  <table class="w-full text-left text-xs md:text-sm border-collapse">
+    <thead>
+      <tr class="bg-emerald-50/50 text-zinc-900 font-bold">
+        <th class="p-3 border-b border-emerald-500/20 font-bold text-emerald-800">Tác vụ  và  Cấp độ Prompt</th><th class="p-3 border-b border-emerald-500/20 font-bold text-emerald-800">Đặc   điểm</th><th class="p-3 border-b border-emerald-500/20 font-bold text-emerald-800">Độ sâu  và  Chất lượng</th><th class="p-3 border-b border-emerald-500/20 font-bold text-emerald-800">Lý do  hiệu   quả</th><th class="p-3 border-b border-emerald-500/20 font-bold text-emerald-800">Đánh   giá</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-150 text-gray-700">
+      <tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">1. Tóm tắt tài liệu ( Bài báo về  CRISPR  CAS )</td><td class="p-3 border-b border-gray-150"></td><td class="p-3 border-b border-gray-150"></td><td class="p-3 border-b border-gray-150"></td><td class="p-3 border-b border-gray-150"></td></tr><tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">Cơ   bản</td><td class="p-3 border-b border-gray-150">Văn bản liên tục, ngắn gọn.</td><td class="p-3 border-b border-gray-150">Thấp. Chỉ nêu được định nghĩa chung về chỉnh sửa gen.</td><td class="p-3 border-b border-gray-150">Thiếu chỉ dẫn về cấu trúc và mục tiêu tóm tắt.</td><td class="p-3 border-b border-gray-150">Kém   hiệu   quả</td></tr><tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">Cải   tiến</td><td class="p-3 border-b border-gray-150">Chia thành các mục (Mục tiêu, Kết quả...).</td><td class="p-3 border-b border-gray-150">Trung bình. Đã có thông tin kỹ thuật nhưng còn rời rạc.</td><td class="p-3 border-b border-gray-150">Cung  cấp   khung  (framework)  để  AI  lọc   thông  tin.</td><td class="p-3 border-b border-gray-150">Hiệu  quả   trung   bình</td></tr><tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">Nâng   cao</td><td class="p-3 border-b border-gray-150">Báo cáo chuyên sâu, có thuật ngữ chuyên ngành chính  xác .</td><td class="p-3 border-b border-gray-150">Rất cao. Phân tích được cả ưu điểm và thách thức của công nghệ.</td><td class="p-3 border-b border-gray-150">Kỹ thuật  Role-playing  ép AI truy xuất dữ liệu từ "vùng tri thức" chuyên gia.</td><td class="p-3 border-b border-gray-150">Hiệu  quả   cao</td></tr><tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">2. Giải thích khái niệm (Chuỗi vận chuyển  điện tử trong hô hấp tế bào )</td><td class="p-3 border-b border-gray-150"></td><td class="p-3 border-b border-gray-150"></td><td class="p-3 border-b border-gray-150"></td><td class="p-3 border-b border-gray-150"></td></tr><tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">Cơ   bản</td><td class="p-3 border-b border-gray-150">Định nghĩa mang tính lý thuyết suông.</td><td class="p-3 border-b border-gray-150">Thấp. Khó hiểu đối với người mới bắt đầu.</td><td class="p-3 border-b border-gray-150">Quá ngắn gọn, không có sự kết nối giữa các thành phần.</td><td class="p-3 border-b border-gray-150">Kém   hiệu   quả</td></tr><tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">Cải   tiến</td><td class="p-3 border-b border-gray-150">Liệt kê các bước theo trình tự thời gian.</td><td class="p-3 border-b border-gray-150">Trung  bình .  Đầy   đủ   các   phức   hệ  I, II, III, IV.</td><td class="p-3 border-b border-gray-150">Sử dụng định dạng danh sách giúp phân hóa các giai đoạn phản ứng.</td><td class="p-3 border-b border-gray-150">Hiệu  quả   trung   bình</td></tr><tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">Nâng  cao</td><td class="p-3 border-b border-gray-150">Sử dụng hình ảnh ẩn dụ (dòng thác nước/dây chuyền) sinh động.</td><td class="p-3 border-b border-gray-150">Trung bình.  Vừa đảm bảo tính khoa học vừa dễ ghi nhớ.</td><td class="p-3 border-b border-gray-150">Kỹ thuật  Analogy  (Ẩn dụ) giúp chuyển hóa kiến thức trừu tượng thành thực tế.</td><td class="p-3 border-b border-gray-150">Hiệu  quả   cao</td></tr><tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">3.  Tạo   câu   hỏi  (Di  truyền  học  Mendel)</td><td class="p-3 border-b border-gray-150"></td><td class="p-3 border-b border-gray-150"></td><td class="p-3 border-b border-gray-150"></td><td class="p-3 border-b border-gray-150"></td></tr><tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">Cơ   bản</td><td class="p-3 border-b border-gray-150">5 câu hỏi lý thuyết đơn  giản.</td><td class="p-3 border-b border-gray-150">Thấp. Chỉ kiểm tra được mức độ "Nhận biết".</td><td class="p-3 border-b border-gray-150">AI mặc định chọn phương án an toàn và dễ nhất khi không có yêu cầu.</td><td class="p-3 border-b border-gray-150">Kém   hiệu   quả</td></tr><tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">Cải   tiến</td><td class="p-3 border-b border-gray-150">Có sự đan xen giữa lý thuyết và bài tập lai giống.</td><td class="p-3 border-b border-gray-150">Trung bình. Phù hợp để ôn tập cơ bản.</td><td class="p-3 border-b border-gray-150">Ràng buộc về loại hình câu hỏi và nội dung cụ thể.</td><td class="p-3 border-b border-gray-150">Hiệu  quả   trung   bình</td></tr><tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">Nâng  cao</td><td class="p-3 border-b border-gray-150">Bộ câu hỏi có độ khó tăng dần, bao gồm cả các "bẫy" di truyền.</td><td class="p-3 border-b border-gray-150">Rất cao. Đánh giá được tư duy vận dụng xác suất của sinh viên.</td><td class="p-3 border-b border-gray-150">Kỹ thuật  Few-shot  (đưa ví dụ mẫu) định hướng chính xác văn phong và độ khó mong muốn.</td><td class="p-3 border-b border-gray-150">Hiệu  quả  cao</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">IV. PHÂN TÍCH HIỆU QUẢ PROMPT</h2>
+<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Dựa trên bảng so sánh, ta có thể rút ra 3 đặc điểm vượt trội của Prompt nâng cao:</p>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Prompt cơ bản khiến AI hoạt động ở chế độ "tổng hợp internet", trong khi Prompt nâng cao (Role-playing) kích hoạt khả năng "tư duy chuyên gia", giúp sử dụng chính xác các thuật ngữ chuyên ngành.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Kiểm soát logic đầu ra: Bằng cách sử dụng Chain-of-Thought (CoT), chúng ta buộc AI phải trình bày từng bước (ví dụ: giải thích sự chênh lệch nồng độ H+ trước khi nói về tổng hợp ATP). Điều này giúp sinh viên hiểu rõ "tại sao" và "như thế nào" thay vì chỉ biết kết quả.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Giảm thiểu lỗi sai (Hallucination): Việc cung cấp Context (ngữ cảnh) và Few-shot examples (ví dụ mẫu) tạo ra một "hành lang dữ liệu" hẹp, ngăn AI sáng tạo ra những kiến thức Sinh học sai lệch.</li></ul>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">V. TỔNG HỢP NGUYÊN TẮC VÀ MẸO VIẾT PROMPT</h2>
+<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Nguyên tắc S.P.E.C (Specific - Precise - Evidence - Context):</p>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Specific: Càng chi tiết càng tốt (Ví dụ: "Viết 500 chữ" thay vì "Viết ngắn gọn").</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Precise: Sử dụng thuật ngữ chính xác.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Evidence: Yêu cầu AI trích dẫn nguồn hoặc dựa trên các học thuyết cụ thể.</li></ul>
+<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Context: Luôn cung cấp ngữ cảnh (Đang ôn thi, đang viết tiểu luận hay đang thuyết trình) và chuỗi tư duy (Các bước thực hiện).</li></ul>
+      </div>
+
+      <!-- Column 3: Quick Projects Switcher Sidebar (lg:col-span-3) -->
+      <div class="lg:col-span-3 space-y-6">
+        <div class="p-6 bg-white/70 backdrop-blur-sm rounded-2xl border border-gray-200/60 shadow-sm sticky top-24">
+          <h3 class="text-sm font-bold text-zinc-900 mb-4 flex items-center border-b border-gray-100 pb-2 font-serif">
+            <i class="fa-solid fa-list-check text-emerald-500 mr-2"></i> Chuyển nhanh bài tập
+          </h3>
+          <nav class="space-y-2.5">
+            
+            <a href="bai1.html" class="block p-3 rounded-xl text-xs font-semibold border border-gray-150 text-gray-600 bg-gray-50 hover:border-emerald-500/50 hover:bg-emerald-50 hover:text-emerald-700 transition-all">
+              Bài 1: Cấu trúc thư mục
+            </a>
+            
+
+            <a href="bai2.html" class="block p-3 rounded-xl text-xs font-semibold border border-gray-150 text-gray-600 bg-gray-50 hover:border-emerald-500/50 hover:bg-emerald-50 hover:text-emerald-700 transition-all">
+              Bài 2: Tìm kiếm thông tin
+            </a>
+            
+
+            <!-- Active report -->
+            <a href="bai3.html" class="block p-3 rounded-xl text-xs font-bold border transition-all text-emerald-700 bg-emerald-50 border-emerald-500 shadow-sm">
+              <span class="block text-[8px] text-emerald-500 uppercase tracking-widest font-mono mb-0.5">Bài đang xem</span>
+              Bài 3: Prompt Engineering
+            </a>
+            
+
+            <a href="bai4.html" class="block p-3 rounded-xl text-xs font-semibold border border-gray-150 text-gray-600 bg-gray-50 hover:border-emerald-500/50 hover:bg-emerald-50 hover:text-emerald-700 transition-all">
+              Bài 4: Công cụ hợp tác nhóm
+            </a>
+            
+
+            <a href="bai5.html" class="block p-3 rounded-xl text-xs font-semibold border border-gray-150 text-gray-600 bg-gray-50 hover:border-emerald-500/50 hover:bg-emerald-50 hover:text-emerald-700 transition-all">
+              Bài 5: AI tạo sinh nội dung
+            </a>
+            
+
+            <a href="bai6.html" class="block p-3 rounded-xl text-xs font-semibold border border-gray-150 text-gray-600 bg-gray-50 hover:border-emerald-500/50 hover:bg-emerald-50 hover:text-emerald-700 transition-all">
+              Bài 6: Đạo đức AI
+            </a>
+            
+          </nav>
+          
+          <div class="mt-5 pt-4 border-t border-gray-150">
+            <a href="../index.html" class="block text-center py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs md:text-sm font-bold transition-all shadow-md shadow-emerald-500/10 hover:shadow-lg">
+              <i class="fa-solid fa-house mr-1 text-[10px]"></i> Quay lại Portfolio chính
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-auto bg-white/40 border-t border-gray-200/50 py-8 text-center text-xs text-gray-500 font-semibold relative z-10">
+    Trường Đại học Khoa học Tự nhiên - ĐHQGHN
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.remove('opacity-0');
+      document.body.classList.add('opacity-100');
+    });
+  </script>
+</body>
+</html>

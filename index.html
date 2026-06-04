@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Portfolio | Phạm Đình Khánh Đoan - HUS-VNU</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Digital Portfolio của Phạm Đình Khánh Đoan - Sinh viên Khoa Sinh học, Trường Đại học Khoa học Tự nhiên (HUS-VNU). Giao lưu giữa Sinh học phân tử và Trí tuệ nhân tạo.">
+  <meta name="author" content="Phạm Đình Khánh Đoan">
+  
+  <!-- Google Fonts: Lora (academic serif) & Outfit (geometric sans-serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              light: '#10b981',
+              DEFAULT: '#059669',
+              dark: '#047857',
+              sage: '#e8f3ee',
+              deep: '#061c12'
+            }
+          },
+          fontFamily: {
+            serif: ['"Lora"', 'serif'],
+            sans: ['"Outfit"', 'sans-serif'],
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #e6f7ef 0%, #d8f3e5 35%, #cdeedb 70%, #dcfce7 100%);
+      background-attachment: fixed;
+      transition: background-color 0.5s;
+    }
+    h1, h2, h3, .font-serif {
+      font-family: 'Lora', serif;
+    }
+    /* Tăng cỡ chữ tổng thể */
+    .text-xs { font-size: 0.85rem !important; }
+    .text-sm { font-size: 0.95rem !important; }
+    .text-base { font-size: 1.05rem !important; }
+    .text-lg { font-size: 1.2rem !important; }
+    .text-xl { font-size: 1.35rem !important; }
+    .text-2xl { font-size: 1.6rem !important; }
+    .text-3xl { font-size: 2.1rem !important; }
+    .text-4xl { font-size: 2.6rem !important; }
+    .text-5xl { font-size: 3.3rem !important; }
+    .text-justify {
+      text-align: justify;
+    }
+    /* SPA transitions */
+    .tab-content {
+      display: none;
+      opacity: 0;
+      transform: translateY(15px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+    .tab-content.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Floating synapse styles */
+    .skill-tag {
+      position: absolute;
+      transform: scale(0);
+      opacity: 0;
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
+    }
+    .skill-tag.active {
+      transform: scale(1);
+      opacity: 1;
+    }
+    /* Menu Active Tab */
+    .active-nav {
+      background-color: white;
+      color: #059669 !important;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    }
+    /* Bounce animation for Click Here */
+    @keyframes bounce-custom {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .bounce-active {
+      animation: bounce-custom 1.5s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="text-zinc-800 min-h-screen flex flex-col relative overflow-x-hidden selection:bg-emerald-500/30">
+  
+  <!-- BACKGROUND ANIMATION MESH -->
+  <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-60">
+    <div class="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-emerald-400/20 filter blur-[100px] animate-pulse-slow"></div>
+    <div class="absolute top-1/3 -right-40 w-[600px] h-[600px] rounded-full bg-teal-400/20 filter blur-[120px] animate-pulse-slow" style="animation-delay: 1.5s;"></div>
+    <div class="absolute bottom-10 left-1/4 w-[400px] h-[400px] rounded-full bg-green-300/15 filter blur-[90px] animate-pulse-slow" style="animation-delay: 3s;"></div>
+  </div>
+
+  <!-- 0. Header cố định (Sticky Navigation) -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50 transition-colors shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo VNU & HUS Images (Square sizes, borderless, object-contain) -->
+        <div class="flex-shrink-0 flex items-center space-x-3">
+          <div class="flex items-center space-x-2">
+            <!-- 1. Logo VNU (Hình tròn, không viền) -->
+            <div class="h-11 w-11 flex items-center justify-center bg-transparent hover:scale-105 transition-transform duration-300 select-none">
+              <img src="images/vnu_logo.png" alt="VNU Logo" class="h-full w-full object-contain">
+            </div>
+            
+            <!-- 2. Logo HUS (Hình vuông, không viền) -->
+            <div class="h-11 w-11 flex items-center justify-center bg-transparent hover:scale-105 transition-transform duration-300 select-none">
+              <img src="images/hus.jpg" alt="HUS Logo" class="h-full w-full object-contain">
+            </div>
+          </div>
+          <div class="hidden lg:block select-none">
+            <span class="text-xs uppercase tracking-widest text-emerald-600 font-bold block leading-none">HUS - VNU</span>
+            <span class="text-[9px] text-gray-500 block leading-tight font-semibold">Trường ĐH Khoa học Tự nhiên</span>
+          </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="hidden md:flex space-x-1 bg-gray-100 p-1 rounded-xl border border-gray-200/40">
+          <button data-tab="home" class="nav-btn px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 text-gray-600 hover:text-emerald-600">
+            <i class="fa-solid fa-house mr-1.5 text-xs"></i>Trang chủ
+          </button>
+          <button data-tab="about" class="nav-btn px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 text-gray-600 hover:text-emerald-600">
+            <i class="fa-solid fa-dna mr-1.5 text-xs"></i>Giới thiệu
+          </button>
+          <button data-tab="projects" class="nav-btn px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 text-gray-600 hover:text-emerald-600">
+            <i class="fa-solid fa-laptop-code mr-1.5 text-xs"></i>Dự án
+          </button>
+          <button data-tab="summary" class="nav-btn px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 text-gray-600 hover:text-emerald-600">
+            <i class="fa-solid fa-square-poll-vertical mr-1.5 text-xs"></i>Tổng kết
+          </button>
+          <button data-tab="contact" class="nav-btn px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 text-gray-600 hover:text-emerald-600">
+            <i class="fa-regular fa-envelope mr-1.5 text-xs"></i>Liên hệ
+          </button>
+        </nav>
+
+        <!-- Right: Mobile Menu Btn -->
+        <div class="flex items-center">
+          <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-xl hover:bg-gray-100 text-gray-600" aria-label="Open Navigation Menu">
+            <i class="fa-solid fa-bars text-lg"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white px-4 py-4 space-y-2 transition-all">
+      <button data-tab="home" class="mobile-nav-btn w-full text-left px-4 py-3 rounded-xl text-sm font-semibold flex items-center text-gray-600 hover:text-emerald-600">
+        <i class="fa-solid fa-house mr-3 w-5"></i>Trang chủ
+      </button>
+      <button data-tab="about" class="mobile-nav-btn w-full text-left px-4 py-3 rounded-xl text-sm font-semibold flex items-center text-gray-600 hover:text-emerald-600">
+        <i class="fa-solid fa-dna mr-3 w-5"></i>Giới thiệu
+      </button>
+      <button data-tab="projects" class="mobile-nav-btn w-full text-left px-4 py-3 rounded-xl text-sm font-semibold flex items-center text-gray-600 hover:text-emerald-600">
+        <i class="fa-solid fa-laptop-code mr-3 w-5"></i>Dự án
+      </button>
+      <button data-tab="summary" class="mobile-nav-btn w-full text-left px-4 py-3 rounded-xl text-sm font-semibold flex items-center text-gray-600 hover:text-emerald-600">
+        <i class="fa-solid fa-square-poll-vertical mr-3 w-5"></i>Tổng kết
+      </button>
+      <button data-tab="contact" class="mobile-nav-btn w-full text-left px-4 py-3 rounded-xl text-sm font-semibold flex items-center text-gray-600 hover:text-emerald-600">
+        <i class="fa-regular fa-envelope mr-3 w-5"></i>Liên hệ
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER (SPA Tab Sections) -->
+  <main class="flex-grow z-10 relative">
+
+    <!-- 1. Trang Chủ (Home) - select-none cấm bôi đen -->
+    <section id="tab-home" class="tab-content active min-h-[calc(100vh-80px)] flex items-center py-12 relative overflow-hidden select-none">
+      
+      <!-- DNA Canvas inside the Home tab -->
+      <div id="dna-container" class="absolute right-0 top-0 bottom-0 w-full lg:w-1/2 pointer-events-none overflow-hidden z-0 hidden lg:block">
+        <canvas id="dna-canvas" class="w-full h-full drop-shadow-md"></canvas>
+      </div>
+
+      <!-- Home Page Decors: Plant leaf & Chemical formula molecule -->
+      <svg viewBox="0 0 100 100" class="absolute w-16 h-16 text-emerald-500/10 pointer-events-none z-0 animate-float" style="top: 15%; left: 8%; animation-duration: 8s;">
+        <path d="M 50,10 C 20,40 20,70 50,90 C 80,70 80,40 50,10 Z M 50,10 L 50,90" stroke="currentColor" stroke-width="2" fill="none" />
+        <path d="M 50,30 Q 35,40 35,45 M 50,45 Q 65,55 65,60 M 50,60 Q 35,70 35,75 M 50,75 Q 65,85 65,90" stroke="currentColor" stroke-width="1.5" fill="none" />
+      </svg>
+
+      <svg viewBox="0 0 120 120" class="absolute w-20 h-20 text-emerald-500/10 pointer-events-none z-0 animate-float" style="bottom: 12%; left: 45%; animation-duration: 10s;">
+        <polygon points="60,20 90,37 90,72 60,90 30,72 30,37" stroke="currentColor" stroke-width="1.5" fill="none" />
+        <line x1="60" y1="20" x2="60" y2="2" stroke="currentColor" stroke-width="1.5" />
+        <circle cx="60" cy="2" r="3" fill="currentColor" />
+        <line x1="90" y1="37" x2="108" y2="27" stroke="currentColor" stroke-width="1.5" />
+        <text x="112" y="30" font-size="8" font-family="sans-serif" fill="currentColor" font-weight="bold">OH</text>
+        <line x1="30" y1="72" x2="12" y2="82" stroke="currentColor" stroke-width="1.5" />
+        <text x="2" y="92" font-size="8" font-family="sans-serif" fill="currentColor" font-weight="bold">NH2</text>
+      </svg>
+
+      <!-- Chloroplast Decor -->
+      <svg viewBox="0 0 100 100" class="absolute w-20 h-20 text-emerald-500/10 pointer-events-none z-0 animate-float" style="top: 25%; left: 24%; animation-duration: 9s; opacity: 0.08;">
+        <ellipse cx="50" cy="50" rx="40" ry="25" fill="none" stroke="currentColor" stroke-width="2" />
+        <ellipse cx="50" cy="50" rx="36" ry="21" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2,2" />
+        <rect x="25" y="42" width="10" height="4" rx="1" fill="currentColor" />
+        <rect x="25" y="48" width="10" height="4" rx="1" fill="currentColor" />
+        <rect x="45" y="38" width="10" height="4" rx="1" fill="currentColor" />
+        <rect x="45" y="44" width="10" height="4" rx="1" fill="currentColor" />
+        <rect x="45" y="50" width="10" height="4" rx="1" fill="currentColor" />
+        <rect x="65" y="42" width="10" height="4" rx="1" fill="currentColor" />
+        <rect x="65" y="48" width="10" height="4" rx="1" fill="currentColor" />
+        <line x1="35" y1="45" x2="45" y2="44" stroke="currentColor" stroke-width="1" />
+        <line x1="55" y1="44" x2="65" y2="45" stroke="currentColor" stroke-width="1" />
+      </svg>
+
+      <!-- Mitochondria Decor -->
+      <svg viewBox="0 0 100 100" class="absolute w-20 h-20 text-emerald-500/10 pointer-events-none z-0 animate-float" style="bottom: 22%; left: 6%; animation-duration: 11s; opacity: 0.08;">
+        <ellipse cx="50" cy="50" rx="40" ry="22" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M 18,50 C 25,38 22,62 30,50 C 38,38 35,62 45,50 C 55,38 52,62 62,50 C 72,38 70,62 82,50" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+      </svg>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Left side: Text branding & Info card with Gene switcher side-by-side (Higher position) -->
+          <div class="lg:col-span-8 space-y-6 text-center lg:text-left">
+            
+            <div class="space-y-1">
+              <h1 class="text-xl sm:text-2xl font-extrabold text-zinc-500 tracking-widest font-serif uppercase">
+                PORTFOLIO
+              </h1>
+              <h2 class="text-6xl sm:text-7xl md:text-8xl font-extrabold text-zinc-950 font-serif leading-none tracking-tight">
+                BIOLOGY & AI
+              </h2>
+            </div>
+
+            <!-- Side-by-side container to place the Gene switcher HIGHER (aligned with student card) -->
+            <div class="flex flex-col md:flex-row gap-8 items-start pt-2">
+              
+              <!-- Student Profile Intro Box -->
+              <div class="p-6 bg-white/60 border border-gray-200/50 rounded-2xl backdrop-blur-sm w-full md:w-[58%] shadow-sm text-left relative z-20">
+                <h3 class="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-3 border-b border-emerald-500/10 pb-1.5 flex items-center">
+                  <i class="fa-regular fa-id-card mr-2 text-emerald-500"></i>Thông tin Sinh viên
+                </h3>
+                <div class="space-y-2 text-sm text-gray-700">
+                  <div class="flex justify-between">
+                    <span class="text-gray-400 font-medium">Họ và tên:</span>
+                    <span class="text-zinc-900 font-bold">Phạm Đình Khánh Đoan</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-gray-400 font-medium">Mã sinh viên:</span>
+                    <span class="text-emerald-600 font-mono font-bold">25001395</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-gray-400 font-medium">Khoa:</span>
+                    <span class="text-zinc-900 font-bold">Khoa Sinh học</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-gray-400 font-medium">Trường:</span>
+                    <span class="text-zinc-900 font-bold text-xs">Trường Đại học Khoa học Tự nhiên, ĐHQGHN</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Gene Cluster menu positioned side-by-side with card on desktop (Significantly higher) -->
+              <div class="relative w-full md:w-[42%] flex justify-start z-20 -mt-4 md:-mt-10">
+                <div class="relative flex items-center gap-10 py-1">
+                  <svg id="gene-svg" class="absolute inset-0 w-full h-full pointer-events-none z-10">
+                    <path id="path-about" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" class="drop-shadow-[0_0_6px_rgba(16,185,129,0.5)] transition-all duration-300 opacity-0" />
+                    <path id="path-projects" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" class="drop-shadow-[0_0_6px_rgba(16,185,129,0.5)] transition-all duration-300 opacity-0" />
+                    <path id="path-summary" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" class="drop-shadow-[0_0_6px_rgba(16,185,129,0.5)] transition-all duration-300 opacity-0" />
+                  </svg>
+                  
+                  <div class="relative z-30 flex flex-col items-center select-none cursor-pointer">
+                    <span class="text-[11px] text-emerald-600 font-bold uppercase tracking-wider mb-2 font-mono bounce-active inline-block">Click here</span>
+                    <button id="gene-base" class="h-20 w-20 rounded-full bg-emerald-50 border-2 border-emerald-500 flex items-center justify-center text-emerald-600 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:scale-105 transition-transform duration-300" aria-label="Toggle Navigation Hub">
+                      <i class="fa-solid fa-circle-nodes text-3xl"></i>
+                    </button>
+                  </div>
+                  
+                  <div class="flex flex-col gap-5 z-20">
+                    <button id="gene-target-about" data-tab="about" class="gene-branch-btn opacity-0 scale-0 pointer-events-none flex items-center space-x-3 text-left hover:translate-x-1.5 transition-all duration-300 group">
+                      <div class="h-10 w-10 rounded-full border border-emerald-500 bg-white flex items-center justify-center text-emerald-600 shadow-md group-hover:bg-emerald-50">
+                        <i class="fa-solid fa-circle-info text-sm"></i>
+                      </div>
+                      <span class="text-xs font-bold text-gray-700 group-hover:text-emerald-600 tracking-wider">GIỚI THIỆU</span>
+                    </button>
+                    
+                    <button id="gene-target-projects" data-tab="projects" class="gene-branch-btn opacity-0 scale-0 pointer-events-none flex items-center space-x-3 text-left hover:translate-x-1.5 transition-all duration-300 group">
+                      <div class="h-10 w-10 rounded-full border border-emerald-500 bg-white flex items-center justify-center text-emerald-600 shadow-md group-hover:bg-emerald-50">
+                        <i class="fa-solid fa-folder text-sm"></i>
+                      </div>
+                      <span class="text-xs font-bold text-gray-700 group-hover:text-emerald-600 tracking-wider">DỰ ÁN</span>
+                    </button>
+                    
+                    <button id="gene-target-summary" data-tab="summary" class="gene-branch-btn opacity-0 scale-0 pointer-events-none flex items-center space-x-3 text-left hover:translate-x-1.5 transition-all duration-300 group">
+                      <div class="h-10 w-10 rounded-full border border-emerald-500 bg-white flex items-center justify-center text-emerald-600 shadow-md group-hover:bg-emerald-50">
+                        <i class="fa-solid fa-file-invoice text-sm"></i>
+                      </div>
+                      <span class="text-xs font-bold text-gray-700 group-hover:text-emerald-600 tracking-wider">TỔNG KẾT</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          
+          <!-- Blank space for DNA overlay -->
+          <div class="lg:col-span-4"></div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Trang Giới thiệu (Giới thiệu Bản thân) -->
+    <section id="tab-about" class="tab-content min-h-[calc(100vh-80px)] py-16 flex items-center relative">
+      
+      <!-- About Page Decors: Plant cell & double-helix strands -->
+      <svg viewBox="0 0 100 100" class="absolute w-24 h-24 text-emerald-500/10 pointer-events-none z-0 animate-float" style="top: 15%; right: 10%; animation-duration: 12s;">
+        <polygon points="50,10 85,25 85,75 50,90 15,75 15,25" stroke="currentColor" stroke-width="2" fill="none" />
+        <polygon points="50,15 80,28 80,72 50,85 20,72 20,28" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="3,3" />
+        <circle cx="50" cy="50" r="10" stroke="currentColor" stroke-width="1.5" fill="none" />
+        <path d="M 30,35 Q 40,30 35,45 Z" stroke="currentColor" stroke-width="1" fill="none" />
+      </svg>
+
+      <svg viewBox="0 0 100 150" class="absolute w-16 h-28 text-emerald-500/10 pointer-events-none z-0 animate-float" style="bottom: 15%; left: 5%; animation-duration: 9s;">
+        <path d="M 30,20 Q 50,0 70,20 T 30,80 T 70,140" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M 70,20 Q 50,40 30,20 T 70,80 T 30,140" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3,3" />
+        <line x1="40" y1="40" x2="60" y2="40" stroke="currentColor" stroke-width="1.5" />
+        <line x1="32" y1="90" x2="68" y2="90" stroke="currentColor" stroke-width="1.5" />
+      </svg>
+
+      <!-- Monstera Leaf Decor -->
+      <svg viewBox="0 0 100 100" class="absolute w-20 h-20 text-emerald-500/10 pointer-events-none z-0 animate-float" style="top: 35%; left: 15%; animation-duration: 12s; opacity: 0.08;">
+        <path d="M 50,90 C 50,90 20,60 20,40 C 20,20 40,10 50,10 C 60,10 80,20 80,40 C 80,60 50,90 50,90 Z" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M 50,10 L 50,90" stroke="currentColor" stroke-width="2" />
+        <path d="M 50,30 C 35,25 30,30 30,30 M 50,45 C 32,40 25,48 25,48 M 50,60 C 35,58 28,68 28,68" stroke="currentColor" stroke-width="1.5" fill="none" />
+        <path d="M 50,30 C 65,25 70,30 70,30 M 50,45 C 68,40 75,48 75,48 M 50,60 C 65,58 72,68 72,68" stroke="currentColor" stroke-width="1.5" fill="none" />
+      </svg>
+
+      <!-- Carbon Benzene Ring Decor -->
+      <svg viewBox="0 0 100 100" class="absolute w-16 h-16 text-emerald-500/10 pointer-events-none z-0 animate-float" style="bottom: 30%; right: 5%; animation-duration: 10s; opacity: 0.08;">
+        <polygon points="50,15 80,32 80,68 50,85 20,68 20,32" stroke="currentColor" stroke-width="2" fill="none" />
+        <polygon points="50,22 74,36 74,64 50,78 26,64 26,36" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="3,3" />
+      </svg>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+        <!-- Section Title -->
+        <div class="text-center mb-16">
+          <span class="text-xs uppercase tracking-widest font-mono text-emerald-600 font-bold">LÝ LỊCH SCIENTIFIC</span>
+          <h2 class="text-3xl md:text-5xl font-bold font-serif text-zinc-950 mt-2">Giới thiệu Bản thân</h2>
+          <div class="w-20 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <!-- PC Split Screen Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Left side: Personal Portrait Card -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="relative bg-white border border-gray-200/80 p-4 rounded-3xl shadow-xl shadow-emerald-500/5 group hover:border-emerald-500/40 transition-all duration-300">
+              <div class="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-emerald-950 flex items-center justify-center">
+                <img src="images/anhAVT.jpg" alt="Phạm Đình Khánh Đoan" class="w-full h-full object-cover select-none">
+                <div class="absolute inset-0 bg-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div class="absolute bottom-4 left-4 right-4 bg-zinc-950/85 backdrop-blur-md border border-zinc-800/50 p-3 rounded-xl text-center z-10">
+                  <span class="text-xs text-emerald-400 font-mono tracking-widest font-bold">BIOTECH RESEARCHER</span>
+                </div>
+              </div>
+
+              <!-- Student Identification Info -->
+              <div class="mt-6 space-y-2 border-t border-gray-100 pt-4 px-2">
+                <div class="flex justify-between items-center text-sm">
+                  <span class="text-gray-400 font-semibold">Họ và tên:</span>
+                  <span class="text-zinc-900 font-bold">Phạm Đình Khánh Đoan</span>
+                </div>
+                <div class="flex justify-between items-center text-sm">
+                  <span class="text-gray-400 font-semibold">Mã sinh viên:</span>
+                  <span class="text-emerald-600 font-mono font-bold">25001395</span>
+                </div>
+                <div class="flex justify-between items-center text-sm">
+                  <span class="text-gray-400 font-semibold">Cơ sở đào tạo:</span>
+                  <span class="text-zinc-900 font-bold text-right text-xs">Trường ĐH Khoa học Tự nhiên - ĐHQGHN</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right side: Biography Content -->
+          <div class="lg:col-span-7 space-y-6">
+            <div class="relative bg-white border border-gray-200/80 p-8 md:p-10 rounded-3xl shadow-xl shadow-emerald-500/5 relative overflow-hidden">
+              <div class="absolute -top-10 -right-10 w-24 h-24 bg-emerald-500/5 rounded-full filter blur-xl"></div>
+              
+              <div class="text-emerald-500/10 text-7xl font-serif absolute top-4 left-4 select-none pointer-events-none">“</div>
+              
+              <!-- EXACT TEXT REQUIRED -->
+              <div class="space-y-6 text-justify text-gray-700 leading-relaxed font-sans text-sm md:text-base relative z-10">
+                <p>
+                  Là một sinh viên ngành Sinh học tại Trường Đại học Khoa học tự nhiên (HUS) - Đại học Quốc gia Hà Nội, tôi luôn có niềm đam mê nghiên cứu cấu trúc sinh học phân tử và ứng dụng trong <span class="text-emerald-600 font-bold">y sinh</span>. Trong kỷ nguyên công nghệ số, việc tiếp cận trí tuệ nhân tạo và các công cụ số không chỉ dừng lại ở học tập kỹ năng phụ trợ, mà là phương thức tất yếu đối với tôi để tối ưu hóa việc phân tích dữ liệu sinh học, mở ra những cách tiếp cận nghiên cứu chính xác và hiệu quả hơn.
+                </p>
+                <p>
+                  <strong>Mục tiêu học tập và định hướng cá nhân:</strong> Tôi định hướng đi sâu vào ứng dụng Sinh học phân tử trong Y sinh, hướng tới việc nghiên cứu các kỹ thuật liệu pháp gene, chẩn đoán phân tử và phát triển những phương pháp tối ưu chữa bệnh di truyền ở người.
+                </p>
+                <p>
+                  <strong>Mục tiêu của Portfolio này:</strong> Thông qua việc hệ thống hóa các sản phẩm từ môn học "Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo", portfolio này là minh chứng khách quan cho năng lực số hóa dữ liệu nghiên cứu, tư duy phân tích hệ thống và khả năng ứng dụng công nghệ AI một cách có trách nhiệm trong hành trình học thuật.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. Trang Dự án (Projects) -->
+    <section id="tab-projects" class="tab-content min-h-[calc(100vh-80px)] py-16 relative">
+      
+      <!-- Projects Page Decors: Sprouting leaves & lab flask -->
+      <svg viewBox="0 0 100 100" class="absolute w-20 h-20 text-emerald-500/10 pointer-events-none z-0 animate-float" style="bottom: 12%; right: 8%; animation-duration: 7s;">
+        <path d="M 40,10 L 60,10 M 45,10 L 45,35 L 20,80 A 10,10 0 0 0 30,90 L 70,90 A 10,10 0 0 0 80,80 L 55,35 L 55,10" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+        <path d="M 28,70 L 72,70" stroke="currentColor" stroke-width="1.5" />
+        <circle cx="40" cy="55" r="3" fill="currentColor" />
+        <circle cx="55" cy="65" r="4" fill="currentColor" />
+      </svg>
+
+      <svg viewBox="0 0 100 100" class="absolute w-16 h-16 text-emerald-500/10 pointer-events-none z-0 animate-float" style="top: 12%; left: 6%; animation-duration: 11s;">
+        <path d="M 50,90 C 50,60 30,40 10,40 C 30,40 50,55 50,90 Z" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M 50,90 C 50,60 70,40 90,40 C 70,40 50,55 50,90 Z" fill="none" stroke="currentColor" stroke-width="2" />
+      </svg>
+
+      <!-- Vine Leaf Decor -->
+      <svg viewBox="0 0 100 100" class="absolute w-20 h-20 text-emerald-500/10 pointer-events-none z-0 animate-float" style="top: 40%; right: 3%; animation-duration: 13s; opacity: 0.08;">
+        <path d="M 10,90 Q 30,70 50,80 T 90,60" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M 30,75 C 25,65 35,55 35,55 C 35,55 45,65 30,75 Z" fill="currentColor" />
+        <path d="M 50,80 C 45,70 55,60 55,60 C 55,60 65,70 50,80 Z" fill="currentColor" />
+        <path d="M 70,70 C 65,60 75,50 75,50 C 75,50 85,60 70,70 Z" fill="currentColor" />
+      </svg>
+
+      <!-- DNA Segment Decor -->
+      <svg viewBox="0 0 100 150" class="absolute w-14 h-24 text-emerald-500/10 pointer-events-none z-0 animate-float" style="bottom: 40%; left: 3%; animation-duration: 9s; opacity: 0.08;">
+        <path d="M 30,20 Q 50,0 70,20 T 30,80 T 70,140" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M 70,20 Q 50,40 30,20 T 70,80 T 30,140" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3,3" />
+        <line x1="40" y1="40" x2="60" y2="40" stroke="currentColor" stroke-width="1.5" />
+        <line x1="32" y1="90" x2="68" y2="90" stroke="currentColor" stroke-width="1.5" />
+      </svg>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Section Title -->
+        <div class="text-center mb-16">
+          <span class="text-xs uppercase tracking-widest font-mono text-emerald-600 font-bold">MÔN HỌC SẢN PHẨM</span>
+          <h2 class="text-3xl md:text-5xl font-bold font-serif text-zinc-950 mt-2">Dự Án Nghiên Cứu & Bài Tập</h2>
+          <div class="w-20 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <!-- Cards Grid (6 projects) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Card 1 -->
+          <div class="bg-white border border-gray-200/80 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg group hover:border-emerald-500/30 transition-all duration-300">
+            <div>
+              <div class="flex items-center justify-between text-xs text-gray-400 mb-3">
+                <span class="font-semibold uppercase tracking-wider text-emerald-500">Bài tập 1</span>
+                <span>Thư mục & Tệp tin</span>
+              </div>
+              <h3 class="text-lg font-bold text-zinc-950 mb-2 font-serif group-hover:text-emerald-600 transition-colors">
+                Bài 1 - Thao tác cơ bản với tệp tin và thư mục
+              </h3>
+              <p class="text-xs text-gray-500 mb-4 line-clamp-3 leading-relaxed">
+                <strong>Mục tiêu:</strong> Trình bày cấu trúc thư mục tối ưu và quy tắc đặt tên tệp đã thiết lập, kèm ảnh chụp minh họa.
+              </p>
+            </div>
+            <a href="BaoCao/bai1.html" class="w-full py-2.5 px-4 bg-gray-50 hover:bg-emerald-500 hover:text-white font-bold text-xs rounded-xl transition-all duration-300 text-center flex items-center justify-center space-x-1.5 border border-gray-200/50">
+              <span>Xem sản phẩm</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white border border-gray-200/80 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg group hover:border-emerald-500/30 transition-all duration-300">
+            <div>
+              <div class="flex items-center justify-between text-xs text-gray-400 mb-3">
+                <span class="font-semibold uppercase tracking-wider text-emerald-500">Bài tập 2</span>
+                <span>Tìm kiếm học thuật</span>
+              </div>
+              <h3 class="text-lg font-bold text-zinc-950 mb-2 font-serif group-hover:text-emerald-600 transition-colors">
+                Bài 2 - Tìm kiếm và đánh giá thông tin học thuật
+              </h3>
+              <p class="text-xs text-gray-500 mb-4 line-clamp-3 leading-relaxed">
+                <strong>Mục tiêu:</strong> Trình bày kết quả tìm kiếm học thuật bằng các toán tử nâng cao và bảng đánh giá nguồn tin đã thực hiện.
+              </p>
+            </div>
+            <a href="BaoCao/bai2.html" class="w-full py-2.5 px-4 bg-gray-50 hover:bg-emerald-500 hover:text-white font-bold text-xs rounded-xl transition-all duration-300 text-center flex items-center justify-center space-x-1.5 border border-gray-200/50">
+              <span>Xem sản phẩm</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white border border-gray-200/80 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg group hover:border-emerald-500/30 transition-all duration-300">
+            <div>
+              <div class="flex items-center justify-between text-xs text-gray-400 mb-3">
+                <span class="font-semibold uppercase tracking-wider text-emerald-500">Bài tập 3</span>
+                <span>Prompt Engineering</span>
+              </div>
+              <h3 class="text-lg font-bold text-zinc-950 mb-2 font-serif group-hover:text-emerald-600 transition-colors">
+                Bài 3 - Viết Prompt hiệu quả cho các tác vụ học tập
+              </h3>
+              <p class="text-xs text-gray-500 mb-4 line-clamp-3 leading-relaxed">
+                <strong>Mục tiêu:</strong> Trình bày sự so sánh giữa Prompt ban đầu và Prompt cải tiến cùng kết quả đầu ra từ AI.
+              </p>
+            </div>
+            <a href="BaoCao/bai3.html" class="w-full py-2.5 px-4 bg-gray-50 hover:bg-emerald-500 hover:text-white font-bold text-xs rounded-xl transition-all duration-300 text-center flex items-center justify-center space-x-1.5 border border-gray-200/50">
+              <span>Xem sản phẩm</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bg-white border border-gray-200/80 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg group hover:border-emerald-500/30 transition-all duration-300">
+            <div>
+              <div class="flex items-center justify-between text-xs text-gray-400 mb-3">
+                <span class="font-semibold uppercase tracking-wider text-emerald-500">Bài tập 4</span>
+                <span>Hợp tác trực tuyến</span>
+              </div>
+              <h3 class="text-lg font-bold text-zinc-950 mb-2 font-serif group-hover:text-emerald-600 transition-colors">
+                Bài 4 - Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm
+              </h3>
+              <p class="text-xs text-gray-500 mb-4 line-clamp-3 leading-relaxed">
+                <strong>Mục tiêu:</strong> Trình bày minh chứng về việc sử dụng công cụ quản lý dự án nhóm và cách thức phối hợp trực tuyến.
+              </p>
+            </div>
+            <a href="BaoCao/bai4.html" class="w-full py-2.5 px-4 bg-gray-50 hover:bg-emerald-500 hover:text-white font-bold text-xs rounded-xl transition-all duration-300 text-center flex items-center justify-center space-x-1.5 border border-gray-200/50">
+              <span>Xem sản phẩm</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="bg-white border border-gray-200/80 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg group hover:border-emerald-500/30 transition-all duration-300">
+            <div>
+              <div class="flex items-center justify-between text-xs text-gray-400 mb-3">
+                <span class="font-semibold uppercase tracking-wider text-emerald-500">Bài tập 5</span>
+                <span>AI tạo sinh nội dung</span>
+              </div>
+              <h3 class="text-lg font-bold text-zinc-950 mb-2 font-serif group-hover:text-emerald-600 transition-colors">
+                Bài 5 - Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung
+              </h3>
+              <p class="text-xs text-gray-500 mb-4 line-clamp-3 leading-relaxed">
+                <strong>Mục tiêu:</strong> Trưng bày sản phẩm nội dung số hoàn thiện (hình ảnh, video hoặc bài viết) được hỗ trợ bởi AI.
+              </p>
+            </div>
+            <a href="BaoCao/bai5.html" class="w-full py-2.5 px-4 bg-gray-50 hover:bg-emerald-500 hover:text-white font-bold text-xs rounded-xl transition-all duration-300 text-center flex items-center justify-center space-x-1.5 border border-gray-200/50">
+              <span>Xem sản phẩm</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="bg-white border border-gray-200/80 rounded-2xl p-6 flex flex-col justify-between hover:shadow-lg group hover:border-emerald-500/30 transition-all duration-300">
+            <div>
+              <div class="flex items-center justify-between text-xs text-gray-400 mb-3">
+                <span class="font-semibold uppercase tracking-wider text-emerald-500">Bài tập 6</span>
+                <span>Sử dụng AI có trách nhiệm</span>
+              </div>
+              <h3 class="text-lg font-bold text-zinc-950 mb-2 font-serif group-hover:text-emerald-600 transition-colors">
+                Bài 6 - Sử dụng AI có trách nhiệm trong học tập và nghiên cứu
+              </h3>
+              <p class="text-xs text-gray-500 mb-4 line-clamp-3 leading-relaxed">
+                <strong>Mục tiêu:</strong> Trình bày bộ nguyên tắc cá nhân về sử dụng AI có trách nhiệm dựa trên các nghiên cứu đã thực hiện.
+              </p>
+            </div>
+            <a href="BaoCao/bai6.html" class="w-full py-2.5 px-4 bg-gray-50 hover:bg-emerald-500 hover:text-white font-bold text-xs rounded-xl transition-all duration-300 text-center flex items-center justify-center space-x-1.5 border border-gray-200/50">
+              <span>Xem sản phẩm</span>
+              <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. Trang Tổng kết (Tổng kết và Đánh giá Bản thân) -->
+    <section id="tab-summary" class="tab-content min-h-[calc(100vh-80px)] py-16 relative">
+      
+      <!-- Summary Page Decors: Chromosome & Purine double ring -->
+      <svg viewBox="0 0 100 100" class="absolute w-20 h-20 text-emerald-500/10 pointer-events-none z-0 animate-float" style="bottom: 15%; right: 8%; animation-duration: 9s;">
+        <path d="M 35,20 L 65,80 M 65,20 L 35,80" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+        <circle cx="50" cy="50" r="8" fill="white" stroke="currentColor" stroke-width="2" />
+      </svg>
+
+      <svg viewBox="0 0 120 120" class="absolute w-20 h-20 text-emerald-500/10 pointer-events-none z-0 animate-float" style="top: 18%; left: 10%; animation-duration: 9s;">
+        <polygon points="40,30 70,30 85,55 70,80 40,80 25,55" stroke="currentColor" stroke-width="1.8" fill="none" />
+        <polygon points="70,30 95,40 95,70 70,80" stroke="currentColor" stroke-width="1.5" fill="none" />
+      </svg>
+
+      <!-- Leaf Sprout Decor -->
+      <svg viewBox="0 0 100 100" class="absolute w-16 h-16 text-emerald-500/10 pointer-events-none z-0 animate-float" style="top: 35%; right: 12%; animation-duration: 8s; opacity: 0.08;">
+        <path d="M 50,90 C 50,60 30,40 10,40 C 30,40 50,55 50,90 Z" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M 50,90 C 50,60 70,40 90,40 C 70,40 50,55 50,90 Z" fill="none" stroke="currentColor" stroke-width="2" />
+      </svg>
+
+      <!-- Synapse Network Decor -->
+      <svg viewBox="0 0 100 100" class="absolute w-20 h-20 text-emerald-500/10 pointer-events-none z-0 animate-float" style="bottom: 35%; left: 8%; animation-duration: 12s; opacity: 0.08;">
+        <circle cx="50" cy="50" r="6" fill="currentColor" />
+        <circle cx="20" cy="30" r="4" fill="currentColor" />
+        <circle cx="80" cy="35" r="5" fill="currentColor" />
+        <circle cx="35" cy="75" r="4" fill="currentColor" />
+        <circle cx="70" cy="70" r="4" fill="currentColor" />
+        <line x1="50" y1="50" x2="20" y2="30" stroke="currentColor" stroke-width="1.5" />
+        <line x1="50" y1="50" x2="80" y2="35" stroke="currentColor" stroke-width="1.5" />
+        <line x1="50" y1="50" x2="35" y2="75" stroke="currentColor" stroke-width="1.5" />
+        <line x1="50" y1="50" x2="70" y2="70" stroke="currentColor" stroke-width="1.5" />
+      </svg>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Section Title -->
+        <div class="text-center mb-16">
+          <span class="text-xs uppercase tracking-widest font-mono text-emerald-600 font-bold">BẢN NGHIỆM THU HỌC THUẬT</span>
+          <h2 class="text-3xl md:text-5xl font-bold font-serif text-zinc-950 mt-2">Tổng kết & Đánh giá</h2>
+          <div class="w-20 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <!-- Căn giữa khổ rộng cân đối sau khi xóa biểu đồ Radar -->
+        <div class="max-w-4xl mx-auto">
+          <div class="relative bg-white border border-gray-200/80 p-8 md:p-10 rounded-3xl shadow-xl shadow-emerald-500/5 overflow-hidden">
+            
+            <div class="absolute inset-0 opacity-[0.03] pointer-events-none select-none flex flex-wrap justify-between items-center p-8">
+              <i class="fa-solid fa-brain text-8xl m-4 text-emerald-700"></i>
+              <i class="fa-solid fa-robot text-8xl m-4 text-emerald-700"></i>
+              <i class="fa-solid fa-database text-8xl m-4 text-emerald-700"></i>
+              <i class="fa-solid fa-circle-nodes text-8xl m-4 text-emerald-700"></i>
+            </div>
+
+            <!-- EXACT TEXT REQUIRED -->
+            <div class="text-justify text-gray-700 leading-relaxed font-sans text-sm md:text-base relative z-10 whitespace-pre-line space-y-4">
+              <p class="font-serif italic text-emerald-600 font-bold text-lg border-b border-gray-100 pb-2 mb-4">*Tổng kết và đánh giá:</p>
+              Quá trình hoàn thành học phần Nhập môn Công nghệ số và Ứng dụng Trí tuệ nhân tạo, kết hợp với việc xây dựng Digital Portfolio này, đã định hình rõ ràng phương pháp học tập và nghiên cứu khoa học của tôi. Việc tích hợp các mô hình AI vào quy trình tìm kiếm tài liệu học thuật và tối ưu hóa câu lệnh đã giúp tăng hiệu suất phân loại thông tin, hỗ trợ xử lý và hệ thống hóa các cấu trúc dữ liệu sinh học một cách có hệ thống.
+              
+              <p class="font-serif italic text-emerald-600 font-bold text-lg border-b border-gray-100 pb-2 mb-4 mt-6">*Kiến thức và kỹ năng cốt lõi đạt được:</p>
+              - Khả năng thiết lập cấu trúc thư mục tối ưu và quy tắc lưu trữ dữ liệu khoa học, phục vụ trực tiếp cho việc quản lý các kết quả thí nghiệm phân tử.
+              - Kỹ năng xây dựng câu lệnh có cấu trúc (bối cảnh, vai trò, giới hạn) để khai thác thông tin học thuật từ các mô hình ngôn ngữ lớn một cách chính xác.
+              - Năng lực kiểm chứng độc lập tính xác thực của thông tin do AI tạo sinh, nhận diện các lỗi sai kỹ thuật và áp dụng các nguyên tắc đạo đức để kiểm soát dữ liệu đầu ra.
+              - Khả năng giao tiếp và sử dụng AI hiệu quả thay vì phụ thuộc vào nó, nâng cao được ý thức về bảo mật thông tin cá nhân và trách nhiệm tôn trọng bản quyền trên không gian mạng.
+              
+              <p class="font-serif italic text-emerald-600 font-bold text-lg border-b border-gray-100 pb-2 mb-4 mt-6">*Điểm tâm đắc và Thách thức:</p>
+              - Điểm tâm đắc nhất: Tôi đã tự xây dựng được một hệ thống quản lý tri thức số cá nhân và hoàn thiện kỹ năng truyền thông khoa học thông qua việc thiết kế giao diện Portfolio logic, trực quan.
+              - Thách thức đã đối mặt: Việc kiểm soát xu hướng "ảo tưởng" (hallucination) của các mô hình AI khi tìm kiếm các kiến thức chuyên sâu về y sinh yêu cầu tôi phải dành nhiều thời gian đối chiếu với các nguồn tài liệu kiểm chứng và liên tục chỉnh sửa để hoàn thiện thông tin.
+              
+              <p class="font-serif italic text-emerald-600 font-bold text-lg border-b border-gray-100 pb-2 mb-4 mt-6">*Định hướng ứng dụng trong tương lai:</p>
+              Các kỹ năng quản lý dữ liệu, phối hợp trực tuyến và tối ưu hóa hiệu suất bằng công nghệ sẽ được tôi áp dụng trực tiếp vào quá trình học tập và nghiên cứu. Sự kết hợp giữa nền tảng kiến thức sinh học cốt lõi và tư duy công nghệ số sẽ là công cụ quan trọng giúp tôi nâng cao hiệu quả trong các công việc tương lai.
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. Trang Liên hệ (Contact) - Tab riêng biệt -->
+    <section id="tab-contact" class="tab-content min-h-[calc(100vh-80px)] py-16 flex items-center relative">
+      
+      <!-- Contact Page Decors: Neural synapse cell & leaves -->
+      <svg viewBox="0 0 100 100" class="absolute w-24 h-24 text-emerald-500/10 pointer-events-none z-0 animate-float" style="top: 22%; left: 12%; animation-duration: 13s;">
+        <circle cx="50" cy="50" r="8" fill="currentColor" />
+        <path d="M 50,42 L 50,20 M 50,58 L 50,80 M 42,50 L 20,50 M 58,50 L 80,50" stroke="currentColor" stroke-width="1.8" />
+        <path d="M 44,44 L 28,28 M 56,56 L 72,72 M 44,56 L 28,72 M 56,44 L 72,28" stroke="currentColor" stroke-width="1.5" />
+        <circle cx="50" cy="20" r="3" fill="currentColor" />
+        <circle cx="50" cy="80" r="3" fill="currentColor" />
+        <circle cx="20" cy="50" r="3" fill="currentColor" />
+        <circle cx="80" cy="50" r="3" fill="currentColor" />
+      </svg>
+
+      <svg viewBox="0 0 100 100" class="absolute w-16 h-16 text-emerald-500/10 pointer-events-none z-0 animate-float" style="bottom: 20%; right: 15%; animation-duration: 9s;">
+        <path d="M 50,10 C 20,40 20,70 50,90 Z" fill="none" stroke="currentColor" stroke-width="1.8" />
+      </svg>
+
+      <!-- Water Molecule Decor -->
+      <svg viewBox="0 0 100 100" class="absolute w-16 h-16 text-emerald-500/10 pointer-events-none z-0 animate-float" style="bottom: 30%; left: 8%; animation-duration: 10s; opacity: 0.08;">
+        <circle cx="35" cy="40" r="10" fill="none" stroke="currentColor" stroke-width="2" />
+        <circle cx="20" cy="52" r="5" fill="currentColor" />
+        <circle cx="50" cy="52" r="5" fill="currentColor" />
+        <line x1="31" y1="48" x2="23" y2="51" stroke="currentColor" stroke-width="1.5" />
+        <line x1="39" y1="48" x2="47" y2="51" stroke="currentColor" stroke-width="1.5" />
+        <circle cx="70" cy="65" r="8" fill="none" stroke="currentColor" stroke-width="1.5" />
+        <circle cx="82" cy="72" r="4" fill="currentColor" />
+        <line x1="75" y1="69" x2="80" y2="71" stroke="currentColor" stroke-width="1.2" />
+      </svg>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center space-y-8 relative z-10">
+        
+        <div class="text-center mb-8">
+          <span class="text-xs uppercase tracking-widest font-mono text-emerald-600 font-bold block">CONNECT WITH ME</span>
+          <h2 class="text-3xl md:text-5xl font-extrabold font-serif text-zinc-950 mt-2">Contact</h2>
+          <div class="w-20 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+        
+        <div class="max-w-lg mx-auto p-6 bg-white border border-gray-200/60 rounded-3xl shadow-xl shadow-emerald-500/5 flex flex-col items-center space-y-6">
+          <div class="w-16 h-16 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-3xl shadow-sm border border-emerald-500/10">
+            <i class="fa-regular fa-envelope"></i>
+          </div>
+          
+          <div class="space-y-1">
+            <span class="text-[10px] text-gray-400 block uppercase font-bold tracking-wider font-mono">Email Sinh viên HUS-VNU</span>
+            <span id="student-email" class="text-base sm:text-lg font-bold text-gray-800 font-mono">25001395@vnu.edu.vn</span>
+          </div>
+
+          <p class="text-xs text-gray-500 max-w-sm">
+            Vui lòng sao chép địa chỉ email trên để trao đổi học thuật hoặc hợp tác trong nghiên cứu sinh học phân tử & ứng dụng y sinh.
+          </p>
+
+          <button id="copy-email-btn" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition-all shadow-md shadow-emerald-500/10 active:scale-95 flex items-center space-x-2" title="Copy email address to clipboard">
+            <i class="fa-regular fa-copy"></i>
+            <span id="copy-btn-text">Sao chép địa chỉ email</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer tối giản theo yêu cầu (Chỉ hiển thị tên trường) -->
+  <footer class="bg-transparent py-8 transition-colors z-10 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs font-semibold tracking-wider text-gray-500 border-t border-gray-200/30 pt-6">
+      Trường Đại học Khoa học Tự nhiên - ĐHQGHN
+    </div>
+  </footer>
+
+  <!-- SCRIPT FOR SPA ROUTING & INTERACTIVE UX EFFECTS -->
+  <script>
+    /* -------------------------------------------------------------
+       SPA Routing with Hash links & Transitions
+       ------------------------------------------------------------- */
+    const navButtons = document.querySelectorAll('.nav-btn, .mobile-nav-btn, .gene-branch-btn');
+    const sections = document.querySelectorAll('.tab-content');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const tabs = ['home', 'about', 'projects', 'summary', 'contact'];
+
+    function switchTab(tabId) {
+      if (!tabs.includes(tabId)) tabId = 'home';
+
+      // Update Active Nav Link Classes
+      navButtons.forEach(btn => {
+        const btnTab = btn.getAttribute('data-tab');
+        if (btnTab === tabId) {
+          if (btn.classList.contains('nav-btn')) {
+            btn.classList.add('active-nav');
+          } else if (btn.classList.contains('mobile-nav-btn')) {
+            btn.classList.add('bg-emerald-50', 'text-emerald-700');
+          }
+        } else {
+          btn.classList.remove('active-nav', 'bg-emerald-50', 'text-emerald-700');
+        }
+      });
+
+      // Switch active section with animations
+      sections.forEach(sec => {
+        if (sec.id === `tab-${tabId}`) {
+          sec.style.display = 'block';
+          sec.offsetHeight;
+          sec.classList.add('active');
+        } else {
+          sec.classList.remove('active');
+          sec.style.display = 'none';
+        }
+      });
+
+      // Close mobile menu drawer
+      mobileMenu.classList.add('hidden');
+
+      // Scroll smoothly back to top of the content/tab
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Re-align connection lines if on Home page
+      if (tabId === 'home') {
+        setTimeout(updateGeneLines, 100);
+      }
+    }
+
+    // Router matching window hashes
+    function routeHandler() {
+      const hash = window.location.hash.substring(1);
+      switchTab(hash);
+    }
+
+    // Nav click handlers
+    navButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const tabId = btn.getAttribute('data-tab');
+        if (tabId) {
+          window.location.hash = tabId;
+        }
+      });
+    });
+
+    window.addEventListener('hashchange', routeHandler);
+    window.addEventListener('load', routeHandler);
+
+    // Mobile Menu Button Toggle
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+
+    /* -------------------------------------------------------------
+       Home Section: Rotated Diagonal DNA Helix (Canvas-based)
+       ------------------------------------------------------------- */
+    const canvas = document.getElementById('dna-canvas');
+    const ctx = canvas.getContext('2d');
+    
+    let dpr = window.devicePixelRatio || 1;
+    let width, height;
+
+    function resizeCanvas() {
+      const container = canvas.parentElement;
+      width = container.clientWidth;
+      height = container.clientHeight;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      ctx.scale(dpr, dpr);
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // DNA layout variables
+    const nodesCount = 20;
+    const radius = 95;
+    const speed = 0.010;
+    let rotationAngle = 0;
+    let hoverState = false;
+    let scrollTriggerOffset = 0;
+
+    // Floating particles systems representing A, T, G, C letters tuôn ra
+    class BaseParticle {
+      constructor(x, y, char) {
+        this.x = x;
+        this.y = y;
+        this.char = char;
+        this.vy = -Math.random() * 1.2 - 0.4;
+        this.vx = (Math.random() - 0.5) * 0.8;
+        this.opacity = 1.0;
+        this.fontSize = Math.floor(Math.random() * 4) + 12;
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.opacity -= 0.012;
+      }
+      draw(c) {
+        c.fillStyle = `rgba(5, 150, 105, ${this.opacity})`;
+        c.font = `bold ${this.fontSize}px monospace`;
+        c.fillText(this.char, this.x, this.y);
+      }
+    }
+    let particles = [];
+
+    // Tracks mouse interactions to trigger A-T-G-C streams
+    let mousePos = { x: 0, y: 0 };
+    
+    const homeSection = document.getElementById('tab-home');
+    homeSection.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      if (e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom) {
+        mousePos.x = e.clientX - rect.left;
+        mousePos.y = e.clientY - rect.top;
+        hoverState = true;
+      } else {
+        hoverState = false;
+      }
+    });
+    
+    homeSection.addEventListener('mouseleave', () => { hoverState = false; });
+
+    // Scroll triggers particles slowly
+    window.addEventListener('scroll', () => {
+      scrollTriggerOffset += 0.02;
+      if (Math.random() < 0.05 && particles.length < 50) {
+        const i = Math.floor(Math.random() * nodesCount);
+        const t = i / (nodesCount - 1);
+        const startX = width * 0.85;
+        const startY = 30;
+        const endX = width * 0.25;
+        const endY = height - 30;
+        const xc = startX + t * (endX - startX);
+        const yc = startY + t * (endY - startY);
+        particles.push(new BaseParticle(xc, yc, ['A', 'T', 'G', 'C'][Math.floor(Math.random() * 4)]));
+      }
+    });
+
+    function drawDNA() {
+      if (window.getComputedStyle(document.getElementById('dna-container')).display === 'none') {
+        requestAnimationFrame(drawDNA);
+        return;
+      }
+
+      ctx.clearRect(0, 0, width, height);
+
+      rotationAngle += speed;
+      const totalRotation = rotationAngle + scrollTriggerOffset;
+
+      // Stable Diagonal endpoints bounded to prevent clipping issues
+      const startX = width * 0.88;
+      const startY = height * 0.06;
+      const endX = width * 0.22;
+      const endY = height * 0.94;
+
+      const dx = endX - startX;
+      const dy = endY - startY;
+      const len = Math.hypot(dx, dy);
+      const nx = -dy / len;
+      const ny = dx / len;
+
+      // Slower nucleotide stream spawn rate (0.12 spawn chance per frame)
+      if (hoverState && Math.random() < 0.12 && particles.length < 60) {
+        const bases = ['A', 'T', 'G', 'C'];
+        particles.push(new BaseParticle(mousePos.x + (Math.random()-0.5)*15, mousePos.y + (Math.random()-0.5)*15, bases[Math.floor(Math.random() * 4)]));
+      }
+
+      for (let i = 0; i < nodesCount; i++) {
+        const t = i / (nodesCount - 1);
+        const xc = startX + t * (endX - startX);
+        const yc = startY + t * (endY - startY);
+
+        const offsetAngle = i * 0.38 + totalRotation;
+
+        const disp = Math.sin(offsetAngle) * radius;
+        const x1 = xc + nx * disp;
+        const y1 = yc + ny * disp;
+
+        const x2 = xc - nx * disp;
+        const y2 = yc - ny * disp;
+
+        const z1 = Math.cos(offsetAngle);
+        const z2 = Math.cos(offsetAngle + Math.PI);
+
+        // Draw cross rungs
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.lineWidth = 1.8;
+        
+        const isAT = (i % 2 === 0);
+        const grad = ctx.createLinearGradient(x1, y1, x2, y2);
+        if (isAT) {
+          grad.addColorStop(0, '#047857');
+          grad.addColorStop(1, '#dc2626');
+        } else {
+          grad.addColorStop(0, '#0891b2');
+          grad.addColorStop(1, '#ea580c');
+        }
+        
+        ctx.strokeStyle = grad;
+        ctx.globalAlpha = 0.65 + (z1 + z2)/4.5;
+        ctx.stroke();
+
+        // Draw spheres
+        // Strand A
+        ctx.beginPath();
+        ctx.arc(x1, y1, 6.5 + z1*2.5, 0, Math.PI * 2);
+        ctx.fillStyle = isAT ? '#047857' : '#0891b2';
+        ctx.globalAlpha = 0.75 + z1 * 0.25;
+        ctx.fill();
+
+        // Strand B
+        ctx.beginPath();
+        ctx.arc(x2, y2, 6.5 + z2*2.5, 0, Math.PI * 2);
+        ctx.fillStyle = isAT ? '#dc2626' : '#ea580c';
+        ctx.globalAlpha = 0.75 + z2 * 0.25;
+        ctx.fill();
+      }
+
+      // Update & render particles
+      particles.forEach((p, idx) => {
+        p.update();
+        p.draw(ctx);
+        if (p.opacity <= 0) {
+          particles.splice(idx, 1);
+        }
+      });
+
+      ctx.globalAlpha = 1.0;
+      requestAnimationFrame(drawDNA);
+    }
+    drawDNA();
+
+
+    /* -------------------------------------------------------------
+       Gene Cluster: Toggle-menu with Click Out to close
+       ------------------------------------------------------------- */
+    const geneBase = document.getElementById('gene-base');
+    const geneLines = document.getElementById('gene-svg');
+    const geneBranchButtons = document.querySelectorAll('.gene-branch-btn');
+    const genePaths = [
+      document.getElementById('path-about'),
+      document.getElementById('path-projects'),
+      document.getElementById('path-summary')
+    ];
+    let clusterActive = false;
+
+    function setClusterState(active) {
+      clusterActive = active;
+      if (active) {
+        updateGeneLines();
+        
+        genePaths.forEach(path => {
+          path.classList.remove('opacity-0');
+          path.classList.add('opacity-100');
+        });
+
+        geneBranchButtons.forEach((btn, index) => {
+          btn.classList.remove('opacity-0', 'scale-0', 'pointer-events-none');
+          btn.classList.add('opacity-100', 'scale-100', 'pointer-events-auto');
+        });
+      } else {
+        genePaths.forEach(path => {
+          path.classList.remove('opacity-100');
+          path.classList.add('opacity-0');
+        });
+
+        geneBranchButtons.forEach(btn => {
+          btn.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto');
+          btn.classList.add('opacity-0', 'scale-0', 'pointer-events-none');
+        });
+      }
+    }
+
+    geneBase.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setClusterState(!clusterActive);
+    });
+
+    geneBranchButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        setClusterState(false);
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      const clusterWrapper = document.querySelector('.relative.flex.items-center.gap-16');
+      if (clusterActive && clusterWrapper && !clusterWrapper.contains(e.target)) {
+        setClusterState(false);
+      }
+    });
+
+    function updateGeneLines() {
+      const targetAbout = document.getElementById('gene-target-about');
+      const targetProjects = document.getElementById('gene-target-projects');
+      const targetSummary = document.getElementById('gene-target-summary');
+      const svg = document.getElementById('gene-svg');
+      
+      if (!geneBase || !targetAbout || !targetProjects || !targetSummary || !svg) return;
+      
+      const svgRect = svg.getBoundingClientRect();
+      const baseRect = geneBase.getBoundingClientRect();
+      
+      const xBase = baseRect.right - svgRect.left;
+      const yBase = baseRect.top - svgRect.top + baseRect.height / 2;
+      
+      const drawLine = (target, pathId) => {
+        const targetRect = target.getBoundingClientRect();
+        const targetIcon = target.querySelector('div');
+        const iconRect = targetIcon.getBoundingClientRect();
+        const xTarget = iconRect.left - svgRect.left;
+        const yTarget = iconRect.top - svgRect.top + iconRect.height / 2;
+        
+        const path = document.getElementById(pathId);
+        
+        const cp1x = xBase + (xTarget - xBase) * 0.45;
+        const cp1y = yBase;
+        const cp2x = xBase + (xTarget - xBase) * 0.25;
+        const cp2y = yTarget;
+        
+        path.setAttribute('d', `M ${xBase} ${yBase} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${xTarget} ${yTarget}`);
+      };
+      
+      drawLine(targetAbout, 'path-about');
+      drawLine(targetProjects, 'path-projects');
+      drawLine(targetSummary, 'path-summary');
+    }
+
+    window.addEventListener('load', () => {
+      setTimeout(updateGeneLines, 150);
+    });
+    window.addEventListener('resize', updateGeneLines);
+
+
+    /* -------------------------------------------------------------
+       Giới thiệu Section: "AI-Driven Skill Alignment" (Y sinh Hover Effect) - Removed as requested
+       ------------------------------------------------------------- */
+
+
+    /* -------------------------------------------------------------
+       Footer: Email Fast copy function
+       ------------------------------------------------------------- */
+    const copyEmailBtn = document.getElementById('copy-email-btn');
+    const copyBtnText = document.getElementById('copy-btn-text');
+    const studentEmail = document.getElementById('student-email').textContent;
+
+    copyEmailBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(studentEmail).then(() => {
+        copyBtnText.textContent = 'Đã sao chép!';
+        copyEmailBtn.classList.remove('bg-emerald-600', 'hover:bg-emerald-700');
+        copyEmailBtn.classList.add('bg-emerald-500');
+        
+        setTimeout(() => {
+          copyBtnText.textContent = 'Sao chép địa chỉ email';
+          copyEmailBtn.classList.add('bg-emerald-600', 'hover:bg-emerald-700');
+          copyEmailBtn.classList.remove('bg-emerald-500');
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy text: ', err);
+      });
+    });
+
+
+    /* -------------------------------------------------------------
+       Intersection Observer: Fade-in and Slide-up Scroll Animations
+       ------------------------------------------------------------- */
+    const observerOptions = {
+      root: null,
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const fadeUpObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('opacity-0', 'translate-y-8');
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('#tab-about grid > div, #tab-projects .grid > div, #tab-summary .grid > div, #tab-contact > div').forEach(el => {
+      el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8', 'transform');
+      fadeUpObserver.observe(el);
+    });
+
+  </script>
+</body>
+</html>
