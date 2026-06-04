@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sử dụng công cụ hợp tác trực tuyến cho dự án nhóm - Phạm Đình Khánh Đoan</title>
-  <!-- Google Fonts: Lora & Outfit for premium look -->
+  <!-- Google Fonts: Literata (academic serif) & Outfit (geometric sans-serif) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
@@ -17,12 +17,12 @@
   </script>
   <style>
     body {
-      font-family: 'Outfit', sans-serif;
-      background: linear-gradient(135deg, #e6f7ef 0%, #d8f3e5 35%, #cdeedb 70%, #dcfce7 100%);
+      font-family: 'Outfit', sans-serif !important;
+      background: linear-gradient(135deg, #e6f7ef 0%, #d8f3e5 35%, #cdeedb 70%, #dcfce7 100%) !important;
       background-attachment: fixed;
     }
     h1, h2, h3, .font-serif {
-      font-family: 'Lora', serif;
+      font-family: 'Literata', serif !important;
     }
     /* Custom float animations */
     @keyframes float-custom {
@@ -45,6 +45,10 @@
     .text-base { font-size: 1.05rem !important; }
     .text-lg { font-size: 1.2rem !important; }
     .text-xl { font-size: 1.35rem !important; }
+    .text-2xl { font-size: 1.6rem !important; }
+    .text-3xl { font-size: 2.1rem !important; }
+    .text-4xl { font-size: 2.6rem !important; }
+    .text-5xl { font-size: 3.3rem !important; }
   </style>
 </head>
 <body class="text-zinc-800 min-h-screen flex flex-col opacity-0 transition-opacity duration-500 relative overflow-x-hidden">
@@ -78,11 +82,15 @@
   <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50 relative shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <div class="flex items-center">
+        <div class="flex items-center space-x-4">
           <a href="../index.html" class="flex items-center space-x-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
             <i class="fa-solid fa-arrow-left"></i>
             <span>Quay lại Portfolio</span>
           </a>
+          <div class="hidden sm:flex items-center space-x-2 border-l border-gray-200 pl-4 select-none">
+            <img src="../images/vnu_logo.png" alt="VNU Logo" class="h-8 w-8 object-contain">
+            <img src="../images/hus.jpg" alt="HUS Logo" class="h-8 w-8 object-contain">
+          </div>
         </div>
         <div class="flex items-center space-x-4">
           <div class="text-sm text-gray-500 font-semibold">Bài 4: Công cụ hợp tác nhóm</div>
@@ -148,83 +156,93 @@
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">BÀI TẬP 3: SỬ DỤNG CÔNG CỤ HỢP TÁC TRỰC TUYẾN CHO DỰ ÁN NHÓM</p>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Người thực hiện: Phạm Đình Khánh Đoan</p>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Mã sinh viên: 25001395</p>
-<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">I. Bối cảnh</h2>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Chủ đề dự án nhóm: "Xây dựng Video tiếng Anh giới thiệu di sản văn hóa Thăng Long - Hà Nội".</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Vai trò cá nhân: Biên tập viên nội dung.</li></ul>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-emerald-900 mt-10 mb-5 border-l-4 border-emerald-500 pl-3.5 pb-0.5 flex items-center select-text">I. Bối cảnh</h2>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Chủ đề dự án nhóm: "Xây dựng Video tiếng Anh giới thiệu di sản văn hóa Thăng Long - Hà Nội".</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Vai trò cá nhân: Biên tập viên nội dung.</span></li></ul>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Tôi chịu trách nhiệm trực tiếp biên soạn kịch bản chi tiết cũng như lịch trình sản xuất trên các nền tảng số, sau đó phân công kịch bản cho các thành viên trong nhóm. Ngoài ra tôi cũng thực hiện một phần phỏng vấn nhỏ trong video sản phẩm.</p>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Mục tiêu: Hoàn thành video chất lượng cao trước ngày 02/05/2026.</li></ul>
-<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">II. Lựa chọn công cụ</h2>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Mục tiêu: Hoàn thành video chất lượng cao trước ngày 02/05/2026.</span></li></ul>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-emerald-900 mt-10 mb-5 border-l-4 border-emerald-500 pl-3.5 pb-0.5 flex items-center select-text">II. Lựa chọn công cụ</h2>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Để tối ưu hóa hiệu suất làm việc từ xa, nhóm chúng tôi đã thiết lập hệ thống 4 nhóm công cụ:</p>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">1. Công cụ quản lý dự án:</h3>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tên công cụ: Trello.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tối ưu hóa: Thiết kế lịch, timeline cho một số thành viên cùng làm, sử dụng tag thành viên.</li></ul>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">2. Công cụ soạn thảo tài liệu:</h3>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Sử dụng công cụ Google Docs và Google Sheets, mở chế độ chỉnh sửa công khai để tất cả các thành viên trong nhóm có thể chỉnh sửa.</li></ul>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">3. Công cụ lưu trữ và chia sẻ tệp:</h3>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Sử dụng công cụ Google Drive để các thành viên trong nhóm có thể upload file, quản lý, xem trạng thái, tiến độ công việc của từng thành viên trong nhóm.</li></ul>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">4. Công cụ giao tiếp nhóm:</h3>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Sử dụng ứng dụng Zalo để giao tiếp giữa các thành viên trong nhóm, thông báo, gửi tài liệu, hình ảnh, âm thanh,…</li></ul>
-<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">III. Quá trình thực hiện nhiệm vụ cá nhân</h2>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Lập nhóm zalo có đầy đủ các thành viên trong nhóm: Vào ngày 02/04/2026, tôi đã lập 01 group zalo tên “Nhóm 4_TAB1_fieldtrip” và thêm đủ 10 thành viên của nhóm vào group.</li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">1. Công cụ quản lý dự án:</h3>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tên công cụ: Trello.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tối ưu hóa: Thiết kế lịch, timeline cho một số thành viên cùng làm, sử dụng tag thành viên.</span></li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">2. Công cụ soạn thảo tài liệu:</h3>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Sử dụng công cụ Google Docs và Google Sheets, mở chế độ chỉnh sửa công khai để tất cả các thành viên trong nhóm có thể chỉnh sửa.</span></li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">3. Công cụ lưu trữ và chia sẻ tệp:</h3>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Sử dụng công cụ Google Drive để các thành viên trong nhóm có thể upload file, quản lý, xem trạng thái, tiến độ công việc của từng thành viên trong nhóm.</span></li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">4. Công cụ giao tiếp nhóm:</h3>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Sử dụng ứng dụng Zalo để giao tiếp giữa các thành viên trong nhóm, thông báo, gửi tài liệu, hình ảnh, âm thanh,…</span></li></ul>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-emerald-900 mt-10 mb-5 border-l-4 border-emerald-500 pl-3.5 pb-0.5 flex items-center select-text">III. Quá trình thực hiện nhiệm vụ cá nhân</h2>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Lập nhóm zalo có đầy đủ các thành viên trong nhóm: Vào ngày 02/04/2026, tôi đã lập 01 group zalo tên “Nhóm 4_TAB1_fieldtrip” và thêm đủ 10 thành viên của nhóm vào group.</span></li></ul>
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai4_img1.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai4_img1.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 4.1: Ảnh chụp minh chứng kết quả thực hành bài tập 4" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 4.1: Ảnh chụp minh chứng kết quả thực hành bài tập 4</div>
 </div>
 
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Trưởng nhóm lập bảng phân công nhiệm vụ và tôi đã nhận công việc xây dựng kịch bản.</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Trưởng nhóm lập bảng phân công nhiệm vụ và tôi đã nhận công việc xây dựng kịch bản.</span></li></ul>
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai4_img2.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai4_img2.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 4.2: Ảnh chụp minh chứng kết quả thực hành bài tập 4" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 4.2: Ảnh chụp minh chứng kết quả thực hành bài tập 4</div>
 </div>
 
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tham gia thảo luận cùng mọi người trong group Zalo.</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tham gia thảo luận cùng mọi người trong group Zalo.</span></li></ul>
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai4_img3.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai4_img3.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 4.3: Ảnh chụp minh chứng kết quả thực hành bài tập 4" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 4.3: Ảnh chụp minh chứng kết quả thực hành bài tập 4</div>
 </div>
 
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Thực hiện và hoàn thành công việc cá nhân (xây dựng kịch bản) đúng deadline ngày 14/04/2026. Sau đó thảo luận với các thành viên khác trong nhóm và có chỉnh sửa kịch bản vào ngày 15-16/04/2026.</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Thực hiện và hoàn thành công việc cá nhân (xây dựng kịch bản) đúng deadline ngày 14/04/2026. Sau đó thảo luận với các thành viên khác trong nhóm và có chỉnh sửa kịch bản vào ngày 15-16/04/2026.</span></li></ul>
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai4_img4.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai4_img4.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 4.4: Ảnh chụp minh chứng kết quả thực hành bài tập 4" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 4.4: Ảnh chụp minh chứng kết quả thực hành bài tập 4</div>
 </div>
 
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tham gia cuộc họp Meet do trưởng nhóm tổ chức và tôi đã đảm nhiệm vai trò phân công kịch bản cho các thành viên trong nhóm vào ngày 15/04/2026.</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tham gia cuộc họp Meet do trưởng nhóm tổ chức và tôi đã đảm nhiệm vai trò phân công kịch bản cho các thành viên trong nhóm vào ngày 15/04/2026.</span></li></ul>
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai4_img5.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai4_img5.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 4.5: Ảnh chụp minh chứng kết quả thực hành bài tập 4" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 4.5: Ảnh chụp minh chứng kết quả thực hành bài tập 4</div>
 </div>
 
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tôi đã nhận 01 phần phỏng vấn trong timeline công việc.</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tôi đã nhận 01 phần phỏng vấn trong timeline công việc.</span></li></ul>
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai4_img6.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai4_img6.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 4.6: Ảnh chụp minh chứng kết quả thực hành bài tập 4" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 4.6: Ảnh chụp minh chứng kết quả thực hành bài tập 4</div>
 </div>
 
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Sử dụng Trello để quản lý tiến độ công việc cá nhân.</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Sử dụng Trello để quản lý tiến độ công việc cá nhân.</span></li></ul>
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai4_img7.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai4_img7.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 4.7: Ảnh chụp minh chứng kết quả thực hành bài tập 4" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 4.7: Ảnh chụp minh chứng kết quả thực hành bài tập 4</div>
 </div>
 
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai4_img8.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai4_img8.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 4.8: Ảnh chụp minh chứng kết quả thực hành bài tập 4" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 4.8: Ảnh chụp minh chứng kết quả thực hành bài tập 4</div>
 </div>
 
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tạo drive chung cho cả nhóm để các thành viên trong nhóm có thể upload file, quản lý, xem trạng thái, tiến độ công việc của từng thành viên trong nhóm.</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tạo drive chung cho cả nhóm để các thành viên trong nhóm có thể upload file, quản lý, xem trạng thái, tiến độ công việc của từng thành viên trong nhóm.</span></li></ul>
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai4_img9.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai4_img9.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 4.9: Ảnh chụp minh chứng kết quả thực hành bài tập 4" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 4.9: Ảnh chụp minh chứng kết quả thực hành bài tập 4</div>
 </div>
 
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Sử dụng Google Docs để quản lý, lưu trữ các tệp tin cá nhân phụ trách: Do cá nhân phụ trách phần kịch bản.</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Sử dụng Google Docs để quản lý, lưu trữ các tệp tin cá nhân phụ trách: Do cá nhân phụ trách phần kịch bản.</span></li></ul>
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai4_img10.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai4_img10.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 4.10: Ảnh chụp minh chứng kết quả thực hành bài tập 4" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 4.10: Ảnh chụp minh chứng kết quả thực hành bài tập 4</div>
 </div>
 
-<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">IV. Phân tích hiệu quả của các công cụ</h2>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-emerald-900 mt-10 mb-5 border-l-4 border-emerald-500 pl-3.5 pb-0.5 flex items-center select-text">IV. Phân tích hiệu quả của các công cụ</h2>
 
 <div class="overflow-x-auto my-6 bg-white/70 backdrop-blur-sm border border-gray-200/60 rounded-2xl p-4 shadow-sm select-text">
   <table class="w-full text-left text-xs md:text-sm border-collapse">
@@ -239,16 +257,16 @@
   </table>
 </div>
 
-<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">V. Thách thức và cách giải quyết</h2>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Thách thức 1: "Loãng" thông tin trên Zalo</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Vấn đề: Do nhóm thảo luận quá nhiều, các file kịch bản gửi trên Zalo thường bị trôi và bị quá hạn tải về.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Giải quyết: Group Zalo chung chỉ dùng để thảo luận. Mọi file chính thức bắt buộc phải tải lên Google Drive và dán link vào phần "Mô tả" của thẻ Trello tương ứng.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Thách thức 2: Xung đột khi chỉnh sửa kịch bản Tiếng Anh</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Vấn đề: Khi nhiều người cùng sửa kịch bản trên Google Docs, câu văn dễ bị rời rạc, mất tính thống nhất về văn phong.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Giải quyết: Tôi đóng vai trò người chốt kịch bản cuối cùng. Sau khi các bạn đóng góp ý tưởng, tôi sẽ sử dụng tính năng "Suggesting mode" để chỉnh sửa lại toàn bộ mà vẫn giữ được ý tưởng hợp lý của các bạn, sau đó mới "Accept" để hoàn thiện bản cuối.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Thách thức 3: Quản lý Deadline cho các nhiệm vụ sáng tạo</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Vấn đề: Việc "Demo nói thử" hay "Quay video" thường bị trễ do các yếu tố khách quan (thời tiết, tiếng ồn).</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Giải quyết: Đặt Soft Deadline trên Trello sớm hơn 2 ngày so với thời hạn thật để chủ động hoàn thành nhiệm vụ trước hạn.</li></ul>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-emerald-900 mt-10 mb-5 border-l-4 border-emerald-500 pl-3.5 pb-0.5 flex items-center select-text">V. Thách thức và cách giải quyết</h2>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Thách thức 1: "Loãng" thông tin trên Zalo</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Vấn đề: Do nhóm thảo luận quá nhiều, các file kịch bản gửi trên Zalo thường bị trôi và bị quá hạn tải về.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Giải quyết: Group Zalo chung chỉ dùng để thảo luận. Mọi file chính thức bắt buộc phải tải lên Google Drive và dán link vào phần "Mô tả" của thẻ Trello tương ứng.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Thách thức 2: Xung đột khi chỉnh sửa kịch bản Tiếng Anh</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Vấn đề: Khi nhiều người cùng sửa kịch bản trên Google Docs, câu văn dễ bị rời rạc, mất tính thống nhất về văn phong.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Giải quyết: Tôi đóng vai trò người chốt kịch bản cuối cùng. Sau khi các bạn đóng góp ý tưởng, tôi sẽ sử dụng tính năng "Suggesting mode" để chỉnh sửa lại toàn bộ mà vẫn giữ được ý tưởng hợp lý của các bạn, sau đó mới "Accept" để hoàn thiện bản cuối.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Thách thức 3: Quản lý Deadline cho các nhiệm vụ sáng tạo</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Vấn đề: Việc "Demo nói thử" hay "Quay video" thường bị trễ do các yếu tố khách quan (thời tiết, tiếng ồn).</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Giải quyết: Đặt Soft Deadline trên Trello sớm hơn 2 ngày so với thời hạn thật để chủ động hoàn thành nhiệm vụ trước hạn.</span></li></ul>
       </div>
 
       <!-- Column 3: Quick Projects Switcher Sidebar (lg:col-span-3) -->

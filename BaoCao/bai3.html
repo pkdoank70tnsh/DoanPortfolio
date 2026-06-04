@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Viết Prompt hiệu quả cho các tác vụ học tập - Phạm Đình Khánh Đoan</title>
-  <!-- Google Fonts: Lora & Outfit for premium look -->
+  <!-- Google Fonts: Literata (academic serif) & Outfit (geometric sans-serif) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
@@ -17,12 +17,12 @@
   </script>
   <style>
     body {
-      font-family: 'Outfit', sans-serif;
-      background: linear-gradient(135deg, #e6f7ef 0%, #d8f3e5 35%, #cdeedb 70%, #dcfce7 100%);
+      font-family: 'Outfit', sans-serif !important;
+      background: linear-gradient(135deg, #e6f7ef 0%, #d8f3e5 35%, #cdeedb 70%, #dcfce7 100%) !important;
       background-attachment: fixed;
     }
     h1, h2, h3, .font-serif {
-      font-family: 'Lora', serif;
+      font-family: 'Literata', serif !important;
     }
     /* Custom float animations */
     @keyframes float-custom {
@@ -45,6 +45,10 @@
     .text-base { font-size: 1.05rem !important; }
     .text-lg { font-size: 1.2rem !important; }
     .text-xl { font-size: 1.35rem !important; }
+    .text-2xl { font-size: 1.6rem !important; }
+    .text-3xl { font-size: 2.1rem !important; }
+    .text-4xl { font-size: 2.6rem !important; }
+    .text-5xl { font-size: 3.3rem !important; }
   </style>
 </head>
 <body class="text-zinc-800 min-h-screen flex flex-col opacity-0 transition-opacity duration-500 relative overflow-x-hidden">
@@ -75,11 +79,15 @@
   <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50 relative shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <div class="flex items-center">
+        <div class="flex items-center space-x-4">
           <a href="../index.html" class="flex items-center space-x-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
             <i class="fa-solid fa-arrow-left"></i>
             <span>Quay lại Portfolio</span>
           </a>
+          <div class="hidden sm:flex items-center space-x-2 border-l border-gray-200 pl-4 select-none">
+            <img src="../images/vnu_logo.png" alt="VNU Logo" class="h-8 w-8 object-contain">
+            <img src="../images/hus.jpg" alt="HUS Logo" class="h-8 w-8 object-contain">
+          </div>
         </div>
         <div class="flex items-center space-x-4">
           <div class="text-sm text-gray-500 font-semibold">Bài 3: Prompt Engineering</div>
@@ -143,89 +151,98 @@
       <div class="lg:col-span-6 space-y-6 bg-white/50 backdrop-blur-sm border border-gray-200/50 p-6 md:p-8 rounded-3xl shadow-sm">
         <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">BÁO CÁO</p>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">BÀI TẬP 2: VIẾT PROMPT HIỆU QUẢ</p>
-<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">I. PHÂN TÍCH TÁC VỤ HỌC TẬP</h2>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">1. Tóm tắt một bài đọc/tài liệu học thuật (Ví dụ: Bài báo về chủ đề: Cơ chế CRISPR-Cas9)</h3>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Mục tiêu: Trích xuất thông tin cốt lõi (vấn đề, phương pháp, kết quả) từ một văn bản dài, phức tạp.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Thách thức: Tài liệu sinh học thường dài và chứa nhiều dữ liệu. Thách thức là phải giữ được phương pháp nghiên cứu và kết quả cốt lõi mà không làm mất đi tính logic.</li></ul>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">2. Giải thích một khái niệm phức tạp (Ví dụ: Khái niệm Chuỗi vận chuyển điện tử trong hô hấp tế bào)</h3>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Mục tiêu: Làm sáng tỏ các thuật ngữ trừu tượng thành kiến thức dễ tiếp thu.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Thách thức: Cân bằng giữa tính hàn lâm của các thuật ngữ chuyên ngành Sinh học và tính trực quan, dễ hiểu. Đòi hỏi phải sử dụng các phép ẩn dụ hợp lý mà không làm sai lệch bản chất.</li></ul>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">3. Tạo bộ câu hỏi ôn tập cho một chủ đề (Ví dụ: Tạo bộ câu hỏi ôn tập chủ đề Di truyền học Mendel)</h3>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Mục tiêu: Thiết kế công cụ kiểm tra kiến thức bao quát nhiều câu hỏi ở nhiều mức độ (biết, hiểu, vận dụng).</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Thách thức: Các prompt đơn giản thường chỉ tạo ra câu hỏi ghi nhớ mức độ thấp (Fact-based). Cần tạo ra các câu hỏi phân tích, suy luận và cung cấp đáp án có giải thích chuỗi tư duy (Chain-of-Thought).</li></ul>
-<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">II. XÂY DỰNG CÁC PHIÊN BẢN PROMPT</h2>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">1. Tóm tắt một bài đọc/tài liệu học thuật (Ví dụ: Bài báo về chủ đề: Cơ chế CRISPR-Cas9)</h3>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ bản: Tóm tắt bài báo “Simon A. Jackson et al., CRISPR-Cas: Adapting to change. Science 356, eaal5056 (2017)” cho tôi.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cải tiến: Hãy tóm tắt bài báo “Simon A. Jackson et al., CRISPR-Cas: Adapting to change. Science 356, eaal5056 (2017)” thành 4 ý chính: Mục tiêu nghiên cứu, Phương pháp, Kết quả và Ý nghĩa thực tiễn.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Nâng cao: Bạn là một chuyên gia Sinh học phân tử. Hãy đọc tài liệu về CRISPR-Cas9 sau đây: “Simon A. Jackson et al., CRISPR-Cas: Adapting to change. Science 356, eaal5056 (2017)”</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Bước 1: Trình bày Mục tiêu nghiên cứu của bài báo.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Bước 2: Tóm tắt quy trình thực nghiệm theo sơ đồ logic.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Bước 3: Đưa ra Kết quả và Kết luận về tính đột phá của nghiên cứu.</li></ul>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">2. Giải thích một khái niệm phức tạp (Ví dụ: Khái niệm Chuỗi vận chuyển điện tử trong hô hấp tế bào)</h3>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ bản: Chuỗi vận chuyển điện tử trong hô hấp tế bào là gì?</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cải tiến: Giải thích khái niệm “Chuỗi vận chuyển điện tử trong hô hấp tế bào” cho sinh viên đại học. Sử dụng các gạch đầu dòng để phân biệt các giai đoạn.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Nâng cao: Đóng vai một giảng viên Sinh học tế bào. Hãy giải thích khái niệm “Chuỗi vận chuyển điện tử trong hô hấp tế bào” bằng cách so sánh nó với một hệ thống trong thực tế (ví dụ: dây chuyền sản xuất). Sau đó, viết một đoạn ngắn tóm tắt vai trò của H+ và ATP synthase.</li></ul>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">3. Tạo bộ câu hỏi ôn tập cho một chủ đề (Ví dụ: Tạo bộ câu hỏi ôn tập chủ đề Di truyền học Mendel)</h3>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ bản: Tạo 5 câu hỏi trắc nghiệm về Di truyền học Mendel.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cải tiến: Tạo 5 câu hỏi trắc nghiệm về Quy luật phân li độc lập của Mendel, bao gồm cả câu hỏi lý thuyết và bài tập tính toán tỉ lệ. Có kèm đáp án.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Nâng cao: Dựa trên nội dung chương Di truyền học Mendel, hãy tạo 6 câu hỏi theo thang đo Bloom (2 câu Nhận biết, 2 câu Thông hiểu, 2 câu Vận dụng cao về xác suất). Mỗi câu hỏi phải có 4 lựa chọn, trong đó các đáp án nhiễu phải liên quan đến các lỗi sai phổ biến của sinh viên. Cung cấp lời giải chi tiết.</li></ul>
-<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">III. THỬ NGHIỆM VÀ SO SÁNH KẾT QUẢ</h2>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-emerald-900 mt-10 mb-5 border-l-4 border-emerald-500 pl-3.5 pb-0.5 flex items-center select-text">I. PHÂN TÍCH TÁC VỤ HỌC TẬP</h2>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">1. Tóm tắt một bài đọc/tài liệu học thuật (Ví dụ: Bài báo về chủ đề: Cơ chế CRISPR-Cas9)</h3>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Mục tiêu: Trích xuất thông tin cốt lõi (vấn đề, phương pháp, kết quả) từ một văn bản dài, phức tạp.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Thách thức: Tài liệu sinh học thường dài và chứa nhiều dữ liệu. Thách thức là phải giữ được phương pháp nghiên cứu và kết quả cốt lõi mà không làm mất đi tính logic.</span></li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">2. Giải thích một khái niệm phức tạp (Ví dụ: Khái niệm Chuỗi vận chuyển điện tử trong hô hấp tế bào)</h3>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Mục tiêu: Làm sáng tỏ các thuật ngữ trừu tượng thành kiến thức dễ tiếp thu.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Thách thức: Cân bằng giữa tính hàn lâm của các thuật ngữ chuyên ngành Sinh học và tính trực quan, dễ hiểu. Đòi hỏi phải sử dụng các phép ẩn dụ hợp lý mà không làm sai lệch bản chất.</span></li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">3. Tạo bộ câu hỏi ôn tập cho một chủ đề (Ví dụ: Tạo bộ câu hỏi ôn tập chủ đề Di truyền học Mendel)</h3>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Mục tiêu: Thiết kế công cụ kiểm tra kiến thức bao quát nhiều câu hỏi ở nhiều mức độ (biết, hiểu, vận dụng).</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Thách thức: Các prompt đơn giản thường chỉ tạo ra câu hỏi ghi nhớ mức độ thấp (Fact-based). Cần tạo ra các câu hỏi phân tích, suy luận và cung cấp đáp án có giải thích chuỗi tư duy (Chain-of-Thought).</span></li></ul>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-emerald-900 mt-10 mb-5 border-l-4 border-emerald-500 pl-3.5 pb-0.5 flex items-center select-text">II. XÂY DỰNG CÁC PHIÊN BẢN PROMPT</h2>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">1. Tóm tắt một bài đọc/tài liệu học thuật (Ví dụ: Bài báo về chủ đề: Cơ chế CRISPR-Cas9)</h3>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cơ bản: Tóm tắt bài báo “Simon A. Jackson et al., CRISPR-Cas: Adapting to change. Science 356, eaal5056 (2017)” cho tôi.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cải tiến: Hãy tóm tắt bài báo “Simon A. Jackson et al., CRISPR-Cas: Adapting to change. Science 356, eaal5056 (2017)” thành 4 ý chính: Mục tiêu nghiên cứu, Phương pháp, Kết quả và Ý nghĩa thực tiễn.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Nâng cao: Bạn là một chuyên gia Sinh học phân tử. Hãy đọc tài liệu về CRISPR-Cas9 sau đây: “Simon A. Jackson et al., CRISPR-Cas: Adapting to change. Science 356, eaal5056 (2017)”</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Bước 1: Trình bày Mục tiêu nghiên cứu của bài báo.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Bước 2: Tóm tắt quy trình thực nghiệm theo sơ đồ logic.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Bước 3: Đưa ra Kết quả và Kết luận về tính đột phá của nghiên cứu.</span></li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">2. Giải thích một khái niệm phức tạp (Ví dụ: Khái niệm Chuỗi vận chuyển điện tử trong hô hấp tế bào)</h3>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cơ bản: Chuỗi vận chuyển điện tử trong hô hấp tế bào là gì?</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cải tiến: Giải thích khái niệm “Chuỗi vận chuyển điện tử trong hô hấp tế bào” cho sinh viên đại học. Sử dụng các gạch đầu dòng để phân biệt các giai đoạn.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Nâng cao: Đóng vai một giảng viên Sinh học tế bào. Hãy giải thích khái niệm “Chuỗi vận chuyển điện tử trong hô hấp tế bào” bằng cách so sánh nó với một hệ thống trong thực tế (ví dụ: dây chuyền sản xuất). Sau đó, viết một đoạn ngắn tóm tắt vai trò của H+ và ATP synthase.</span></li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">3. Tạo bộ câu hỏi ôn tập cho một chủ đề (Ví dụ: Tạo bộ câu hỏi ôn tập chủ đề Di truyền học Mendel)</h3>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cơ bản: Tạo 5 câu hỏi trắc nghiệm về Di truyền học Mendel.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cải tiến: Tạo 5 câu hỏi trắc nghiệm về Quy luật phân li độc lập của Mendel, bao gồm cả câu hỏi lý thuyết và bài tập tính toán tỉ lệ. Có kèm đáp án.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Nâng cao: Dựa trên nội dung chương Di truyền học Mendel, hãy tạo 6 câu hỏi theo thang đo Bloom (2 câu Nhận biết, 2 câu Thông hiểu, 2 câu Vận dụng cao về xác suất). Mỗi câu hỏi phải có 4 lựa chọn, trong đó các đáp án nhiễu phải liên quan đến các lỗi sai phổ biến của sinh viên. Cung cấp lời giải chi tiết.</span></li></ul>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-emerald-900 mt-10 mb-5 border-l-4 border-emerald-500 pl-3.5 pb-0.5 flex items-center select-text">III. THỬ NGHIỆM VÀ SO SÁNH KẾT QUẢ</h2>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Thử nghiệm các prompt với ChatGPT:</p>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tác vụ 1:</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ bản:</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tác vụ 1:</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cơ bản:</span></li></ul>
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai3_img1.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai3_img1.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 3.1: Ảnh chụp minh chứng kết quả thực hành bài tập 3" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 3.1: Ảnh chụp minh chứng kết quả thực hành bài tập 3</div>
 </div>
 
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cải tiến:</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cải tiến:</span></li></ul>
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai3_img2.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai3_img2.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 3.2: Ảnh chụp minh chứng kết quả thực hành bài tập 3" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 3.2: Ảnh chụp minh chứng kết quả thực hành bài tập 3</div>
 </div>
 
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Nâng cao:</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Nâng cao:</span></li></ul>
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai3_img3.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai3_img3.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 3.3: Ảnh chụp minh chứng kết quả thực hành bài tập 3" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 3.3: Ảnh chụp minh chứng kết quả thực hành bài tập 3</div>
 </div>
 
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tác vụ 2:</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ bản:</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tác vụ 2:</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cơ bản:</span></li></ul>
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai3_img4.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai3_img4.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 3.4: Ảnh chụp minh chứng kết quả thực hành bài tập 3" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 3.4: Ảnh chụp minh chứng kết quả thực hành bài tập 3</div>
 </div>
 
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cải tiến:</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cải tiến:</span></li></ul>
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai3_img5.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai3_img5.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 3.5: Ảnh chụp minh chứng kết quả thực hành bài tập 3" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 3.5: Ảnh chụp minh chứng kết quả thực hành bài tập 3</div>
 </div>
 
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Nâng cao:</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Nâng cao:</span></li></ul>
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai3_img6.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai3_img6.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 3.6: Ảnh chụp minh chứng kết quả thực hành bài tập 3" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 3.6: Ảnh chụp minh chứng kết quả thực hành bài tập 3</div>
 </div>
 
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tác vụ 3:</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ bản:</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tác vụ 3:</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cơ bản:</span></li></ul>
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai3_img7.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai3_img7.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 3.7: Ảnh chụp minh chứng kết quả thực hành bài tập 3" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 3.7: Ảnh chụp minh chứng kết quả thực hành bài tập 3</div>
 </div>
 
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cải tiến:</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cải tiến:</span></li></ul>
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai3_img8.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai3_img8.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 3.8: Ảnh chụp minh chứng kết quả thực hành bài tập 3" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 3.8: Ảnh chụp minh chứng kết quả thực hành bài tập 3</div>
 </div>
 
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Nâng cao:</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Nâng cao:</span></li></ul>
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai3_img9.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai3_img9.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 3.9: Ảnh chụp minh chứng kết quả thực hành bài tập 3" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 3.9: Ảnh chụp minh chứng kết quả thực hành bài tập 3</div>
 </div>
 
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Bảng so sánh các prompt:</p>
@@ -243,17 +260,17 @@
   </table>
 </div>
 
-<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">IV. PHÂN TÍCH HIỆU QUẢ PROMPT</h2>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-emerald-900 mt-10 mb-5 border-l-4 border-emerald-500 pl-3.5 pb-0.5 flex items-center select-text">IV. PHÂN TÍCH HIỆU QUẢ PROMPT</h2>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Dựa trên bảng so sánh, ta có thể rút ra 3 đặc điểm vượt trội của Prompt nâng cao:</p>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Prompt cơ bản khiến AI hoạt động ở chế độ "tổng hợp internet", trong khi Prompt nâng cao (Role-playing) kích hoạt khả năng "tư duy chuyên gia", giúp sử dụng chính xác các thuật ngữ chuyên ngành.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Kiểm soát logic đầu ra: Bằng cách sử dụng Chain-of-Thought (CoT), chúng ta buộc AI phải trình bày từng bước (ví dụ: giải thích sự chênh lệch nồng độ H+ trước khi nói về tổng hợp ATP). Điều này giúp sinh viên hiểu rõ "tại sao" và "như thế nào" thay vì chỉ biết kết quả.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Giảm thiểu lỗi sai (Hallucination): Việc cung cấp Context (ngữ cảnh) và Few-shot examples (ví dụ mẫu) tạo ra một "hành lang dữ liệu" hẹp, ngăn AI sáng tạo ra những kiến thức Sinh học sai lệch.</li></ul>
-<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">V. TỔNG HỢP NGUYÊN TẮC VÀ MẸO VIẾT PROMPT</h2>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Prompt cơ bản khiến AI hoạt động ở chế độ "tổng hợp internet", trong khi Prompt nâng cao (Role-playing) kích hoạt khả năng "tư duy chuyên gia", giúp sử dụng chính xác các thuật ngữ chuyên ngành.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Kiểm soát logic đầu ra: Bằng cách sử dụng Chain-of-Thought (CoT), chúng ta buộc AI phải trình bày từng bước (ví dụ: giải thích sự chênh lệch nồng độ H+ trước khi nói về tổng hợp ATP). Điều này giúp sinh viên hiểu rõ "tại sao" và "như thế nào" thay vì chỉ biết kết quả.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Giảm thiểu lỗi sai (Hallucination): Việc cung cấp Context (ngữ cảnh) và Few-shot examples (ví dụ mẫu) tạo ra một "hành lang dữ liệu" hẹp, ngăn AI sáng tạo ra những kiến thức Sinh học sai lệch.</span></li></ul>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-emerald-900 mt-10 mb-5 border-l-4 border-emerald-500 pl-3.5 pb-0.5 flex items-center select-text">V. TỔNG HỢP NGUYÊN TẮC VÀ MẸO VIẾT PROMPT</h2>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Nguyên tắc S.P.E.C (Specific - Precise - Evidence - Context):</p>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Specific: Càng chi tiết càng tốt (Ví dụ: "Viết 500 chữ" thay vì "Viết ngắn gọn").</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Precise: Sử dụng thuật ngữ chính xác.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Evidence: Yêu cầu AI trích dẫn nguồn hoặc dựa trên các học thuyết cụ thể.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Context: Luôn cung cấp ngữ cảnh (Đang ôn thi, đang viết tiểu luận hay đang thuyết trình) và chuỗi tư duy (Các bước thực hiện).</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Specific: Càng chi tiết càng tốt (Ví dụ: "Viết 500 chữ" thay vì "Viết ngắn gọn").</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Precise: Sử dụng thuật ngữ chính xác.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Evidence: Yêu cầu AI trích dẫn nguồn hoặc dựa trên các học thuyết cụ thể.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Context: Luôn cung cấp ngữ cảnh (Đang ôn thi, đang viết tiểu luận hay đang thuyết trình) và chuỗi tư duy (Các bước thực hiện).</span></li></ul>
       </div>
 
       <!-- Column 3: Quick Projects Switcher Sidebar (lg:col-span-3) -->

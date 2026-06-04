@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tìm kiếm và đánh giá thông tin học thuật - Phạm Đình Khánh Đoan</title>
-  <!-- Google Fonts: Lora & Outfit for premium look -->
+  <!-- Google Fonts: Literata (academic serif) & Outfit (geometric sans-serif) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
@@ -17,12 +17,12 @@
   </script>
   <style>
     body {
-      font-family: 'Outfit', sans-serif;
-      background: linear-gradient(135deg, #e6f7ef 0%, #d8f3e5 35%, #cdeedb 70%, #dcfce7 100%);
+      font-family: 'Outfit', sans-serif !important;
+      background: linear-gradient(135deg, #e6f7ef 0%, #d8f3e5 35%, #cdeedb 70%, #dcfce7 100%) !important;
       background-attachment: fixed;
     }
     h1, h2, h3, .font-serif {
-      font-family: 'Lora', serif;
+      font-family: 'Literata', serif !important;
     }
     /* Custom float animations */
     @keyframes float-custom {
@@ -45,6 +45,10 @@
     .text-base { font-size: 1.05rem !important; }
     .text-lg { font-size: 1.2rem !important; }
     .text-xl { font-size: 1.35rem !important; }
+    .text-2xl { font-size: 1.6rem !important; }
+    .text-3xl { font-size: 2.1rem !important; }
+    .text-4xl { font-size: 2.6rem !important; }
+    .text-5xl { font-size: 3.3rem !important; }
   </style>
 </head>
 <body class="text-zinc-800 min-h-screen flex flex-col opacity-0 transition-opacity duration-500 relative overflow-x-hidden">
@@ -81,11 +85,15 @@
   <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50 relative shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <div class="flex items-center">
+        <div class="flex items-center space-x-4">
           <a href="../index.html" class="flex items-center space-x-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
             <i class="fa-solid fa-arrow-left"></i>
             <span>Quay lại Portfolio</span>
           </a>
+          <div class="hidden sm:flex items-center space-x-2 border-l border-gray-200 pl-4 select-none">
+            <img src="../images/vnu_logo.png" alt="VNU Logo" class="h-8 w-8 object-contain">
+            <img src="../images/hus.jpg" alt="HUS Logo" class="h-8 w-8 object-contain">
+          </div>
         </div>
         <div class="flex items-center space-x-4">
           <div class="text-sm text-gray-500 font-semibold">Bài 2: Tìm kiếm thông tin</div>
@@ -148,132 +156,132 @@
       <!-- Column 2: Content (lg:col-span-6) -->
       <div class="lg:col-span-6 space-y-6 bg-white/50 backdrop-blur-sm border border-gray-200/50 p-6 md:p-8 rounded-3xl shadow-sm">
         <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">BÁO CÁO: TÌM KIẾM VÀ ĐÁNH GIÁ THÔNG TIN HỌC THUẬT</p>
-<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">I. Chủ đề: Vai trò của microRNA trong ung thư</h2>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tổng quan: Trong thập kỷ qua, các nghiên cứu đã chỉ ra rằng sự rối loạn biểu hiện của miRNA có liên quan mật thiết đến sự hình thành, phát triển và di căn của nhiều loại ung thư.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tìm kiếm thông tin: Sử dụng các từ khóa tiếng Việt và tiếng Anh như: "microRNA in cancer", "miRNA biomarkers", "oncogenic miRNA", "vai trò của miRNA trong ung thư".</li></ul>
-<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">II. Tìm kiếm thông tin</h2>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-emerald-900 mt-10 mb-5 border-l-4 border-emerald-500 pl-3.5 pb-0.5 flex items-center select-text">I. Chủ đề: Vai trò của microRNA trong ung thư</h2>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tổng quan: Trong thập kỷ qua, các nghiên cứu đã chỉ ra rằng sự rối loạn biểu hiện của miRNA có liên quan mật thiết đến sự hình thành, phát triển và di căn của nhiều loại ung thư.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tìm kiếm thông tin: Sử dụng các từ khóa tiếng Việt và tiếng Anh như: "microRNA in cancer", "miRNA biomarkers", "oncogenic miRNA", "vai trò của miRNA trong ung thư".</span></li></ul>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-emerald-900 mt-10 mb-5 border-l-4 border-emerald-500 pl-3.5 pb-0.5 flex items-center select-text">II. Tìm kiếm thông tin</h2>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Các nguồn tìm kiếm thông tin:</p>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ sở dữ liệu học thuật: Google Scholar</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tạp chí khoa học chuyên ngành:</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Nature Reviews Cancer</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Journal of Clinical Oncology</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">PubMed</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">ScienceDirect...</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Sách chuyên khảo:</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Molecular Biology of the Cell (Alberts et al.)</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Non-coding RNAs in Colorectal Cancer (Slaby, O.)</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Nguồn mở:</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tổ chức Y tế Thế giới (WHO)</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">National Cancer Institute (NCI)</li></ul>
-<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">III. Thu thập tài liệu</h2>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Bài báo khoa học:</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Lin, S., Gregory, R. MicroRNA biogenesis pathways in cancer. (2015). Nat Rev Cancer 15, 321–333</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cơ sở dữ liệu học thuật: Google Scholar</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tạp chí khoa học chuyên ngành:</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Nature Reviews Cancer</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Journal of Clinical Oncology</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">PubMed</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">ScienceDirect...</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Sách chuyên khảo:</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Molecular Biology of the Cell (Alberts et al.)</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Non-coding RNAs in Colorectal Cancer (Slaby, O.)</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Nguồn mở:</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tổ chức Y tế Thế giới (WHO)</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">National Cancer Institute (NCI)</span></li></ul>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-emerald-900 mt-10 mb-5 border-l-4 border-emerald-500 pl-3.5 pb-0.5 flex items-center select-text">III. Thu thập tài liệu</h2>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Bài báo khoa học:</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Lin, S., Gregory, R. MicroRNA biogenesis pathways in cancer. (2015). Nat Rev Cancer 15, 321–333</span></li></ul>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">https://doi.org/10.1038/nrc3932</p>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Peng, Y., Croce, C. The role of MicroRNAs in human cancer. (2016). Sig Transduct Target Ther 1, 15004</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Peng, Y., Croce, C. The role of MicroRNAs in human cancer. (2016). Sig Transduct Target Ther 1, 15004</span></li></ul>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">https://doi.org/10.1038/sigtrans.2015.4</p>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Mangang, N. L., Gargasz, S. K., Murugan, S. G., Kumar, M., Shukla, G. C., & Vijayaraghavalu, S. (2025). MicroRNAs Modulating Cancer Immunotherapy Mechanisms and Therapeutic Synergies. Cancers, 17(24), 3978.</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Mangang, N. L., Gargasz, S. K., Murugan, S. G., Kumar, M., Shukla, G. C., & Vijayaraghavalu, S. (2025). MicroRNAs Modulating Cancer Immunotherapy Mechanisms and Therapeutic Synergies. Cancers, 17(24), 3978.</span></li></ul>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">https://doi.org/10.3390/cancers17243978</p>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Di Martino, M., Tagliaferri, P. & Tassone, P. (2025).  MicroRNA in cancer therapy: breakthroughs and challenges in early clinical applications. J Exp Clin Cancer Res 44, 126</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Di Martino, M., Tagliaferri, P. & Tassone, P. (2025).  MicroRNA in cancer therapy: breakthroughs and challenges in early clinical applications. J Exp Clin Cancer Res 44, 126</span></li></ul>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">https://doi.org/10.1186/s13046-025-03391-x</p>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Dong, L., Tian, X., Zhao, Y., Tu, H., Wong, A., & Yang, Y. (2022). The Roles of MiRNAs (MicroRNAs) in Melanoma Immunotherapy. International Journal of Molecular Sciences, 23(23), 14775.</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Dong, L., Tian, X., Zhao, Y., Tu, H., Wong, A., & Yang, Y. (2022). The Roles of MiRNAs (MicroRNAs) in Melanoma Immunotherapy. International Journal of Molecular Sciences, 23(23), 14775.</span></li></ul>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">https://doi.org/10.3390/ijms232314775</p>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Kumar, S., Sharma, P. and Singh, R. (2026). The role of microRNAs in oral cancer: A review. Archives of Oral Biology, 165, p. 105842.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Li, J., Chen, H. and Wu, Q. (2026). Role of microRNA-145 in regulating the proliferation and apoptosis of breast cancer cells. Gene Reports, 42, p. 101892.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Sách chuyên khảo:</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Alberts B, Johnson A, Lewis J, et al. (2002).  Molecular Biology of the Cell. 4th edition. New York: Garland Science</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Kumar, S., Sharma, P. and Singh, R. (2026). The role of microRNAs in oral cancer: A review. Archives of Oral Biology, 165, p. 105842.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Li, J., Chen, H. and Wu, Q. (2026). Role of microRNA-145 in regulating the proliferation and apoptosis of breast cancer cells. Gene Reports, 42, p. 101892.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Sách chuyên khảo:</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Alberts B, Johnson A, Lewis J, et al. (2002).  Molecular Biology of the Cell. 4th edition. New York: Garland Science</span></li></ul>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">https://www.ncbi.nlm.nih.gov/books/NBK21054/</p>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Slaby, O. (ed.) (2020) Non-coding RNAs in Colorectal Cancer. London: Academic Press</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Slaby, O. (ed.) (2020) Non-coding RNAs in Colorectal Cancer. London: Academic Press</span></li></ul>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">https://doi.org/10.1007/978-3-319-42059-2</p>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Nguồn mở:</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">IARC (2021) Molecular profiles and urinary biomarkers of upper tract urothelial carcinomas.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Saker, M. E. et al. (2018). microRNA-141 as a diagnostic and prognostic biomarker for prostate cancer in Egyptian population. African Journal of Urology, 24(4), pp. 347–352.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">National Cancer Institute (2020) Can MicroRNAs in Blood Be Used to Detect Cancer?</li></ul>
-<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">IV. Đánh giá độ tin cậy</h2>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">1. Lin, S. & Gregory, R. (2015) – Nature Reviews Cancer</h3>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tác giả: Nhóm chuyên gia đầu ngành về sinh học RNA và ung thư.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ quan xuất bản: Nature Reviews Cancer – Tạp chí có chỉ số ảnh hưởng (Impact Factor) cao nhất trong lĩnh vực ung thư.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Phương pháp: Review hệ thống (Systematic Review) tổng hợp các con đường sinh tổng hợp miRNA.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Trích dẫn: Rất cao (hàng nghìn trích dẫn).</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tính cập nhật: Cũ do xuất bản năm 2015 nhưng là nghiên cứu nền tảng về cơ chế.</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Nguồn mở:</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">IARC (2021) Molecular profiles and urinary biomarkers of upper tract urothelial carcinomas.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Saker, M. E. et al. (2018). microRNA-141 as a diagnostic and prognostic biomarker for prostate cancer in Egyptian population. African Journal of Urology, 24(4), pp. 347–352.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">National Cancer Institute (2020) Can MicroRNAs in Blood Be Used to Detect Cancer?</span></li></ul>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-emerald-900 mt-10 mb-5 border-l-4 border-emerald-500 pl-3.5 pb-0.5 flex items-center select-text">IV. Đánh giá độ tin cậy</h2>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">1. Lin, S. & Gregory, R. (2015) – Nature Reviews Cancer</h3>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tác giả: Nhóm chuyên gia đầu ngành về sinh học RNA và ung thư.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cơ quan xuất bản: Nature Reviews Cancer – Tạp chí có chỉ số ảnh hưởng (Impact Factor) cao nhất trong lĩnh vực ung thư.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Phương pháp: Review hệ thống (Systematic Review) tổng hợp các con đường sinh tổng hợp miRNA.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Trích dẫn: Rất cao (hàng nghìn trích dẫn).</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tính cập nhật: Cũ do xuất bản năm 2015 nhưng là nghiên cứu nền tảng về cơ chế.</span></li></ul>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Độ tin cậy: Rất cao.</p>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">2. Peng, Y. & Croce, C. (2016) – Signal Transduction and Targeted Therapy</h3>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tác giả: Carlo Croce là một trong những người đầu tiên nghiên cứu về miRNA.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ quan xuất bản: Nature Publishing Group</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Phương pháp: Tổng quan toàn diện về vai trò điều hòa của miRNA trong các khối u ở người.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Trích dẫn: Rất cao (hàng nghìn trích dẫn).</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tính cập nhật: Cũ do xuất bản năm 2016</li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">2. Peng, Y. & Croce, C. (2016) – Signal Transduction and Targeted Therapy</h3>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tác giả: Carlo Croce là một trong những người đầu tiên nghiên cứu về miRNA.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cơ quan xuất bản: Nature Publishing Group</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Phương pháp: Tổng quan toàn diện về vai trò điều hòa của miRNA trong các khối u ở người.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Trích dẫn: Rất cao (hàng nghìn trích dẫn).</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tính cập nhật: Cũ do xuất bản năm 2016</span></li></ul>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Độ tin cậy: Cao.</p>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">3. Mangang et al. (2025) – Cancers</h3>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tác giả: Nhóm nghiên cứu đa quốc gia về liệu pháp miễn dịch.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ quan xuất bản: MDPI</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Phương pháp: Tổng hợp các cơ chế miRNA tác động đến phản ứng miễn dịch chống u.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Trích dẫn: Thấp</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tính cập nhật: Mới (2025), bắt kịp xu hướng điều trị hiện đại nhất.</li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">3. Mangang et al. (2025) – Cancers</h3>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tác giả: Nhóm nghiên cứu đa quốc gia về liệu pháp miễn dịch.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cơ quan xuất bản: MDPI</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Phương pháp: Tổng hợp các cơ chế miRNA tác động đến phản ứng miễn dịch chống u.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Trích dẫn: Thấp</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tính cập nhật: Mới (2025), bắt kịp xu hướng điều trị hiện đại nhất.</span></li></ul>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Độ tin cậy: Khá cao.</p>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">4. Di Martino et al. (2025) – Journal of Experimental & Clinical Cancer Research</h3>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tác giả: Các chuyên gia về ung thư học lâm sàng và thực nghiệm.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ quan xuất bản: BMC (thuộc Springer Nature) – Uy tín cao trong nghiên cứu ứng dụng.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Phương pháp: Phân tích các thử nghiệm lâm sàng giai đoạn sớm (Clinical applications).</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Trích dẫn: Cao (nguồn mới tiềm năng).</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tính cập nhật: Rất mới (2025), cung cấp cái nhìn về tương lai điều trị.</li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">4. Di Martino et al. (2025) – Journal of Experimental & Clinical Cancer Research</h3>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tác giả: Các chuyên gia về ung thư học lâm sàng và thực nghiệm.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cơ quan xuất bản: BMC (thuộc Springer Nature) – Uy tín cao trong nghiên cứu ứng dụng.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Phương pháp: Phân tích các thử nghiệm lâm sàng giai đoạn sớm (Clinical applications).</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Trích dẫn: Cao (nguồn mới tiềm năng).</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tính cập nhật: Rất mới (2025), cung cấp cái nhìn về tương lai điều trị.</span></li></ul>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Độ tin cậy: Rất cao.</p>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">5. Dong et al. (2022) – International Journal of Molecular Sciences</h3>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tác giả: Nhóm nghiên cứu đại học chuyên sâu về sinh học phân tử.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ quan xuất bản: MDPI</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Phương pháp: Tổng quan tập trung vào một loại bệnh cụ thể (Ung thư hắc tố - Melanoma).</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Trích dẫn: Khá cao.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tính cập nhật: Trung bình (trong vòng 5 năm).</li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">5. Dong et al. (2022) – International Journal of Molecular Sciences</h3>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tác giả: Nhóm nghiên cứu đại học chuyên sâu về sinh học phân tử.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cơ quan xuất bản: MDPI</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Phương pháp: Tổng quan tập trung vào một loại bệnh cụ thể (Ung thư hắc tố - Melanoma).</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Trích dẫn: Khá cao.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tính cập nhật: Trung bình (trong vòng 5 năm).</span></li></ul>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Độ tin cậy: Khá cao.</p>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">6. Kumar et al. (2026) – Archives of Oral Biology</h3>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tác giả: Nhóm nghiên cứu chuyên sâu về bệnh lý răng hàm mặt.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ quan xuất bản: Elsevier</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Phương pháp: Review chuyên sâu về các con đường tín hiệu trong ung thư khoang miệng.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Trích dẫn: Đang cập nhật</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tính cập nhật: Cực kỳ mới (2026).</li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">6. Kumar et al. (2026) – Archives of Oral Biology</h3>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tác giả: Nhóm nghiên cứu chuyên sâu về bệnh lý răng hàm mặt.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cơ quan xuất bản: Elsevier</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Phương pháp: Review chuyên sâu về các con đường tín hiệu trong ung thư khoang miệng.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Trích dẫn: Đang cập nhật</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tính cập nhật: Cực kỳ mới (2026).</span></li></ul>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Độ tin cậy: Cao.</p>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">7. Li et al. (2026) – Biochemistry and Biophysis Reports</h3>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tác giả: Các nhà di truyền học phân tử.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ quan xuất bản: Elsevier</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Phương pháp: Thực nghiệm in vitro (thí nghiệm trực tiếp trên dòng tế bào ung thư vú).</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Trích dẫn: Đang cập nhật.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tính cập nhật: Mới nhất (2026).</li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">7. Li et al. (2026) – Biochemistry and Biophysis Reports</h3>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tác giả: Các nhà di truyền học phân tử.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cơ quan xuất bản: Elsevier</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Phương pháp: Thực nghiệm in vitro (thí nghiệm trực tiếp trên dòng tế bào ung thư vú).</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Trích dẫn: Đang cập nhật.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tính cập nhật: Mới nhất (2026).</span></li></ul>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Độ tin cậy: Cao.</p>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">8. Alberts, B. et al. (2002) – Garland Science</h3>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tác giả: Nhóm các nhà khoa học lỗi lạc, bao gồm các chủ nhân giải Nobel.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ quan xuất bản: Garland Science</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Phương pháp: Tổng hợp kiến thức nền tảng đã được kiểm chứng qua nhiều thập kỷ.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Trích dẫn: Toàn cầu (hàng chục nghìn trích dẫn).</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tính cập nhật: Bản 2002 khá cũ so với tiến độ ngành miRNA nhưng vẫn là nguồn chuẩn cho kiến thức tế bào cơ bản.</li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">8. Alberts, B. et al. (2002) – Garland Science</h3>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tác giả: Nhóm các nhà khoa học lỗi lạc, bao gồm các chủ nhân giải Nobel.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cơ quan xuất bản: Garland Science</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Phương pháp: Tổng hợp kiến thức nền tảng đã được kiểm chứng qua nhiều thập kỷ.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Trích dẫn: Toàn cầu (hàng chục nghìn trích dẫn).</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tính cập nhật: Bản 2002 khá cũ so với tiến độ ngành miRNA nhưng vẫn là nguồn chuẩn cho kiến thức tế bào cơ bản.</span></li></ul>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Độ tin cậy: Rất cao</p>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">9. Slaby, O. (ed.) (2020) – Academic Press</h3>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tác giả: Ondrej Slaby – Chuyên gia hàng đầu về RNA không mã hóa tại Châu Âu.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ quan xuất bản: Academic Press</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Phương pháp: Chuyên khảo (Monograph) tổng hợp các chương từ nhiều chuyên gia về ung thư đại trực tràng.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Trích dẫn: Cao trong giới nghiên cứu chuyên sâu.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tính cập nhật: Hiện đại (2020).</li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">9. Slaby, O. (ed.) (2020) – Academic Press</h3>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tác giả: Ondrej Slaby – Chuyên gia hàng đầu về RNA không mã hóa tại Châu Âu.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cơ quan xuất bản: Academic Press</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Phương pháp: Chuyên khảo (Monograph) tổng hợp các chương từ nhiều chuyên gia về ung thư đại trực tràng.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Trích dẫn: Cao trong giới nghiên cứu chuyên sâu.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tính cập nhật: Hiện đại (2020).</span></li></ul>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Độ tin cậy: Rất cao.</p>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">10. IARC (2021) – World Health Organization</h3>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tác giả: Cơ quan Nghiên cứu Ung thư Quốc tế (thuộc WHO).</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ quan xuất bản: Tổ chức Y tế Thế giới – Cơ quan có thẩm quyền y tế cao nhất toàn cầu.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Phương pháp: Báo cáo kỹ thuật và hồ sơ phân tử từ các dữ liệu dịch tễ lớn.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Trích dẫn: Có sức ảnh hưởng chính sách và pháp quy.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tính cập nhật: Hiện đại (2021).</li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">10. IARC (2021) – World Health Organization</h3>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tác giả: Cơ quan Nghiên cứu Ung thư Quốc tế (thuộc WHO).</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cơ quan xuất bản: Tổ chức Y tế Thế giới – Cơ quan có thẩm quyền y tế cao nhất toàn cầu.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Phương pháp: Báo cáo kỹ thuật và hồ sơ phân tử từ các dữ liệu dịch tễ lớn.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Trích dẫn: Có sức ảnh hưởng chính sách và pháp quy.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tính cập nhật: Hiện đại (2021).</span></li></ul>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Độ tin cậy: Rất cao (Nguồn chính thống).</p>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">11. Saker et al. (2018) – African Journal of Urology</h3>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tác giả: Các bác sĩ và nhà nghiên cứu lâm sàng.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ quan xuất bản: Elsevier (phiên bản khu vực)</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Phương pháp: Nghiên cứu bệnh chứng (Case-control) trên bệnh nhân thực tế.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Trích dẫn: Trung bình.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tính cập nhật: Trung bình (2018).</li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">11. Saker et al. (2018) – African Journal of Urology</h3>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tác giả: Các bác sĩ và nhà nghiên cứu lâm sàng.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cơ quan xuất bản: Elsevier (phiên bản khu vực)</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Phương pháp: Nghiên cứu bệnh chứng (Case-control) trên bệnh nhân thực tế.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Trích dẫn: Trung bình.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tính cập nhật: Trung bình (2018).</span></li></ul>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Độ tin cậy: Cao.</p>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">12. National Cancer Institute (2020) – Cancer Currents Blog</h3>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tác giả: Ban biên tập khoa học của Viện Ung thư Quốc gia Hoa Kỳ.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Cơ quan xuất bản: Chính phủ liên bang Hoa Kỳ (NIH/NCI).</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Phương pháp: Tóm lược và phổ biến kiến thức từ các nghiên cứu lớn (như sinh thiết lỏng).</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Trích dẫn: Được sử dụng rộng rãi trong giáo dục và truyền thông khoa học.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tính cập nhật: Trung bình (2020).</li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">12. National Cancer Institute (2020) – Cancer Currents Blog</h3>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tác giả: Ban biên tập khoa học của Viện Ung thư Quốc gia Hoa Kỳ.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Cơ quan xuất bản: Chính phủ liên bang Hoa Kỳ (NIH/NCI).</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Phương pháp: Tóm lược và phổ biến kiến thức từ các nghiên cứu lớn (như sinh thiết lỏng).</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Trích dẫn: Được sử dụng rộng rãi trong giáo dục và truyền thông khoa học.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tính cập nhật: Trung bình (2020).</span></li></ul>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Độ tin cậy: Cao (Nguồn đáng tin cậy nhưng thông tin ở mức độ tóm tắt)</p>
-<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">V. Bảng tổng hợp</h2>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-emerald-900 mt-10 mb-5 border-l-4 border-emerald-500 pl-3.5 pb-0.5 flex items-center select-text">V. Bảng tổng hợp</h2>
 
 <div class="overflow-x-auto my-6 bg-white/70 backdrop-blur-sm border border-gray-200/60 rounded-2xl p-4 shadow-sm select-text">
   <table class="w-full text-left text-xs md:text-sm border-collapse">

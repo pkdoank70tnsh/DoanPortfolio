@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sử dụng AI có trách nhiệm trong học tập và nghiên cứu - Phạm Đình Khánh Đoan</title>
-  <!-- Google Fonts: Lora & Outfit for premium look -->
+  <!-- Google Fonts: Literata (academic serif) & Outfit (geometric sans-serif) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- FontAwesome Icons -->
@@ -17,12 +17,12 @@
   </script>
   <style>
     body {
-      font-family: 'Outfit', sans-serif;
-      background: linear-gradient(135deg, #e6f7ef 0%, #d8f3e5 35%, #cdeedb 70%, #dcfce7 100%);
+      font-family: 'Outfit', sans-serif !important;
+      background: linear-gradient(135deg, #e6f7ef 0%, #d8f3e5 35%, #cdeedb 70%, #dcfce7 100%) !important;
       background-attachment: fixed;
     }
     h1, h2, h3, .font-serif {
-      font-family: 'Lora', serif;
+      font-family: 'Literata', serif !important;
     }
     /* Custom float animations */
     @keyframes float-custom {
@@ -45,6 +45,10 @@
     .text-base { font-size: 1.05rem !important; }
     .text-lg { font-size: 1.2rem !important; }
     .text-xl { font-size: 1.35rem !important; }
+    .text-2xl { font-size: 1.6rem !important; }
+    .text-3xl { font-size: 2.1rem !important; }
+    .text-4xl { font-size: 2.6rem !important; }
+    .text-5xl { font-size: 3.3rem !important; }
   </style>
 </head>
 <body class="text-zinc-800 min-h-screen flex flex-col opacity-0 transition-opacity duration-500 relative overflow-x-hidden">
@@ -77,11 +81,15 @@
   <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50 relative shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <div class="flex items-center">
+        <div class="flex items-center space-x-4">
           <a href="../index.html" class="flex items-center space-x-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors">
             <i class="fa-solid fa-arrow-left"></i>
             <span>Quay lại Portfolio</span>
           </a>
+          <div class="hidden sm:flex items-center space-x-2 border-l border-gray-200 pl-4 select-none">
+            <img src="../images/vnu_logo.png" alt="VNU Logo" class="h-8 w-8 object-contain">
+            <img src="../images/hus.jpg" alt="HUS Logo" class="h-8 w-8 object-contain">
+          </div>
         </div>
         <div class="flex items-center space-x-4">
           <div class="text-sm text-gray-500 font-semibold">Bài 6: Đạo đức AI</div>
@@ -148,145 +156,161 @@
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">TRONG HỌC TẬP VÀ NGHIÊN CỨU</p>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Người thực hiện: Phạm Đình Khánh Đoan</p>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Mã sinh viên: 25001395</p>
-<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">I. Phân tích chính sách của trường Đại học Khoa học tự nhiên - ĐHQGHN</h2>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">1. Chính sách về việc sử dụng AI trong học tập và nghiên cứu của trường Đại học Khoa học tự nhiên - ĐHQGHN</h3>
-<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Trường Đại học Khoa học tự nhiên, là một thành viên của Đại học Quốc gia Hà Nội, tuân thủ các chính sách về việc sử dụng AI trong học tập và nghiên cứu của ĐHQGHN. Tính đến năm học 2025-2026, Đại học Quốc gia Hà Nội đã có bước đi mang tính chiến lược khi đưa học phần "Nhập môn Công nghệ số và ứng dụng Trí tuệ nhân tạo" (3 tín chỉ) trở thành môn học bắt buộc 100% trực tuyến đối với toàn bộ sinh viên chính quy năm thứ nhất (VNU, 2025). Điều này thể hiện tư duy cởi mở và chủ động chuẩn hóa năng lực công dân số của nhà trường.</p>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tính trung thực và minh bạch: Người học và nghiên cứu phải trung thực trong việc báo cáo kết quả, không ngụy tạo dữ liệu. Việc sử dụng bất kỳ công cụ nào, bao gồm cả AI, để tạo ra nội dung mà không được trích dẫn rõ ràng sẽ bị coi là hành vi gian lận (đạo văn công nghệ).</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Trách nhiệm cá nhân: Người đứng tên tác giả hoàn toàn chịu trách nhiệm về nội dung của công trình. Nếu sử dụng AI để hỗ trợ soạn thảo hoặc phân tích dữ liệu, người sử dụng vẫn phải kiểm tra, xác thực và chịu trách nhiệm về tính chính xác của thông tin do AI tạo ra. AI chỉ là công cụ hỗ trợ, không phải là tác giả.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Quyền sở hữu trí tuệ: Việc sử dụng AI để sao chép ý tưởng, cấu trúc hoặc nội dung của người khác mà không có sự cho phép hoặc trích dẫn đúng quy định là vi phạm quyền sở hữu trí tuệ.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Bất kỳ hành vi vi phạm liêm chính học thuật nào, bao gồm việc lạm dụng AI để gian lận, sẽ bị xử lý nghiêm khắc theo quy định của nhà trường, từ phê bình, cảnh cáo đến đình chỉ học tập hoặc hủy bỏ kết quả nghiên cứu.</li></ul>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">2. Đánh giá</h3>
-<h4 class="text-base md:text-lg font-bold text-emerald-800 mt-4 mb-2 flex items-center select-text">a, Ưu điểm</h4>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Các nguyên tắc về tính trung thực, trách nhiệm giải trình và sở hữu trí tuệ vốn là "bất biến" trong khoa học. Do đó, dù công nghệ AI có thay đổi nhanh đến đâu (từ ChatGPT, Gemini đến các mô hình chuyên sâu hơn), các nguyên tắc này vẫn bao quát và định hướng được hành vi của sinh viên: AI chỉ là công cụ hỗ trợ, con người là tác giả và là người chịu trách nhiệm.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Phù hợp với đặc thù khối ngành Khoa học tự nhiên: Chính sách nhấn mạnh việc "cấm ngụy tạo dữ liệu" đã gián tiếp ngăn chặn rủi ro lớn nhất của AI tạo sinh trong khoa học: hiện tượng AI ảo tưởng (AI hallucination) – tự bịa ra các số liệu thực nghiệm, chuỗi gen hoặc tài liệu tham khảo không có thực.</li></ul>
-<h4 class="text-base md:text-lg font-bold text-emerald-800 mt-4 mb-2 flex items-center select-text">b, Nhược điểm</h4>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Thiếu tính cụ thể: Sinh viên rơi vào trạng thái hoang mang, không biết chính xác ranh giới của mình ở đâu. Ví dụ: Dùng AI để sửa lỗi ngữ pháp tiếng Anh có bị coi là vi phạm không? Dùng AI gợi ý ý tưởng nghiên cứu Sinh học có bị tính là đạo văn không?</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Trong khi các hệ thống trích dẫn quốc tế (APA 7th, IEEE) đã cập nhật cách trích dẫn ChatGPT/Gemini, thì quy định hiện tại của trường chưa có hướng dẫn chính thức bằng văn bản về việc sinh viên phải khai báo và định dạng nguồn AI như thế nào trong khóa luận hoặc báo cáo khoa học.</li></ul>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">3. So sánh chính sách với một số trường đại học khác</h3>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-emerald-900 mt-10 mb-5 border-l-4 border-emerald-500 pl-3.5 pb-0.5 flex items-center select-text">I. Phân tích chính sách của trường Đại học Khoa học tự nhiên - ĐHQGHN</h2>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">1. Chính sách về việc sử dụng AI trong học tập và nghiên cứu của trường Đại học Khoa học tự nhiên - ĐHQGHN</h3>
+<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Trường Đại học Khoa học tự nhiên, là một thành viên của Đại học Quốc gia Hà Nội, tuân thủ các chính sách về việc sử dụng AI trong học tập và nghiên cứu của ĐHQGHN. Tính đến năm học 2025-2026, Đại học Quốc gia Hà Nội đã có bước đi mang tính chiến lược khi đưa học phần "Nhập môn Công nghệ số và ứng dụng Trí tuệ nhân tạo" (3 tín chỉ) trở thành môn học bắt buộc 100% trực tuyến đối với toàn bộ sinh viên chính quy năm thứ nhất (VNU, 2025). Điều này thể hiện tư duy cởi mở và chủ động chuẩn hóa năng lực công dân số của nhà trường.</p>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tính trung thực và minh bạch: Người học và nghiên cứu phải trung thực trong việc báo cáo kết quả, không ngụy tạo dữ liệu. Việc sử dụng bất kỳ công cụ nào, bao gồm cả AI, để tạo ra nội dung mà không được trích dẫn rõ ràng sẽ bị coi là hành vi gian lận (đạo văn công nghệ).</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Trách nhiệm cá nhân: Người đứng tên tác giả hoàn toàn chịu trách nhiệm về nội dung của công trình. Nếu sử dụng AI để hỗ trợ soạn thảo hoặc phân tích dữ liệu, người sử dụng vẫn phải kiểm tra, xác thực và chịu trách nhiệm về tính chính xác của thông tin do AI tạo ra. AI chỉ là công cụ hỗ trợ, không phải là tác giả.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Quyền sở hữu trí tuệ: Việc sử dụng AI để sao chép ý tưởng, cấu trúc hoặc nội dung của người khác mà không có sự cho phép hoặc trích dẫn đúng quy định là vi phạm quyền sở hữu trí tuệ.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Bất kỳ hành vi vi phạm liêm chính học thuật nào, bao gồm việc lạm dụng AI để gian lận, sẽ bị xử lý nghiêm khắc theo quy định của nhà trường, từ phê bình, cảnh cáo đến đình chỉ học tập hoặc hủy bỏ kết quả nghiên cứu.</span></li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">2. Đánh giá</h3>
+<h4 class="text-base md:text-lg font-bold text-emerald-700 mt-6 mb-2.5 flex items-center select-text">a, Ưu điểm</h4>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Các nguyên tắc về tính trung thực, trách nhiệm giải trình và sở hữu trí tuệ vốn là "bất biến" trong khoa học. Do đó, dù công nghệ AI có thay đổi nhanh đến đâu (từ ChatGPT, Gemini đến các mô hình chuyên sâu hơn), các nguyên tắc này vẫn bao quát và định hướng được hành vi của sinh viên: AI chỉ là công cụ hỗ trợ, con người là tác giả và là người chịu trách nhiệm.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Phù hợp với đặc thù khối ngành Khoa học tự nhiên: Chính sách nhấn mạnh việc "cấm ngụy tạo dữ liệu" đã gián tiếp ngăn chặn rủi ro lớn nhất của AI tạo sinh trong khoa học: hiện tượng AI ảo tưởng (AI hallucination) – tự bịa ra các số liệu thực nghiệm, chuỗi gen hoặc tài liệu tham khảo không có thực.</span></li></ul>
+<h4 class="text-base md:text-lg font-bold text-emerald-700 mt-6 mb-2.5 flex items-center select-text">b, Nhược điểm</h4>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Thiếu tính cụ thể: Sinh viên rơi vào trạng thái hoang mang, không biết chính xác ranh giới của mình ở đâu. Ví dụ: Dùng AI để sửa lỗi ngữ pháp tiếng Anh có bị coi là vi phạm không? Dùng AI gợi ý ý tưởng nghiên cứu Sinh học có bị tính là đạo văn không?</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Trong khi các hệ thống trích dẫn quốc tế (APA 7th, IEEE) đã cập nhật cách trích dẫn ChatGPT/Gemini, thì quy định hiện tại của trường chưa có hướng dẫn chính thức bằng văn bản về việc sinh viên phải khai báo và định dạng nguồn AI như thế nào trong khóa luận hoặc báo cáo khoa học.</span></li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">3. So sánh chính sách với một số trường đại học khác</h3>
 
 <div class="overflow-x-auto my-6 bg-white/70 backdrop-blur-sm border border-gray-200/60 rounded-2xl p-4 shadow-sm select-text">
   <table class="w-full text-left text-xs md:text-sm border-collapse">
     <thead>
       <tr class="bg-emerald-50/50 text-zinc-900 font-bold">
-        <th class="p-3 border-b border-emerald-500/20 font-bold text-emerald-800">Trường</th><th class="p-3 border-b border-emerald-500/20 font-bold text-emerald-800">Cách tiếp cận về việc sử dụng AI</th><th class="p-3 border-b border-emerald-500/20 font-bold text-emerald-800">Điểm tương đồng với Đại học Khoa học tự nhiên</th><th class="p-3 border-b border-emerald-500/20 font-bold text-emerald-800">Điểm khác biệt</th>
+        <th class="p-3 border-b border-emerald-500/20 font-bold text-emerald-800">Trường</th><th class="p-3 border-b border-emerald-500/20 font-bold text-emerald-800">Cách tiếp cận về việc sử dụng AI</th><th class="p-3 border-b border-emerald-500/20 font-bold text-emerald-800">Điểm tương đồng với Đại học Khoa học tự nhiên</th><th class="p-3 border-b border-emerald-500/20 font-bold text-emerald-800">Điểm khác biệt</th>
       </tr>
     </thead>
     <tbody class="divide-y divide-gray-150 text-gray-700">
-      <tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">Đại học Bách khoa Hà Nội</td><td class="p-3 border-b border-gray-150">Nhấn mạnh tính trung thực trong khoa học, coi việc nộp sản phẩm không phải do mình làm ra là gian lận. Có các bộ công cụ kiểm tra đạo văn.</td><td class="p-3 border-b border-gray-150">Cùng coi trọng sự trung thực, coi AI là công cụ hỗ trợ, không phải tác giả.</td><td class="p-3 border-b border-gray-150">Có thể có các hướng dẫn cụ thể hơn về việc sử dụng AI trong mã nguồn (code) do đặc thù ngành  Công nghệ thông tin .</td></tr><tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">Trường Đại học Công nghệ - ĐHQGHN</td><td class="p-3 border-b border-gray-150">Tuân thủ Quy định của ĐHQGHN, nhấn mạnh đạo đức trong kỷ nguyên số.</td><td class="p-3 border-b border-gray-150">Sử dụng chung hệ thống quy định của ĐHQGHN.</td><td class="p-3 border-b border-gray-150">Tiếp cận dưới góc độ công nghệ, có thể có các hội thảo, hướng dẫn về AI và đạo đức nghề nghiệp sớm hơn.</td></tr><tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">Đại học RMIT</td><td class="p-3 border-b border-gray-150">Có chính sách rất rõ ràng và cập nhật về "Sử dụng trí tuệ nhân tạo có trách nhiệm trong học tập". Coi AI là công cụ hỗ trợ tư duy, yêu cầu trích dẫn minh bạch. Cung cấp hướng dẫn cụ thể cách trích dẫn AI.</td><td class="p-3 border-b border-gray-150">Tôn trọng minh bạch, coi AI là công cụ hỗ trợ.</td><td class="p-3 border-b border-gray-150">Chính sách cụ thể, hướng dẫn trích dẫn AI chi tiết và công khai cho sinh viên. Coi AI là một nguồn tham khảo cần trích dẫn.</td></tr><tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">VinUniversity</td><td class="p-3 border-b border-gray-150">Có bộ quy tắc ứng xử học thuật nghiêm ngặt, tiếp cận quốc tế, bao gồm cả việc sử dụng công nghệ mới. Nhấn mạnh "Academic Honor".</td><td class="p-3 border-b border-gray-150">Đề cao đạo đức, liêm chính học thuật ở mức cao.</td><td class="p-3 border-b border-gray-150">Tiếp cận chuẩn quốc tế, có thể cập nhật nhanh các xu hướng về quy định AI từ các trường đại học hàng đầu thế giới.</td></tr>
+      <tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">Đại học Bách khoa Hà Nội</td><td class="p-3 border-b border-gray-150">Nhấn mạnh tính trung thực trong khoa học, coi việc nộp sản phẩm không phải do mình làm ra là gian lận. Có các bộ công cụ kiểm tra đạo văn.</td><td class="p-3 border-b border-gray-150">Cùng coi trọng sự trung thực, coi AI là công cụ hỗ trợ, không phải tác giả.</td><td class="p-3 border-b border-gray-150">Có thể có các hướng dẫn cụ thể hơn về việc sử dụng AI trong mã nguồn (code) do đặc thù ngành  Công nghệ thông tin .</td></tr><tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">Trường Đại học Công nghệ - ĐHQGHN</td><td class="p-3 border-b border-gray-150">Tuân thủ Quy định của ĐHQGHN, nhấn mạnh đạo đức trong kỷ nguyên số.</td><td class="p-3 border-b border-gray-150">Sử dụng chung hệ thống quy định của ĐHQGHN.</td><td class="p-3 border-b border-gray-150">Tiếp cận dưới góc độ công nghệ, có thể có các hội thảo, hướng dẫn về AI và đạo đức nghề nghiệp sớm hơn.</td></tr><tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">Đại học RMIT</td><td class="p-3 border-b border-gray-150">Có chính sách rất rõ ràng và cập nhật về "Sử dụng trí tuệ nhân tạo có trách nhiệm trong học tập". Coi AI là công cụ hỗ trợ tư duy, yêu cầu trích dẫn minh bạch. Cung cấp hướng dẫn cụ thể cách trích dẫn AI.</td><td class="p-3 border-b border-gray-150">Tôn trọng minh bạch, coi AI là công cụ hỗ trợ.</td><td class="p-3 border-b border-gray-150">Chính sách cụ thể, hướng dẫn trích dẫn AI chi tiết và công khai cho sinh viên. Coi AI là một nguồn tham khảo cần trích dẫn.</td></tr><tr class="hover:bg-emerald-500/5 transition-colors"><td class="p-3 border-b border-gray-150">VinUniversity</td><td class="p-3 border-b border-gray-150">Có bộ quy tắc ứng xử học thuật nghiêm ngặt, tiếp cận quốc tế, bao gồm cả việc sử dụng công nghệ mới. Nhấn mạnh "Academic Honor".</td><td class="p-3 border-b border-gray-150">Đề cao đạo đức, liêm chính học thuật ở mức cao.</td><td class="p-3 border-b border-gray-150">Tiếp cận chuẩn quốc tế, có thể cập nhật nhanh các xu hướng về quy định AI từ các trường đại học hàng đầu thế giới.</td></tr>
     </tbody>
   </table>
 </div>
 
-<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">II. Chọn nhiệm vụ học tập:</h2>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Tổng hợp tài liệu.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Chủ đề: Ứng dụng CRISPR-Cas9 trong chỉnh sửa gen để tạo ra giống cây trồng chịu hạn.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Công cụ hỗ trợ: Gemini AI</li></ul>
-<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">*Quá trình thực hiện với sự hỗ trợ của AI:</p>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Bước 1: Lập dàn ý:</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Prompt: Tôi là sinh viên ngành Sinh học trường ĐH KHTN. Tôi đang viết một bài tổng hợp tài liệu (literature review) khoa học về chủ đề 'Ứng dụng CRISPR-Cas9 trong chỉnh sửa gen để tạo ra giống cây trồng chịu hạn'. Hãy gợi ý cho tôi một cấu trúc đề cương chi tiết, logic chuẩn học thuật. Đề cương cần phân tách rõ phần cơ chế phân tử, các chiến lược chỉnh sửa (gõ tắt gen ức chế hoặc kích hoạt gen chịu hạn), các ví dụ thực nghiệm trên lúa/ngô, thách thức và triển vọng.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Kết quả đầu ra:</li></ul>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-emerald-900 mt-10 mb-5 border-l-4 border-emerald-500 pl-3.5 pb-0.5 flex items-center select-text">II. Chọn nhiệm vụ học tập:</h2>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Tổng hợp tài liệu.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Chủ đề: Ứng dụng CRISPR-Cas9 trong chỉnh sửa gen để tạo ra giống cây trồng chịu hạn.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Công cụ hỗ trợ: Gemini AI</span></li></ul>
+<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">*Quá trình thực hiện với sự hỗ trợ của AI:</p>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Bước 1: Lập dàn ý:</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Prompt: Tôi là sinh viên ngành Sinh học trường ĐH KHTN. Tôi đang viết một bài tổng hợp tài liệu (literature review) khoa học về chủ đề 'Ứng dụng CRISPR-Cas9 trong chỉnh sửa gen để tạo ra giống cây trồng chịu hạn'. Hãy gợi ý cho tôi một cấu trúc đề cương chi tiết, logic chuẩn học thuật. Đề cương cần phân tách rõ phần cơ chế phân tử, các chiến lược chỉnh sửa (gõ tắt gen ức chế hoặc kích hoạt gen chịu hạn), các ví dụ thực nghiệm trên lúa/ngô, thách thức và triển vọng.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Kết quả đầu ra:</span></li></ul>
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai6_img1.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai6_img1.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 6.1: Ảnh chụp minh chứng kết quả thực hành bài tập 6" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 6.1: Ảnh chụp minh chứng kết quả thực hành bài tập 6</div>
 </div>
 
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai6_img2.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai6_img2.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 6.2: Ảnh chụp minh chứng kết quả thực hành bài tập 6" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 6.2: Ảnh chụp minh chứng kết quả thực hành bài tập 6</div>
 </div>
 
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai6_img3.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai6_img3.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 6.3: Ảnh chụp minh chứng kết quả thực hành bài tập 6" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 6.3: Ảnh chụp minh chứng kết quả thực hành bài tập 6</div>
 </div>
 
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai6_img4.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai6_img4.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 6.4: Ảnh chụp minh chứng kết quả thực hành bài tập 6" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 6.4: Ảnh chụp minh chứng kết quả thực hành bài tập 6</div>
 </div>
 
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai6_img5.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai6_img5.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 6.5: Ảnh chụp minh chứng kết quả thực hành bài tập 6" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 6.5: Ảnh chụp minh chứng kết quả thực hành bài tập 6</div>
 </div>
 
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai6_img6.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai6_img6.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 6.6: Ảnh chụp minh chứng kết quả thực hành bài tập 6" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 6.6: Ảnh chụp minh chứng kết quả thực hành bài tập 6</div>
 </div>
 
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai6_img7.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai6_img7.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 6.7: Ảnh chụp minh chứng kết quả thực hành bài tập 6" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 6.7: Ảnh chụp minh chứng kết quả thực hành bài tập 6</div>
 </div>
 
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Bước 2: Thu thập, lọc và phân loại tài liệu khoa học</li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Bước 2: Thu thập, lọc và phân loại tài liệu khoa học</span></li></ul>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">+Prompt: Hãy tìm và liệt kê cho tôi 5 bài báo khoa học nghiên cứu gốc (original research) có tầm ảnh hưởng lớn, xuất bản từ năm 2020 trở lại đây trên các tạp chí uy tín (Nature, Plant Biotechnology Journal, Elsevier...) về việc dùng CRISPR-Cas9 tạo giống lúa hoặc ngô chịu hạn. Yêu cầu cung cấp rõ: Tên tác giả, Năm xuất bản, Tên bài báo, Mã định danh DOI và tóm tắt ngắn gọn phương pháp/kết quả phân tử của họ.</p>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">+Kết quả đầu ra: AI cung cấp danh sách 5 bài báo.</p>
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai6_img8.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai6_img8.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 6.8: Ảnh chụp minh chứng kết quả thực hành bài tập 6" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 6.8: Ảnh chụp minh chứng kết quả thực hành bài tập 6</div>
 </div>
 
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai6_img9.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai6_img9.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 6.9: Ảnh chụp minh chứng kết quả thực hành bài tập 6" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 6.9: Ảnh chụp minh chứng kết quả thực hành bài tập 6</div>
 </div>
 
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai6_img10.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai6_img10.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 6.10: Ảnh chụp minh chứng kết quả thực hành bài tập 6" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 6.10: Ảnh chụp minh chứng kết quả thực hành bài tập 6</div>
 </div>
 
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai6_img11.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai6_img11.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 6.11: Ảnh chụp minh chứng kết quả thực hành bài tập 6" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 6.11: Ảnh chụp minh chứng kết quả thực hành bài tập 6</div>
 </div>
 
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai6_img12.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai6_img12.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 6.12: Ảnh chụp minh chứng kết quả thực hành bài tập 6" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 6.12: Ảnh chụp minh chứng kết quả thực hành bài tập 6</div>
 </div>
 
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">+Kiểm chứng học thuật bắt buộc: Do AI có nguy cơ "ảo tưởng" tự bịa mã DOI, tôi đã copy toàn bộ 5 mã DOI này và tra cứu ngược lại trên trang doi.org cũng như hệ thống thư viện điện tử.</p>
-<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Kết quả: 4/5 bài báo là chính xác hoàn toàn, 1 bài thứ 3 bị sai lệch link DOI. Tôi đã tiến hành loại bỏ bài sai lệch.</p>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Bước 3: Đánh giá, chỉnh sửa và tích hợp nội dung:</li></ul>
-<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Sử dụng dàn ý và thông tin từ AI để tự tổng hợp nội dung liên quan đến chủ đề.</p>
+<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Kết quả: 4/5 bài báo là chính xác hoàn toàn, 1 bài thứ 3 bị sai lệch link DOI. Tôi đã tiến hành loại bỏ bài sai lệch.</p>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Bước 3: Đánh giá, chỉnh sửa và tích hợp nội dung:</span></li></ul>
+<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Sử dụng dàn ý và thông tin từ AI để tự tổng hợp nội dung liên quan đến chủ đề.</p>
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai6_img13.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai6_img13.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 6.13: Ảnh chụp minh chứng kết quả thực hành bài tập 6" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 6.13: Ảnh chụp minh chứng kết quả thực hành bài tập 6</div>
 </div>
 
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai6_img14.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai6_img14.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 6.14: Ảnh chụp minh chứng kết quả thực hành bài tập 6" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 6.14: Ảnh chụp minh chứng kết quả thực hành bài tập 6</div>
 </div>
 
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai6_img15.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai6_img15.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 6.15: Ảnh chụp minh chứng kết quả thực hành bài tập 6" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 6.15: Ảnh chụp minh chứng kết quả thực hành bài tập 6</div>
 </div>
 
-<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">III. Phân tích các vấn đề đạo đức liên quan đến việc sử dụng AI trong học thuật</h2>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">1. Ranh giới giữa hỗ trợ hợp lý và gian lận học thuật</h3>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Hỗ trợ hợp lý: Sử dụng AI như một trợ lý ngôn ngữ và phân loại. AI giúp tóm tắt nhanh các bài báo tiếng Anh chuyên ngành dài 15-20 trang, dịch thuật thuật ngữ, gợi ý trích mục lục hoặc tìm kiếm các mối liên hệ logic giữa các nghiên cứu khác nhau. Quyền quyết định câu chữ, cấu trúc lập luận và tính đúng đắn của kiến thức thuộc về sinh viên.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Gian lận học thuật: Sao chép nguyên văn (Copy-paste) các đoạn tổng hợp do AI viết trực tiếp vào bài báo cáo mà không qua xử lý tư duy; hoặc tệ hơn là sử dụng các công cụ AI tự động xào nấu (spin) văn bản của người khác để qua mặt các phần mềm quét đạo văn (như Turnitin). Hành vi này triệt tiêu hoàn toàn khả năng tư duy độc lập và làm sai lệch bản chất của nghiên cứu khoa học.</li></ul>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">2. Vấn đề về quyền sở hữu trí tuệ và trích dẫn</h3>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-emerald-900 mt-10 mb-5 border-l-4 border-emerald-500 pl-3.5 pb-0.5 flex items-center select-text">III. Phân tích các vấn đề đạo đức liên quan đến việc sử dụng AI trong học thuật</h2>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">1. Ranh giới giữa hỗ trợ hợp lý và gian lận học thuật</h3>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Hỗ trợ hợp lý: Sử dụng AI như một trợ lý ngôn ngữ và phân loại. AI giúp tóm tắt nhanh các bài báo tiếng Anh chuyên ngành dài 15-20 trang, dịch thuật thuật ngữ, gợi ý trích mục lục hoặc tìm kiếm các mối liên hệ logic giữa các nghiên cứu khác nhau. Quyền quyết định câu chữ, cấu trúc lập luận và tính đúng đắn của kiến thức thuộc về sinh viên.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Gian lận học thuật: Sao chép nguyên văn (Copy-paste) các đoạn tổng hợp do AI viết trực tiếp vào bài báo cáo mà không qua xử lý tư duy; hoặc tệ hơn là sử dụng các công cụ AI tự động xào nấu (spin) văn bản của người khác để qua mặt các phần mềm quét đạo văn (như Turnitin). Hành vi này triệt tiêu hoàn toàn khả năng tư duy độc lập và làm sai lệch bản chất của nghiên cứu khoa học.</span></li></ul>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">2. Vấn đề về quyền sở hữu trí tuệ và trích dẫn</h3>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Khi AI thực hiện việc tổng hợp dữ liệu, nó quét qua hàng triệu dữ liệu bản quyền của các tác giả khác nhau. Do đó, sản phẩm thô của AI luôn tiềm ẩn nguy cơ "đạo văn vô thức". Việc sinh viên lấy đầu ra của AI và coi đó là tài sản trí tuệ của mình là vi phạm nghiêm trọng đạo đức học thuật. Khi sử dụng bất kỳ ý tưởng nào được gợi mở bởi AI, sinh viên phải truy xuất tận cùng nguồn gốc bài báo gốc mà AI đã học để trích dẫn tác giả thực sự của nghiên cứu đó, đồng thời ghi nhận sự hỗ trợ của công cụ AI ở phần phụ lục hoặc ghi chú.</p>
-<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-900 mt-6 mb-3 flex items-center select-text">3. Tác động đến quá trình học tập và phát triển kỹ năng</h3>
+<h3 class="text-lg md:text-xl font-bold font-serif text-zinc-800 mt-8 mb-4 pb-1 flex items-center select-text border-b border-gray-100">3. Tác động đến quá trình học tập và phát triển kỹ năng</h3>
 <p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Đối với sinh viên ngành Sinh học, kỹ năng đọc và viết bài tổng quan tài liệu (Literature Review) là bước rèn luyện cốt lõi để hình thành tư duy nghiên cứu, phát hiện các "khoảng trống tri thức" (research gaps). Nếu lạm dụng AI để viết hộ, sinh viên sẽ mất đi khả năng đọc hiểu sâu, kỹ năng phân tích phản biện (Critical thinking) và năng lực tổng hợp các luồng quan điểm khoa học trái chiều. Ngược lại, nếu biết sử dụng đúng cách, AI sẽ giải phóng sinh viên khỏi các tác vụ cơ học (định dạng, tìm kiếm thô) để tập trung sâu vào phần phân tích và đưa ra nhận định cá nhân chuyên sâu.</p>
-<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">IV. Xây dựng bộ nguyên tắc cá nhân về sử dụng AI có trách nhiệm</h2>
-<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Dựa trên việc phân tích toàn diện các rủi ro đạo đức về sử dụng AI, tôi tự thiết lập 6 Nguyên tắc Vàng để áp dụng trong quá trình học tập và nghiên cứu khoa học:</p>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Nguyên tắc Con người làm chủ (Human-in-the-loop): Phải luôn là người giữ quyền kiểm soát tối cao. AI chỉ là trợ lý ý tưởng; mọi cấu trúc luận điểm, lập luận khoa học và kết luận cuối cùng phải xuất phát từ bộ não của chính tôi.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Nguyên tắc Minh bạch tuyệt đối (Absolute Transparency): Luôn công khai khai báo rõ ràng, trung thực trong mọi sản phẩm học thuật về việc có sử dụng AI hay không, sử dụng công cụ nào, phiên bản nào và can thiệp vào những phần nào của bài làm.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Nguyên tắc Kiểm chứng nguồn gốc (Double-Check Rule): Tuyệt đối không thừa nhận bất kỳ số liệu, định lý, hay nguồn tài liệu tham khảo nào do AI cung cấp nếu chưa tự mình kiểm chứng chéo thành công với các nguồn tài liệu sơ cấp đáng tin cậy (Google Scholar, Scopus, ISI).</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Nguyên tắc Giới hạn tỷ lệ vàng (20% Threshold): Tự áp đặt giới hạn kỹ thuật cho bản thân: Nội dung văn bản thô do AI gợi ý sau khi được biên tập lại không được phép chiếm quá 20% dung lượng của toàn bộ bài báo cáo hay tiểu luận.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Nguyên tắc Bảo mật dữ liệu học thuật: Tuyệt đối không tải lên các hệ thống AI công cộng những dữ liệu nghiên cứu thô chưa công bố, kết quả thí nghiệm độc quyền của các phòng thí nghiệm thuộc VNU-HUS, hoặc thông tin cá nhân của giảng viên và bạn học.</li></ul>
-<ul class="list-disc pl-6 text-sm md:text-base text-gray-700 space-y-2 mb-6 select-text"><li class="leading-relaxed">Nguyên tắc Phát triển tư duy độc lập trước khi dùng AI: Trước khi mở bất kỳ công cụ AI nào, phải dành ít nhất 30 phút để tự suy nghĩ, phác thảo dàn ý thô bằng sơ đồ tư duy trên giấy. AI chỉ được sử dụng để mở rộng góc nhìn chứ không được dùng để thay thế bước khởi đầu của tư duy.</li></ul>
-<h2 class="text-xl md:text-2xl font-bold font-serif text-zinc-950 mt-8 mb-4 border-b border-emerald-500/10 pb-1.5 flex items-center select-text">V. Infographic</h2>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-emerald-900 mt-10 mb-5 border-l-4 border-emerald-500 pl-3.5 pb-0.5 flex items-center select-text">IV. Xây dựng bộ nguyên tắc cá nhân về sử dụng AI có trách nhiệm</h2>
+<p class="text-sm md:text-base text-gray-700 leading-relaxed text-justify mb-4 select-text">Dựa trên việc phân tích toàn diện các rủi ro đạo đức về sử dụng AI, tôi tự thiết lập 6 Nguyên tắc Vàng để áp dụng trong quá trình học tập và nghiên cứu khoa học:</p>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Nguyên tắc Con người làm chủ (Human-in-the-loop): Phải luôn là người giữ quyền kiểm soát tối cao. AI chỉ là trợ lý ý tưởng; mọi cấu trúc luận điểm, lập luận khoa học và kết luận cuối cùng phải xuất phát từ bộ não của chính tôi.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Nguyên tắc Minh bạch tuyệt đối (Absolute Transparency): Luôn công khai khai báo rõ ràng, trung thực trong mọi sản phẩm học thuật về việc có sử dụng AI hay không, sử dụng công cụ nào, phiên bản nào và can thiệp vào những phần nào của bài làm.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Nguyên tắc Kiểm chứng nguồn gốc (Double-Check Rule): Tuyệt đối không thừa nhận bất kỳ số liệu, định lý, hay nguồn tài liệu tham khảo nào do AI cung cấp nếu chưa tự mình kiểm chứng chéo thành công với các nguồn tài liệu sơ cấp đáng tin cậy (Google Scholar, Scopus, ISI).</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Nguyên tắc Giới hạn tỷ lệ vàng (20% Threshold): Tự áp đặt giới hạn kỹ thuật cho bản thân: Nội dung văn bản thô do AI gợi ý sau khi được biên tập lại không được phép chiếm quá 20% dung lượng của toàn bộ bài báo cáo hay tiểu luận.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Nguyên tắc Bảo mật dữ liệu học thuật: Tuyệt đối không tải lên các hệ thống AI công cộng những dữ liệu nghiên cứu thô chưa công bố, kết quả thí nghiệm độc quyền của các phòng thí nghiệm thuộc VNU-HUS, hoặc thông tin cá nhân của giảng viên và bạn học.</span></li></ul>
+<ul class="text-sm md:text-base text-gray-700 space-y-1 mb-6 select-text"><li class="leading-relaxed flex items-start mb-2"><span class="text-emerald-500 mr-2.5 select-none font-bold text-base">•</span><span class="flex-grow">Nguyên tắc Phát triển tư duy độc lập trước khi dùng AI: Trước khi mở bất kỳ công cụ AI nào, phải dành ít nhất 30 phút để tự suy nghĩ, phác thảo dàn ý thô bằng sơ đồ tư duy trên giấy. AI chỉ được sử dụng để mở rộng góc nhìn chứ không được dùng để thay thế bước khởi đầu của tư duy.</span></li></ul>
+<h2 class="text-xl md:text-2xl font-bold font-serif text-emerald-900 mt-10 mb-5 border-l-4 border-emerald-500 pl-3.5 pb-0.5 flex items-center select-text">V. Infographic</h2>
 
-<div class="my-6 bg-white border border-gray-250 p-2.5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
-  <img src="../images/reports/bai6_img16.png" class="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-300 cursor-zoom-in" alt="Hình ảnh báo cáo" onclick="window.open(this.src)">
+<div class="my-8 bg-white border border-gray-150 p-3 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 select-none">
+  <img src="../images/reports/bai6_img16.png" class="w-full h-auto rounded-xl hover:scale-[1.005] transition-transform duration-300 cursor-zoom-in border border-gray-50" alt="Hình 6.16: Ảnh chụp minh chứng kết quả thực hành bài tập 6" onclick="window.open(this.src)">
+  <div class="text-center text-xs text-gray-500 font-sans italic mt-2.5 tracking-wide select-text">Hình 6.16: Ảnh chụp minh chứng kết quả thực hành bài tập 6</div>
 </div>
 
       </div>
